@@ -10,42 +10,34 @@ const mediaArticles = [
   {
     id: 1,
     source: "經濟日報",
-    articleTitle: "全球尼古丁袋市場趨勢深度剖析", // 標題
+    articleTitle: "台灣菸草減害研究院發布《無煙台灣宣言》",
     excerpt:
-      "本文探討全球尼古丁袋市場的最新發展，分析其增長動力、主要品牌競爭態勢，以及未來幾年的市場預測和潛在挑戰，為讀者提供全面行業洞察。", // 摘要
-    link: "https://www.google.com",
+      "研究院強調菸草減害是基本人權，呼籲政府重啟科學對話，停止對電子菸、加熱菸與尼古丁袋等減害菸品的一體適用式打壓，以實現真正的無煙台灣...",
+    link: "https://money.udn.com/money/story/5635/8774968",
   },
   {
     id: 2,
-    source: "2firsts 菸草快訊",
-    articleTitle: "世界無菸日：菸草減害策略的全球視角", // 標題
+    source: "2firsts",
+    articleTitle: "世界無菸日2025：前WHO執行主任呼籲擁抱菸草減害",
     excerpt:
-      "在世界無菸日之際，本文聚焦全球菸草減害策略的進展與挑戰。探討尼古丁替代品如尼古丁袋在公共衛生中的角色，以及各國政策如何影響其發展。", // 摘要
-    link: "https://www.google.com",
+      "全球知名菸害防制專家Derek Yach博士強調，科學證據顯示電子菸、尼古丁袋等產品危害顯著低於傳統香菸，呼籲國際社會支持減害策略拯救生命...",
+    link: "https://www.2firsts.com/news/world-no-tobacco-day-2025-embracing-tobacco-harm-reduction-to-save-millions",
   },
   {
     id: 3,
-    source: "國際健康研究",
-    articleTitle: "尼古丁替代療法：減少菸草危害的科學實證", // 標題
+    source: "中央社",
+    articleTitle: "菸防法修法近2年，國健署首件加熱菸審查結果即將出爐",
     excerpt:
-      "綜合多項研究，本文評估尼古丁替代療法（包括尼古丁袋）在幫助吸菸者戒菸及減少菸草相關疾病風險方面的有效性與安全性，提供科學依據。", // 摘要
-    link: "https://www.google.com",
+      "衛福部國健署長吳昭軍表示，台灣加熱菸健康風險評估審查正在進行中，首家業者審查結果預計4月公布，顯示政府以科學實證保護民眾健康...",
+    link: "https://www.cna.com.tw/news/ahel/202503070183.aspx",
   },
   {
     id: 4,
-    source: "健康生活指南",
-    articleTitle: "專家解析：尼古丁袋與傳統菸品健康風險比較", // 標題
+    source: "中國時報",
+    articleTitle: "電子菸加熱菸稽查統計：全台2年開罰5億元",
     excerpt:
-      "邀請公共衛生專家深入比較尼古丁袋與傳統香菸的健康風險。從成分、使用方式到長期影響，全面解析兩者差異，助您做出明智選擇。", // 摘要
-    link: "https://www.google.com",
-  },
-  {
-    id: 5,
-    source: "科技與消費趨勢",
-    articleTitle: "創新尼古丁技術如何重塑消費習慣與市場格局", // 標題
-    excerpt:
-      "本文關注尼古丁傳遞技術的最新創新，如尼古丁袋的改良。分析這些技術如何改變消費者的使用習慣，並對整體市場格局帶來深遠影響。", // 摘要
-    link: "https://www.google.com",
+      "WHO統計全球新興菸品社群媒體瀏覽超過34億次，國健署加強稽查違法產品，顯示政府重視菸害防制與產品品質管控...",
+    link: "https://www.chinatimes.com/cn/realtimenews/20250526002653-260405",
   },
 ]
 
