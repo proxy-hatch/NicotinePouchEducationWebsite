@@ -544,7 +544,7 @@ export default function Home() {
       <section className="w-full py-12 md:py-24 bg-blue-50">
         <div className="container px-4 md:px-6 text-center">
           <div className="max-w-2xl mx-auto space-y-4">
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">找到適合您工作與生活的尼古丁解決方案</h2>
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">尋找符合品質標準的供應商？</h2>
             <p className="text-gray-600 md:text-lg">瀏覽歐美原廠品牌的認證經銷商，獲得品質保證的選擇</p>
             <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-lg">
               <Link href="/vendors">查看推薦品牌</Link>
