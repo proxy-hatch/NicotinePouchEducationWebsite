@@ -166,7 +166,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
-                  <p>持續30-60分鐘平穩體驗，適應各種生活與工作狀</p>
+                  <p>持續30-60分鐘平穩體驗，適應各種生活與工作狀態</p>
                 </div>
               </CardContent>
             </Card>
