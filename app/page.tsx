@@ -445,53 +445,6 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left font-medium">與電子菸有何差別？</AccordionTrigger>
-                <AccordionContent className="faq-accordion-content">
-                  <p>
-                    與電子菸不同，尼古丁袋不需要任何設備、電池或充電。它們不產生蒸氣或煙霧，使用時完全無味，且不需要吸入任何物質。
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left font-medium">尼古丁袋安全嗎？</AccordionTrigger>
-                <AccordionContent className="faq-accordion-content">
-                  <p>
-                    相較於傳統吸菸，尼古丁袋避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品，認定其相較於香菸具有顯著較低的健康風險。
-                  </p>
-                  <p>
-                    然而，尼古丁本身仍具有成癮性，且可能對心血管系統產生影響。尼古丁袋主要適合已經使用尼古丁產品的成年人作為減害替代選擇，不建議非尼古丁使用者開始使用。
-                  </p>
-                  <p>
-                    與電子菸不同，尼古丁袋透過口腔吸收，完全避免肺部接觸任何物質。任何尼古丁產品都應在了解風險的情況下謹慎使用，建議諮詢醫療專業人員的建議。
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left font-medium">會影響牙齦健康嗎？</AccordionTrigger>
-                <AccordionContent className="faq-accordion-content">
-                  <p>
-                    部分使用者初期可能會感到輕微的牙齦刺激或刺痛感，這是正常現象，通常在使用一至兩週後會逐漸適應並減輕。這種初期反應主要是口腔組織適應新產品的過程。
-                  </p>
-                  <p>
-                    某些口味可能會產生刺激性唾液，使用時應避免吞嚥唾液，以免造成胃部不適、噁心或消化問題。
-                  </p>
-                  <p>
-                    為減少不適感，建議從較低強度產品開始，正確放置於牙齦與嘴唇之間，並定期更換放置位置。初次使用時可縮短使用時間（如15-20分鐘），待適應後再延長至建議時間。
-                  </p>
-                  <p>
-                    相較於傳統煙草產品，尼古丁袋不含菸葉，避免了與口腔癌、牙齦疾病、牙齒染色等相關的風險。建議保持良好的口腔衛生習慣，定期進行口腔檢查。如有持續不適或異常症狀，應停止使用並諮詢牙醫或醫療專業人員。
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5">
-                <AccordionTrigger className="text-left font-medium">可以持續多久？</AccordionTrigger>
-                <AccordionContent className="faq-accordion-content">
-                  <p>
-                    一般來說，尼古丁袋的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-6">
                 <AccordionTrigger className="text-left font-medium">可以在工作場所使用嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
@@ -513,6 +466,53 @@ export default function Home() {
                   </p>
                   <p>
                     由於產品完全無味無煙，使用時幾乎無法察覺，因此適合各種正式或非正式場合。
+                  </p>
+                </AccordionContent>
+
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left font-medium">與電子菸有何差別？</AccordionTrigger>
+                <AccordionContent className="faq-accordion-content">
+                  <p>
+                    與電子菸不同，尼古丁袋不需要任何設備、電池或充電。它們不產生蒸氣或煙霧，使用時完全無味，且不需要吸入任何物質。
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left font-medium">尼古丁袋安全嗎？</AccordionTrigger>
+                <AccordionContent className="faq-accordion-content">
+                  <p>
+                    相較於傳統吸菸，尼古丁袋避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品，認定其相較於香菸具有顯著較低的健康風險。
+                  </p>
+                  <p>
+                    然而，尼古丁本身仍具有成癮性，且可能對心血管系統產生影響。尼古丁袋主要適合已經使用尼古丁產品的成年人作為減害替代選擇，不建議非尼古丁使用者開始使用。
+                  </p>
+                  <p>
+                    與電子菸不同，尼古丁袋透過口腔吸收，完全避免肺部接觸任何物質。任何尼古丁產品都應在了解風險的情況下謹慎使用，建議諮詢醫療專業人員的建議。
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left font-medium">會影響牙齦健康嗎？</AccordionTrigger>
+                <AccordionContent className="faq-accordion-content">
+                  <p>
+                    部分使用者初期可能會感到輕微的牙齦刺激或刺痛感，這是正常現象，通常在使用一至兩週後會逐漸適應並減輕。這種初期反應主要是口腔組織適應新產品的過程。
+                  </p>
+                  <p>
+                    某些口味可能會產生刺激性唾液，使用時應避免吞嚥唾液，以免造成胃部不適、噁心或消化問題。
+                  </p>
+                  <p>
+                    為減少不適感，建議從較低強度產品開始，正確放置於牙齦與嘴唇之間，並定期更換放置位置。初次使用時可縮短使用時間（如15-20分鐘），待適應後再延長至建議時間。
+                  </p>
+                  <p>
+                    相較於傳統煙草產品，尼古丁袋不含菸葉，避免了與口腔癌、牙齦疾病、牙齒染色等相關的風險。建議保持良好的口腔衛生習慣，定期進行口腔檢查。如有持續不適或異常症狀，應停止使用並諮詢牙醫或醫療專業人員。
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-6">
+                <AccordionTrigger className="text-left font-medium">可以持續多久？</AccordionTrigger>
+                <AccordionContent className="faq-accordion-content">
+                  <p>
+                    一般來說，尼古丁袋的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。
                   </p>
                 </AccordionContent>
               </AccordionItem>
