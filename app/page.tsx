@@ -455,7 +455,15 @@ export default function Home() {
               <AccordionItem value="item-4">
                 <AccordionTrigger className="text-left font-medium">會影響牙齦健康嗎？</AccordionTrigger>
                 <AccordionContent>
-                  部分使用者可能會感到輕微的牙齦刺激，尤其是初次使用時。選擇較低強度的產品並正確放置可以減少這種情況。如有持續不適，應停止使用並諮詢牙醫。
+                  <p>
+                    相較於傳統吸菸，尼古丁袋避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品，認定其相較於香菸具有顯著較低的健康風險。
+                  </p>
+                  <p>
+                    然而，尼古丁本身仍具有成癮性，且可能對心血管系統產生影響。尼古丁袋主要適合已經使用尼古丁產品的成年人作為減害替代選擇，不建議非尼古丁使用者開始使用。
+                  </p>
+                  <p>
+                    與電子菸不同，尼古丁袋透過口腔吸收，完全避免肺部接觸任何物質。任何尼古丁產品都應在了解風險的情況下謹慎使用，建議諮詢醫療專業人員的建議。
+                  </p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
