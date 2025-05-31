@@ -528,7 +528,10 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">費用會很昂貴嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    尼古丁袋的價格因品牌和強度而異，但長期來看，通常比持續購買香菸或維護電子菸設備更經濟實惠。
+                    尼古丁袋的價格因品牌和強度而異，但考慮總成本效益具有優勢：無需購買設備、充電器或耗材，避免設備故障維修費用。相較於進口IQOS的複雜成本或黑市電子菸的品質風險，正品尼古丁袋提供可預期的使用成本。
+                  </p>
+                  <p>
+                    此外，每個袋裝可使用30-60分鐘，使用頻率通常低於電子菸的短時間吸食，長期而言更具成本效益。許多使用者認為便利性、可靠性和品質保證使投資物有所值。
                   </p>
                 </AccordionContent>
               </AccordionItem>
