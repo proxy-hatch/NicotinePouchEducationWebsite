@@ -453,7 +453,7 @@ export default function Home() {
                   <p>
                     <strong>具體使用場景：</strong>
                   </p>
-                  <ul>
+                  <ul className="list-disc list-inside pl-5"> 
                     <li>長時間會議或研習 - 無需中途離席吸菸休息</li>
                     <li>工廠作業環境 - 符合安全規範，不影響生產線工作</li>
                     <li>辦公大樓 - 無需搭電梯到戶外吸菸區，節省時間</li>
