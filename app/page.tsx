@@ -10,37 +10,41 @@ const mediaArticles = [
   {
     id: 1,
     source: "經濟日報",
-    articleTitle: "全球尼古丁袋市場趨勢深度解析與未來展望",
+    articleTitle: "全球尼古丁袋市場趨勢深度剖析", // 標題
     excerpt:
-      "本文深入探討全球尼古丁袋市場的最新發展趨勢，分析其增長動力、主要參與者以及未來幾年的市場預測，為相關業者提供參考。",
+      "本文探討全球尼古丁袋市場的最新發展，分析其增長動力、主要品牌競爭態勢，以及未來幾年的市場預測和潛在挑戰，為讀者提供全面行業洞察。", // 摘要
     link: "https://www.google.com",
   },
   {
     id: 2,
-    source: "2firsts 專業報導",
-    articleTitle: "世界無菸日倡議：菸害減輕策略如何拯救生命",
-    excerpt: "探討在世界無菸日的背景下，菸害減輕策略，特別是尼古丁替代品，在全球公共衛生中扮演的關鍵角色及其潛力。",
+    source: "2firsts 菸草快訊",
+    articleTitle: "世界無菸日：菸草減害策略的全球視角", // 標題
+    excerpt:
+      "在世界無菸日之際，本文聚焦全球菸草減害策略的進展與挑戰。探討尼古丁替代品如尼古丁袋在公共衛生中的角色，以及各國政策如何影響其發展。", // 摘要
     link: "https://www.google.com",
   },
   {
     id: 3,
-    source: "國際公共衛生期刊",
-    articleTitle: "尼古丁替代療法於菸草減害之角色與實證",
-    excerpt: "綜合分析多項研究，評估尼古丁替代療法（包括尼古丁袋）在幫助吸菸者減少傳統菸草使用方面的效果與挑戰。",
+    source: "國際健康研究",
+    articleTitle: "尼古丁替代療法：減少菸草危害的科學實證", // 標題
+    excerpt:
+      "綜合多項研究，本文評估尼古丁替代療法（包括尼古丁袋）在幫助吸菸者戒菸及減少菸草相關疾病風險方面的有效性與安全性，提供科學依據。", // 摘要
     link: "https://www.google.com",
   },
   {
     id: 4,
-    source: "健康生活網",
-    articleTitle: "專家對談：尼古丁袋與傳統香菸的利弊全方位比較",
-    excerpt: "邀請多位醫學及公共衛生專家，從健康、成癮性、社會影響等多角度，深入比較尼古丁袋與傳統香菸的差異。",
+    source: "健康生活指南",
+    articleTitle: "專家解析：尼古丁袋與傳統菸品健康風險比較", // 標題
+    excerpt:
+      "邀請公共衛生專家深入比較尼古丁袋與傳統香菸的健康風險。從成分、使用方式到長期影響，全面解析兩者差異，助您做出明智選擇。", // 摘要
     link: "https://www.google.com",
   },
   {
     id: 5,
-    source: "科技趨勢前瞻",
-    articleTitle: "創新尼古丁傳輸技術如何重塑消費者行為模式",
-    excerpt: "分析新型尼古丁產品（如尼古丁袋）的技術創新，及其對消費者選擇、市場格局乃至公共衛生政策的深遠影響。",
+    source: "科技與消費趨勢",
+    articleTitle: "創新尼古丁技術如何重塑消費習慣與市場格局", // 標題
+    excerpt:
+      "本文關注尼古丁傳遞技術的最新創新，如尼古丁袋的改良。分析這些技術如何改變消費者的使用習慣，並對整體市場格局帶來深遠影響。", // 摘要
     link: "https://www.google.com",
   },
 ]
@@ -402,20 +406,18 @@ export default function Home() {
               {mediaArticles.map((article) => (
                 <CarouselItem key={article.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
-                    <Card className="shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col rounded-lg overflow-hidden">
-                      <CardHeader className="pb-3 pt-5 px-5">
-                        <CardTitle className="text-sm font-medium text-blue-600">{article.source}</CardTitle>
-                        <h3 className="text-md font-semibold text-gray-800 mt-1 leading-tight hover:text-blue-700 transition-colors">
-                          <Link href={article.link} target="_blank" rel="noopener noreferrer">
-                            {article.articleTitle}
-                          </Link>
-                        </h3>
+                    <Card className="shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
+                      <CardHeader className="pb-2">
+                        <p className="text-sm font-medium text-gray-500">{article.source}</p>
+                        <CardTitle className="text-blue-700 text-lg leading-tight mt-1">
+                          {article.articleTitle}
+                        </CardTitle>
                       </CardHeader>
-                      <CardContent className="px-5 pb-4 flex-grow">
-                        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{article.excerpt}</p>
+                      <CardContent className="flex-grow pt-2">
+                        <p className="text-gray-600 text-sm line-clamp-3">{article.excerpt}</p>
                       </CardContent>
-                      <CardFooter className="px-5 pb-5 pt-0 mt-auto">
-                        <Button asChild variant="link" className="p-0 text-blue-600 hover:text-blue-700 text-sm">
+                      <CardFooter>
+                        <Button asChild variant="link" className="p-0 text-blue-600 hover:text-blue-700">
                           <Link href={article.link} target="_blank" rel="noopener noreferrer">
                             閱讀更多 <ChevronRight className="h-4 w-4 ml-1" />
                           </Link>
