@@ -237,7 +237,7 @@ export default function Home() {
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
-                    <span>西方品質標準</span>
+                    <span>歐美原廠製造保證</span>
                   </li>
                 </ul>
               </CardContent>
@@ -264,7 +264,7 @@ export default function Home() {
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
-                    <span>可在餐廳、交通工具、會議中使用</span>
+                    <span>適合長時間會議、工廠作業、通勤使用</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -300,7 +300,7 @@ export default function Home() {
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
-                    <span>適合忙碌行程</span>
+                    <span>配合薹灣高效率工作節奏</span>
                   </li>
                 </ul>
               </CardContent>
@@ -327,7 +327,7 @@ export default function Home() {
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
-                    <span>FDA規範成分</span>
+                    <span>獲美國監管機構認可</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -345,7 +345,7 @@ export default function Home() {
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
-                    <span>無燃燒毒素</span>
+                    <span>避免燃燒產生的焦油與一氧化碳</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -363,7 +363,7 @@ export default function Home() {
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
-                    <span>透明供應鏈</span>
+                    <span>歐美原廠直送，保證產品真實性</span>
                   </li>
                 </ul>
               </CardContent>
