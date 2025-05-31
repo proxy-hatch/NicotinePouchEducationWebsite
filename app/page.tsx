@@ -19,6 +19,14 @@ const mediaArticles = [
   },
   {
     id: 2,
+    source: "世界新聞網",
+    articleTitle: "職場菁英新歡：尼古丁袋提神又增進效率",
+    excerpt:
+      "彭博社報導指出，尼古丁袋在財經界與高科技業大為風行，投資人使用後可專注完成工作，矽谷科技界使用情況越來越普遍，成為職場提神聖品...",
+    link: "https://www.worldjournal.com/wj/story/121472/7824800",
+  },
+  {
+    id: 3,
     source: "2firsts",
     articleTitle: "世界無菸日2025：前WHO執行主任呼籲擁抱菸草減害",
     excerpt:
@@ -26,7 +34,7 @@ const mediaArticles = [
     link: "https://www.2firsts.com/news/world-no-tobacco-day-2025-embracing-tobacco-harm-reduction-to-save-millions",
   },
   {
-    id: 3,
+    id: 4,
     source: "中央社",
     articleTitle: "菸防法修法近2年，國健署首件加熱菸審查結果即將出爐",
     excerpt:
@@ -34,7 +42,7 @@ const mediaArticles = [
     link: "https://www.cna.com.tw/news/ahel/202503070183.aspx",
   },
   {
-    id: 4,
+    id: 5,
     source: "中國時報",
     articleTitle: "電子菸加熱菸稽查統計：全臺2年開罰5億元",
     excerpt:
