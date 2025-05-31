@@ -11,31 +11,31 @@ const mediaArticles = [
     id: 1,
     source: "經濟日報",
     title: "尼古丁袋產品在全球市場的發展趨勢...",
-    link: "#", // Placeholder link
+    link: "https://www.google.com",
   },
   {
     id: 2,
     source: "2firsts",
     title: "世界無菸日2025：擁抱菸害減害以拯救數百萬人...",
-    link: "#", // Placeholder link
+    link: "https://www.google.com",
   },
   {
     id: 3,
     source: "國際觀點",
     title: "尼古丁替代品在減少傳統菸草危害中的角色...",
-    link: "#", // Placeholder link
+    link: "https://www.google.com",
   },
   {
     id: 4,
     source: "健康新知",
     title: "專家解析：尼古丁袋與傳統菸品的比較",
-    link: "#", // Placeholder link
+    link: "https://www.google.com",
   },
   {
     id: 5,
     source: "科技脈動",
     title: "創新尼古丁技術如何改變消費習慣",
-    link: "#", // Placeholder link
+    link: "https://www.google.com",
   },
 ]
 
@@ -405,7 +405,7 @@ export default function Home() {
                       </CardContent>
                       <CardFooter>
                         <Button asChild variant="link" className="p-0 text-blue-600 hover:text-blue-700">
-                          <Link href={article.link}>
+                          <Link href={article.link} target="_blank" rel="noopener noreferrer">
                             閱讀更多 <ChevronRight className="h-4 w-4 ml-1" />
                           </Link>
                         </Button>
