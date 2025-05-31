@@ -34,7 +34,7 @@ const mediaArticles = [
   {
     id: 4,
     source: "中國時報",
-    articleTitle: "電子菸加熱菸稽查統計：全台2年開罰5億元",
+    articleTitle: "電子菸加熱菸稽查統計：全臺2年開罰5億元",
     excerpt:
       "WHO統計全球新興菸品社群媒體瀏覽超過34億次，國健署加強稽查違法產品，顯示政府重視菸害防制與產品品質管控...",
     link: "https://www.chinatimes.com/cn/realtimenews/20250526002653-260405",
