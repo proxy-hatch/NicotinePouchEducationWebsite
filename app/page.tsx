@@ -79,7 +79,7 @@ export default function Home() {
       <section className="w-full py-12 md:py-16 bg-gray-50">
         <div className="container px-4 md:px-6">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-center mb-10 text-blue-800">
-            做出您的明智選擇：傳統方案與尼古丁袋全解析
+            了解您的選擇
           </h2>
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             <Card className="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
