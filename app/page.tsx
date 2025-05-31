@@ -177,36 +177,195 @@ export default function Home() {
       {/* Three-Pillar Benefits Grid */}
       <section className="w-full py-12 md:py-16 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-center mb-8 text-blue-800">核心優勢</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-blue-700">可靠性</CardTitle>
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-center mb-10 text-blue-800">核心優勢</h2>
+          <div className="grid gap-8 md:gap-12 lg:grid-cols-3">
+            <Card className="shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+              <CardHeader className="bg-blue-600 p-6">
+                <CardTitle className="text-xl font-semibold text-white">可靠性</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
-                <p>無需充電、加油或維護</p>
-                <p>每次使用體驗一致</p>
-                <p>西方品質標準</p>
+              <CardContent className="p-6 space-y-3 text-gray-700 flex-grow">
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>無需充電、加油或維護</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>每次使用體驗一致</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>西方品質標準</span>
+                  </li>
+                </ul>
               </CardContent>
             </Card>
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-blue-700">便利性</CardTitle>
+            <Card className="shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+              <CardHeader className="bg-blue-600 p-6">
+                <CardTitle className="text-xl font-semibold text-white">便利性</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
-                <p>可在餐廳、交通工具、會議中使用</p>
-                <p>無需抽菸休息時間</p>
-                <p>適合忙碌行程</p>
+              <CardContent className="p-6 space-y-3 text-gray-700 flex-grow">
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>可在餐廳、交通工具、會議中使用</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>無需抽菸休息時間</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>適合忙碌行程</span>
+                  </li>
+                </ul>
               </CardContent>
             </Card>
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300 sm:col-span-2 lg:col-span-1">
-              <CardHeader>
-                <CardTitle className="text-blue-700">純淨度</CardTitle>
+            <Card className="shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col sm:col-span-2 lg:col-span-1">
+              <CardHeader className="bg-blue-600 p-6">
+                <CardTitle className="text-xl font-semibold text-white">純淨度</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
-                <p>FDA規範成分</p>
-                <p>無燃燒毒素</p>
-                <p>透明供應鏈</p>
+              <CardContent className="p-6 space-y-3 text-gray-700 flex-grow">
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>FDA規範成分</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>無燃燒毒素</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-check-circle h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>透明供應鏈</span>
+                  </li>
+                </ul>
               </CardContent>
             </Card>
           </div>
