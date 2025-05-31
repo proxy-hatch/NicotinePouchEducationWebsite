@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "台灣尼古丁袋教育平台",
-  description: "為台灣消費者提供關於尼古丁袋的可靠教育資訊",
+  title: "薹灣尼古丁袋教育平台",
+  description: "為台灣消費者提供關於尼古丁袋的可靠資訊",
     generator: 'v0.dev'
 }
 
@@ -26,7 +26,7 @@ export default function RootLayout({
               <div className="container px-4 md:px-6">
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-xl font-bold text-blue-800">尼古丁袋教育</span>
+                    <span className="text-xl font-bold text-blue-800">尼古丁袋指南</span>
                   </Link>
                   <nav className="hidden md:flex items-center space-x-6">
                     <Link href="/learn" className="text-gray-600 hover:text-blue-600 transition-colors">
@@ -81,7 +81,7 @@ export default function RootLayout({
                   </Link>
                 </div>
                 <div className="mt-6 text-center text-sm text-gray-500">
-                  <p>© {new Date().getFullYear()} 台灣尼古丁袋教育平台. 版權所有.</p>
+                  <p>© {new Date().getFullYear()} 薹灣尼古丁袋教育平台. 版權所有.</p>
                 </div>
               </div>
             </footer>
