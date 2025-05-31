@@ -109,19 +109,19 @@ export default function Home() {
               <CardContent className="p-6 space-y-3 text-gray-700">
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
-                  <p>電子菸設備經常故障或需要持續充電</p>
+                  <p>設備維護充電煩惱，使用便利性受限</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
-                  <p>未受規管產品的成分不明</p>
+                  <p>市場產品成分不明，品質參差影響肺部健康</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
-                  <p>優質替代方案取得受限</p>
+                  <p>新興菸品進口困難，傳統香菸燃燒產生焦油危害肺功能</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
-                  <p>吸菸或電子菸使用場所限制</p>
+                  <p> 使用場所受限影響日常工作與生活便利性，二手煙霧影響他人</p>
                 </div>
               </CardContent>
             </Card>
