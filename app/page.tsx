@@ -556,7 +556,7 @@ export default function Home() {
       {/* Disclaimer Footer */}
       <div className="w-full py-6 bg-gray-100 text-center text-sm text-gray-500">
         <div className="container px-4 md:px-6">
-          <p>本網站提供尼古丁替代方案的教育資訊。內容僅供參考用途。個人醫療建議請諮詢醫療專業人員。</p>
+          <p>本網站僅提供教育資訊供參考。使用任何尼古丁產品前請評估個人需求並謹慎選擇。</p>
         </div>
       </div>
     </main>
