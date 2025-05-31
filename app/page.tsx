@@ -121,7 +121,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
-                  <p> 使用場所受限影響生活便利性，二手煙霧影響他人</p>
+                  <p> 使用場所受限影響工作與生活便利性，二手煙霧影響他人</p>
                 </div>
               </CardContent>
             </Card>
