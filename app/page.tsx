@@ -450,10 +450,10 @@ export default function Home() {
                   <p>
                     尼古丁袋不產生煙霧或蒸氣，使用時無味無煙，因此可以在大多數禁止吸菸的場所使用，特別適合台灣的工作環境與生活型態。
                   </p>
-                  <p>
+                  <p className="mb-2">
                     <strong>具體使用場景：</strong>
                   </p>
-                  <ul className="list-disc list-inside pl-5"> 
+                  <ul className="list-disc list-inside pl-5 mb-4"> 
                     <li>長時間會議或研習 - 無需中途離席吸菸休息</li>
                     <li>工廠作業環境 - 符合安全規範，不影響生產線工作</li>
                     <li>辦公大樓 - 無需搭電梯到戶外吸菸區，節省時間</li>
