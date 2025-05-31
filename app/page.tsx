@@ -51,11 +51,11 @@ export default function Home() {
                 純淨尼古丁，明智選擇
               </h1>
               <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                告別電子菸故障充電煩惱，避免來源不明成分疑慮
+                告別傳統菸與電子菸的使用困擾，選擇透明成分的健康可靠替代方案
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
-                  <Link href="/vendors">尋找經銷商</Link>
+                  <Link href="/vendors">查看推薦品牌</Link>
                 </Button>
                 <Button asChild variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50 rounded-lg">
                   <Link href="/learn">了解更多</Link>
