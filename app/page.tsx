@@ -154,19 +154,19 @@ export default function Home() {
               <CardContent className="p-6 space-y-3 text-gray-700">
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
-                  <p>無設備依賴性 - 隨時隨地可用</p>
+                  <p>口腔吸收避免肺部接觸，隨時隨地安全使用</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
-                  <p>西方檢測成分，完全透明</p>
+                  <p>歐美品牌保障，藥用級成分完整透明標示</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
-                  <p>謹慎專業使用 - 無蒸氣、無異味</p>
+                  <p>零煙霧零異味，適合專業場合使用</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
-                  <p>30-60分鐘持續穩定體驗</p>
+                  <p>持續30-60分鐘平穩體驗，適應各種生活與工作狀</p>
                 </div>
               </CardContent>
             </Card>
