@@ -26,7 +26,7 @@ export default function RootLayout({
               <div className="container px-4 md:px-6">
                 <div className="flex items-center justify-between">
                   <Link href="/" className="flex items-center space-x-2">
-                    <span className="text-xl font-bold text-blue-800">尼古丁新知</span>
+                    <span className="text-xl font-bold text-blue-800">尼古丁袋薹灣</span>
                   </Link>
                   <nav className="hidden md:flex items-center space-x-6">
                     <Link href="/learn" className="text-gray-600 hover:text-blue-600 transition-colors">
