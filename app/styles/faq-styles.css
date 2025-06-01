@@ -1,0 +1,11 @@
+/* app/styles/faq-styles.css */
+.faq-accordion-content p:not(:last-child) {
+  margin-bottom: 1em; /* Adjust '1em' to your desired spacing (e.g., 1rem, 16px) */
+}
+
+.faq-accordion-content > *:first-child {
+  margin-top: 0;
+}
+.faq-accordion-content > *:last-child {
+  margin-bottom: 0;
+}
