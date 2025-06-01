@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
@@ -476,7 +478,7 @@ export default function Home() {
                     由於產品完全無味無煙，使用時幾乎無法察覺，因此適合各種正式或非正式場合。
                   </p>
                 </AccordionContent>
-
+              </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-left font-medium">與電子菸有何差別？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
