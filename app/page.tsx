@@ -7,8 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ChevronRight } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay" // For self-wrapping/autoplay
-import './styles/faq-styles.css';
-
+import "./styles/faq-styles.css"
 
 const mediaArticles = [
   {
@@ -47,8 +46,7 @@ const mediaArticles = [
     id: 5,
     source: "中國時報",
     articleTitle: "電子菸加熱菸稽查統計：全臺2年開罰5億元",
-    excerpt:
-      "WHO統計全球新興菸品社群媒體瀏覽超過34億次，國健署加強稽查違法產品，顯示政府重視菸害防制與產品品質管控...",
+    excerpt: "WHO統計全球新興菸品社群媒體瀏覽超過34億次，國健署加強稽查違法產品，顯示政府重視菸害防制與產品品質管控...",
     link: "https://www.chinatimes.com/cn/realtimenews/20250526002653-260405",
   },
 ]
@@ -548,27 +546,23 @@ export default function Home() {
             </Accordion>
           </div>
         </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="w-full py-12 md:py-24 bg-blue-50">
-        <div className="container px-4 md:px-6 text-center">
-          <div className="max-w-2xl mx-auto space-y-4">
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">尋找符合品質標準的供應商？</h2>
-            <p className="text-gray-600 md:text-lg">瀏覽歐美原廠品牌的認證經銷商，獲得品質保證的選擇</p>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-lg">
-              <Link href="/vendors">查看推薦品牌</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Disclaimer Footer */}
-      <div className="w-full py-6 bg-gray-100 text-center text-sm text-gray-500">
-        <div className="container px-4 md:px-6">
-          <p>本網站僅提供教育資訊供參考。使用任何尼古丁產品前請評估個人需求並謹慎選擇。</p>
-        </div>
+  </section>
+  <section className="w-full py-12 md:py-24 bg-blue-50">
+    <div className="container px-4 md:px-6 text-center">
+      <div className="max-w-2xl mx-auto space-y-4">
+        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">尋找符合品質標準的供應商？</h2>
+        <p className="text-gray-600 md:text-lg">瀏覽歐美原廠品牌的認證經銷商，獲得品質保證的選擇</p>
+        <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-lg">
+          <Link href="/vendors">查看推薦品牌</Link>
+        </Button>
       </div>
-    </main>
+    </div>
+  </section>
+  <div className="w-full py-6 bg-gray-100 text-center text-sm text-gray-500">
+    <div className="container px-4 md:px-6">
+      <p>本網站僅提供教育資訊供參考。使用任何尼古丁產品前請評估個人需求並謹慎選擇。</p>
+    </div>
+  </div>
+  </main>
   )
 }
