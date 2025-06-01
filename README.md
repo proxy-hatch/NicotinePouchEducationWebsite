@@ -32,10 +32,10 @@ Continue building your app on:
 
 ## Other Miscellaneous Resources
 - Zipping this repository to be examined by LLMs:
-    ```
+    \`\`\`
     zip -r NicotinePouchEducationWebsite.zip NicotinePouchEducationWebsite \
         -x "NicotinePouchEducationWebsite/node_modules/*" \
         -x "NicotinePouchEducationWebsite/.next/*" \
         -x "NicotinePouchEducationWebsite/.idea/*" \
         -x "NicotinePouchEducationWebsite/.git/*"
-    ```
+    \`\`\`
