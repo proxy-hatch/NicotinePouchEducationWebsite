@@ -453,7 +453,7 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left font-medium">可以在工作場所使用嗎？</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">可以在工作場���使用嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
                     尼古丁袋不產生煙霧或蒸氣，使用時無味無煙，因此可以在大多數禁止吸菸的場所使用，特別適合台灣的工作環境與生活型態。

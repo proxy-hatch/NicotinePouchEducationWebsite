@@ -5,11 +5,14 @@ import { Clock } from "lucide-react"
 // Blog post data structure
 const blogPosts = [
   {
-    id: "iqos-guide",
-    slug: "iqos-guide",
-    title: "加熱菸購買指南：IQOS台灣現況與最佳替代方案",
-    excerpt:
-      "台灣消費者面臨IQOS取得困難？了解加熱菸在台灣的法規現況，以及為何越來越多人選擇更便利的替代方案。完整分析各種選項的優缺點，協助您找到最適合的解決方案。",
+    id: "what-is-nicotine-pouch",
+    slug: "what-is-nicotine-pouch",
+    title: "尼古丁袋完整介紹：成分、使用方法與科學原理",
+    excerpt: "
+      <p>
+      什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。
+      </p>
+      ",
     readingTime: 7,
   },
   {
