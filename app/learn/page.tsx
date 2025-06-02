@@ -5,39 +5,68 @@ import { Clock } from "lucide-react"
 // Blog post data structure
 const blogPosts = [
   {
-    id: "what-is-nicotine-pouch",
+    id: "1",
     slug: "what-is-nicotine-pouch",
     title: "尼古丁袋完整介紹：成分、使用方法與科學原理",
-    excerpt: "
-      <p>
-      什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。
-      </p>
-      ",
-    readingTime: 7,
-  },
-  {
-    id: "toxin-comparison",
-    slug: "toxin-comparison",
-    title: "研究顯示：各產品毒素含量比較",
-    excerpt:
-      "比較香菸、電子菸及替代品的有害化學物質暴露。本文深入分析最新科學研究，揭示不同尼古丁產品中的有害物質含量差異，幫助您了解各種選擇的健康風險。",
+    excerpt: 
+      "什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。",
     readingTime: 6,
   },
   {
-    id: "global-regulations",
-    slug: "global-regulations",
-    title: "全球減害法規方針",
+    id: "2",
+    slug: "nicotine-products-risk",
+    title: "科學研究：不同尼古丁產品的健康風險比較",
     excerpt:
-      "各國如何在創新與公共健康間取得平衡。探討世界各地對尼古丁替代品的監管策略，以及這些政策如何影響消費者選擇和公共健康成果。",
+      "基於國際同行評議研究，客觀比較香菸、電子菸、加熱菸與尼古丁袋的健康風險。了解各產品的有害物質含量、FDA評估結果，以及目前科學界的共識與爭議。",
+    readingTime: 8,
+  },
+  {
+    id: "3",
+    slug: "nicotine-in-the-workplace",
+    title: "工作場所使用指南：謹慎、專業的尼古丁消費方式",
+    excerpt:
+      "如何在辦公室、會議中、或通勤時謹慎使用尼古丁產品？針對台灣工作文化特色，提供實用建議與注意事項，讓您在職場環境中維持專業形象。",
     readingTime: 5,
   },
   {
-    id: "quality-guide",
-    slug: "quality-guide",
-    title: "消費者指南：評估尼古丁產品品質",
+    id: "4",
+    slug: "modern-nicotine-products-comparison",
+    title: "加熱菸 vs 電子菸 vs 尼古丁袋：價格與便利性完整比較",
     excerpt:
-      "應避免的警示信號與值得注意的品質指標。學習如何辨別高品質的尼古丁替代品，了解產品標籤上的關鍵資訊，以及如何避免劣質或假冒產品。",
+      "三大尼古丁替代方案的全面比較分析。從價格成本、使用便利性、維護需求到場所限制，幫助您根據個人需求與生活方式，選擇最適合的產品類型。",
     readingTime: 7,
+  },
+  {
+    id: "5",
+    slug: "taiwan-htp-analysis",
+    title: "加熱菸購買指南：IQOS台灣現況與替代方案評析",
+    excerpt:
+      "IQOS在台灣面臨哪些取得困難？分析加熱菸的法規現況、進口挑戰，以及為何越來越多消費者轉向其他替代方案。客觀評估各種選項的優缺點。",
+    readingTime: 6,
+  },
+  {
+    id: "6",
+    slug: "nicotine-pouch-brands",
+    title: "國際品牌介紹：ZYN、VELO等知名尼古丁袋品牌分析",
+    excerpt:
+      "深入了解全球主要尼古丁袋品牌的特色與差異。從ZYN的市場地位到VELO的產品線，分析各品牌的製造標準、認證狀況，以及在台灣的可取得性。",
+    readingTime: 6,
+  },
+  {
+    id: "7",
+    slug: "nicotine-pouch-retailers",
+    title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
+    excerpt:
+      "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
+    readingTime: 5,
+  },
+  {
+    id: "8",
+    slug: "nicotine-pouch-legality-in-taiwan",
+    title: "台灣法規現況：尼古丁袋的合法性與使用須知",
+    excerpt:
+      "尼古丁袋在台灣的法律地位如何？了解相關法規、使用限制，以及如何在法律框架內安全使用。包含最新政策動態與合規建議。",
+    readingTime: 4,
   },
 ]
 
