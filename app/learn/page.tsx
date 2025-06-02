@@ -25,15 +25,19 @@ export default function LearnPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
             <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="text-blue-700">尼古丁傳遞方式的科學原理</CardTitle>
+                <CardTitle className="text-blue-700"> 加熱菸購買指南：IQOS台灣現況與最佳替代方案</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">不同產品如何傳遞尼古丁及其對健康的影響</p>
+                <p className="text-gray-600">
+                  台灣消費者面臨IQOS取得困難？了解加熱菸在台灣的法規現況，
+                  以及為何越來越多人選擇更便利的替代方案。完整分析各種選項
+                  的優缺點，協助您找到最適合的解決方案。
+                </p>
               </CardContent>
               <CardFooter className="flex justify-between items-center">
                 <div className="flex items-center text-sm text-gray-500">
                   <Clock className="h-4 w-4 mr-1" />
-                  <span>8分鐘閱讀</span>
+                  <span>7分鐘閱讀</span>
                 </div>
                 <Link href="#" className="text-blue-600 hover:underline">
                   閱讀更多
