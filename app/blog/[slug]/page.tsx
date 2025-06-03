@@ -649,7 +649,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
     <main className="flex flex-col min-h-screen">
       {/* Page Header */}
-      <section className="w-full py-12 md:py-8 lg:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="w-full py-12 md:py-16 lg:py-20 md:pb-4 bg-gradient-to-b from-blue-50 to-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
             <Link href="/learn" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6">
@@ -674,7 +674,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* Blog Content */}
-      <section className="w-full pt-6 py-8 md:py-12 bg-white">
+      <section className="w-full py-8 md:py-12 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto prose prose-lg prose-blue">
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
