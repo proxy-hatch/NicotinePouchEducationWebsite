@@ -545,7 +545,7 @@ export const blogPostsData: BlogPost[] = [
     publishDate: "2024-10-01",
     readingTime: 6,
     author: "編輯團隊",
-    content: "<p>詳細內容即將推出。敬請期待關於尼古丁袋成分、正確使用方式以及其背後科學根據的全面解析。</p>",
+    content: contentForArticle1,
     excerpt: "什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。",
   },
 /*
