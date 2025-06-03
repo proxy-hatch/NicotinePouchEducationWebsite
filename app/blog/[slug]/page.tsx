@@ -649,7 +649,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
     <main className="flex flex-col min-h-screen">
       {/* Page Header */}
-      <section className="w-full py-12 md:py-16 lg:py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="w-full pt-12 md:pt-16 lg:pt-20 pb-6 md:pb-8 lg:pb-10 bg-gradient-to-b from-blue-50 to-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
             <Link href="/learn" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6">
