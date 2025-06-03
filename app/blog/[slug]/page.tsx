@@ -1,23 +1,26 @@
-import { CardFooter } from "@/components/ui/card"
-import { CardContent } from "@/components/ui/card"
-import { CardTitle } from "@/components/ui/card"
-import { CardHeader } from "@/components/ui/card"
-import { Card } from "@/components/ui/card"
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { ArrowLeft, Clock } from "lucide-react"
+import { CardFooter, CardContent, CardTitle, CardHeader, Card } from "@/components/ui/card";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowLeft, Clock } from "lucide-react";
 
-// Blog post data structure - this would typically come from a CMS or database
-const blogPosts = {
-  1: {
-    title: "加熱菸購買指南：IQOS台灣現況與最佳替代方案",
-    publishDate: "2024-12-01",
-    readingTime: 7,
-    author: "健康科學團隊",
-    content: `
+// --- Blog Data and Helpers (Exported) ---
+export interface BlogPost {
+  id: number;
+  // slug field is not strictly necessary here if post.id is used in URL
+  // but can be kept if you plan to use string slugs later.
+  // For now, routing is by ID via the 'slug' param.
+  title: string;
+  publishDate: string;
+  readingTime: number;
+  author: string;
+  content: string; // HTML content
+  excerpt: string;
+}
+
+// Full Content for Posts (ensure these are the complete HTML strings)
+const contentForPostIQOSAlternatives = `
       <h2>台灣IQOS市場現況</h2>
       <p>自2017年起，IQOS在全球多個市場取得合法銷售資格，但在台灣，加熱菸產品的法規環境仍處於灰色地帶。根據最新的菸害防制法修正案，加熱菸產品需經過衛福部審查核准才能合法進口銷售。然而，截至目前為止，尚未有任何加熱菸產品獲得正式核准。</p>
-      
       <p>這導致許多台灣消費者面臨以下困境：</p>
       <ul>
         <li>無法合法購買IQOS設備及其專用菸彈</li>
@@ -25,10 +28,8 @@ const blogPosts = {
         <li>黑市產品品質無保障，價格偏高</li>
         <li>維修和配件取得困難</li>
       </ul>
-
       <h2>替代方案比較</h2>
       <p>面對這些挑戰，越來越多台灣消費者開始尋找更便利、合法的替代選擇。以下是幾種主要替代方案的比較：</p>
-
       <h3>1. 尼古丁袋（Nicotine Pouches）</h3>
       <p><strong>優點：</strong></p>
       <ul>
@@ -43,7 +44,6 @@ const blogPosts = {
         <li>使用體驗與吸菸有較大差異</li>
         <li>初期可能有輕微口腔刺激感</li>
       </ul>
-
       <h3>2. 電子菸（E-cigarettes）</h3>
       <p><strong>優點：</strong></p>
       <ul>
@@ -57,7 +57,6 @@ const blogPosts = {
         <li>產生可見蒸氣，使用場合受限</li>
         <li>市場產品良莠不齊，品質參差不齊</li>
       </ul>
-
       <h2>為何尼古丁袋成為首選替代品？</h2>
       <p>根據我們的調查和用戶反饋，尼古丁袋正逐漸成為台灣消費者的首選替代品，主要原因包括：</p>
       <ul>
@@ -66,7 +65,6 @@ const blogPosts = {
         <li><strong>品質保證：</strong>主要來自歐美正規廠商，成分透明，品質有保障</li>
         <li><strong>多樣選擇：</strong>從輕度到高度，多種強度和口味可選</li>
       </ul>
-
       <h2>如何選擇適合的尼古丁袋產品</h2>
       <p>選擇尼古丁袋產品時，建議考慮以下因素：</p>
       <ul>
@@ -75,20 +73,13 @@ const blogPosts = {
         <li><strong>品牌信譽：</strong>選擇知名品牌如ZYN、VELO、Nordic Spirit等</li>
         <li><strong>包裝尺寸：</strong>標準包裝通常含20個袋裝，也有小包裝可供嘗試</li>
       </ul>
-
       <h2>結論</h2>
       <p>在台灣現行法規環境下，尼古丁袋提供了一個便利、可靠的替代選擇，特別適合那些尋找IQOS替代品的消費者。雖然使用體驗與加熱菸有所不同，但其便利性和可靠性優勢明顯。隨著台灣對減害產品認知的提升，我們預期尼古丁袋將在未來幾年內獲得更廣泛的接受。</p>
-    `,
-  },
-  2: {
-    title: "研究顯示：各產品毒素含量比較",
-    publishDate: "2024-11-15",
-    readingTime: 6,
-    author: "醫學研究團隊",
-    content: `
+    `;
+
+const contentForPostToxinComparison = `
       <h2>尼古丁產品毒素含量研究概述</h2>
       <p>近年來，隨著尼古丁替代品市場的擴大，科學界對不同尼古丁傳遞系統的有害物質含量進行了廣泛研究。本文將總結最新研究發現，比較傳統香菸、電子菸、加熱菸和尼古丁袋等產品中的有害物質含量。</p>
-
       <h2>研究方法</h2>
       <p>本文分析了2018-2024年間發表的超過30項獨立研究，這些研究使用標準化測試方法測量不同尼古丁產品中的有害和潛在有害成分(HPHCs)。研究主要關注以下幾類有害物質：</p>
       <ul>
@@ -99,9 +90,7 @@ const blogPosts = {
         <li>煙草特有亞硝胺(TSNAs)</li>
         <li>重金屬</li>
       </ul>
-
       <h2>研究結果</h2>
-      
       <h3>1. 傳統香菸</h3>
       <p>傳統香菸在燃燒過程中產生超過7,000種化學物質，其中至少69種被確認為致癌物質。研究顯示，香菸煙霧中含有高濃度的：</p>
       <ul>
@@ -111,7 +100,6 @@ const blogPosts = {
         <li>苯：每支香菸約20-70μg</li>
         <li>亞硝胺：每支香菸約100-500ng</li>
       </ul>
-
       <h3>2. 電子菸</h3>
       <p>電子菸通過加熱液體產生蒸氣，不涉及燃燒過程。研究顯示，與傳統香菸相比，電子菸蒸氣中的有害物質含量顯著降低：</p>
       <ul>
@@ -122,7 +110,6 @@ const blogPosts = {
         <li>亞硝胺：減少約97-99%</li>
       </ul>
       <p>然而，電子菸蒸氣中可能含有其他特有的潛在有害物質，如某些調味劑和丙二醇分解產物。</p>
-
       <h3>3. 加熱菸(如IQOS)</h3>
       <p>加熱菸通過加熱而非燃燒煙草產生氣霧。研究顯示，與傳統香菸相比：</p>
       <ul>
@@ -132,7 +119,6 @@ const blogPosts = {
         <li>苯：減少約97%</li>
         <li>亞硝胺：減少約80-90%</li>
       </ul>
-
       <h3>4. 尼古丁袋</h3>
       <p>尼古丁袋不含煙草，也不涉及任何燃燒或加熱過程。研究顯示：</p>
       <ul>
@@ -143,10 +129,8 @@ const blogPosts = {
         <li>亞硝胺：極微量或不可檢測</li>
       </ul>
       <p>尼古丁袋中可能存在的潛在有害物質主要來自植物纖維基質和調味劑，但含量極低，遠低於其他尼古丁產品。</p>
-
       <h2>毒素暴露對健康的影響</h2>
       <p>長期研究顯示，與傳統吸菸相關的健康風險主要來自燃燒產生的有害物質，而非尼古丁本身。因此，不同尼古丁產品的健康風險主要取決於其有害物質暴露水平。</p>
-
       <p>根據英國公共衛生署(PHE)和美國國家科學院(NAS)的評估，尼古丁替代品的健康風險排序大致為：</p>
       <ol>
         <li>傳統香菸（風險最高）</li>
@@ -154,7 +138,6 @@ const blogPosts = {
         <li>電子菸</li>
         <li>尼古丁袋（風險最低）</li>
       </ol>
-
       <h2>結論與建議</h2>
       <p>科學研究一致表明，尼古丁袋在所有尼古丁產品中有害物質含量最低，因此理論上健康風險也最低。然而，重要的是要強調：</p>
       <ul>
@@ -162,21 +145,13 @@ const blogPosts = {
         <li>尼古丁本身仍具有成癮性，可能對特定人群（如孕婦、青少年）產生不良影響</li>
         <li>尼古丁替代品主要適合已經使用尼古丁的成年人作為減害選擇</li>
       </ul>
-
       <p>對於無法或不願完全戒除尼古丁的使用者，選擇有害物質含量較低的替代品可能是一種減害策略。然而，任何尼古丁產品的使用都應在了解風險的情況下謹慎選擇。</p>
-    `,
-  },
-  3: {
-    title: "全球減害法規方針",
-    publishDate: "2024-10-20",
-    readingTime: 5,
-    author: "政策研究團隊",
-    content: `
+    `;
+
+const contentForGlobalHarmReductionPolicies = `
       <h2>全球尼古丁減害政策概述</h2>
       <p>全球各國對尼古丁替代品的監管策略存在顯著差異，反映了不同的公共衛生理念和政策方向。本文將探討主要國家和地區的尼古丁減害法規方針，以及這些政策對公共健康和消費者選擇的影響。</p>
-
       <h2>減害導向型國家</h2>
-      
       <h3>1. 英國</h3>
       <p>英國採取了全球最積極的尼古丁減害政策，將其作為降低吸菸率的核心策略之一。</p>
       <ul>
@@ -186,7 +161,6 @@ const blogPosts = {
         <li>尼古丁袋合法銷售，受到消費品安全法規監管</li>
       </ul>
       <p>結果：英國成年人吸菸率從2011年的20%降至2023年的12.9%，創歷史新低。</p>
-
       <h3>2. 瑞典</h3>
       <p>瑞典長期以來採用減害策略，特別是通過推廣無煙煙草產品(Snus)。</p>
       <ul>
@@ -195,7 +169,6 @@ const blogPosts = {
         <li>強調消費者知情選擇權</li>
       </ul>
       <p>結果：瑞典男性吸菸率僅為5.6%，是歐盟最低，同時也是歐盟肺癌和口腔癌發病率最低的國家之一。</p>
-
       <h3>3. 紐西蘭</h3>
       <p>紐西蘭近年採取創新的減害策略，目標是到2025年實現"無煙紐西蘭"。</p>
       <ul>
@@ -204,9 +177,7 @@ const blogPosts = {
         <li>同時實施嚴格的傳統香菸控制措施</li>
       </ul>
       <p>結果：吸菸率持續下降，2023年降至8%，接近其2025年目標。</p>
-
       <h2>禁止導向型國家</h2>
-
       <h3>1. 澳大利亞</h3>
       <p>澳大利亞對尼古丁替代品採取嚴格的禁止策略。</p>
       <ul>
@@ -215,7 +186,6 @@ const blogPosts = {
         <li>強調"預防原則"，認為新型尼古丁產品缺乏長期安全數據</li>
       </ul>
       <p>結果：澳大利亞吸菸率下降速度近年放緩，非法市場和網購灰色地帶擴大。</p>
-
       <h3>2. 印度</h3>
       <p>印度對大多數尼古丁替代品採取全面禁止策略。</p>
       <ul>
@@ -224,9 +194,7 @@ const blogPosts = {
         <li>強調防止青少年使用和新型成癮問題</li>
       </ul>
       <p>結果：傳統煙草使用率仍然很高，非法市場繁榮。</p>
-
       <h2>混合策略國家</h2>
-
       <h3>1. 美國</h3>
       <p>美國採取基於科學證據的個案審查策略。</p>
       <ul>
@@ -235,7 +203,6 @@ const blogPosts = {
         <li>同時加強對青少年使用的監管和預防</li>
       </ul>
       <p>結果：成人吸菸率持續下降，但青少年使用新型尼古丁產品的情況引發關注。</p>
-
       <h3>2. 日本</h3>
       <p>日本對不同類型的尼古丁替代品採取差異化策略。</p>
       <ul>
@@ -244,16 +211,14 @@ const blogPosts = {
         <li>尼古丁袋處於監管灰色地帶</li>
       </ul>
       <p>結果：傳統香菸銷量大幅下降，加熱菸市場迅速擴大。</p>
-
       <h2>台灣現況</h2>
       <p>台灣目前對尼古丁替代品採取相對嚴格的監管策略。</p>
       <ul>
         <li>電子菸和加熱菸需經審查核准才能合法銷售，目前尚無產品獲批</li>
         <li>尼古丁袋處於監管灰色地帶</li>
-        <li>��調預防青少年使用和防止新型成癮問題</li>
+        <li>強調預防青少年使用和防止新型成癮問題</li>
       </ul>
       <p>結果：傳統吸菸率下降緩慢，非法市場和跨境購買現象普遍。</p>
-
       <h2>政策趨勢與未來展望</h2>
       <p>全球尼古丁減害政策正在經歷以下趨勢：</p>
       <ul>
@@ -262,23 +227,15 @@ const blogPosts = {
         <li><strong>平衡策略：</strong>在減害和預防之間尋求平衡</li>
         <li><strong>消費者參與：</strong>增加消費者在政策制定中的聲音</li>
       </ul>
-
       <h2>結論</h2>
       <p>全球尼古丁減害政策呈現多元化發展路徑。研究證據越來越支持差異化監管策略，即對風險較低的產品採取相對寬鬆的監管，同時維持對傳統香菸的嚴格控制。</p>
       <p>對台灣而言，借鑒英國、瑞典等成功案例，採取基於科學證據的減害策略，可能有助於加速降低吸菸率，同時保護公共健康。然而，任何政策調整都應考慮本地文化和社會因素，並確保有足夠措施防止青少年使用。</p>
-    `,
-  },
-  4: {
-    title: "消費者指南：評估尼古丁產品品質",
-    publishDate: "2024-11-05",
-    readingTime: 7,
-    author: "消費者保護團隊",
-    content: `
+    `;
+
+const contentForQualityGuide = `
       <h2>如何辨別高品質尼古丁替代品</h2>
       <p>隨著尼古丁替代品市場的快速發展，消費者面臨越來越多的產品選擇。然而，市場上產品品質參差不齊，選擇優質產品對於減少健康風險至關重要。本指南將幫助您識別高品質尼古丁替代品的關鍵指標，以及如何避免劣質或假冒產品。</p>
-
       <h2>尼古丁袋品質評估標準</h2>
-      
       <h3>1. 包裝與標示</h3>
       <p><strong>優質產品特徵：</strong></p>
       <ul>
@@ -297,7 +254,6 @@ const blogPosts = {
         <li>成分列表不完整或模糊</li>
         <li>尼古丁含量標示不清或誇大</li>
       </ul>
-
       <h3>2. 產品來源</h3>
       <p><strong>優質產品特徵：</strong></p>
       <ul>
@@ -313,7 +269,6 @@ const blogPosts = {
         <li>只能通過非正規渠道購買</li>
         <li>無法在製造商官網找到相關產品資訊</li>
       </ul>
-
       <h3>3. 物理特性</h3>
       <p><strong>優質產品特徵：</strong></p>
       <ul>
@@ -330,9 +285,7 @@ const blogPosts = {
         <li>有強烈化學氣味或異味</li>
         <li>使用時釋放不均勻或刺激性過強</li>
       </ul>
-
       <h2>如何驗證產品真實性</h2>
-      
       <h3>1. 官方驗證工具</h3>
       <p>許多知名品牌提供產品真實性驗證工具：</p>
       <ul>
@@ -341,7 +294,6 @@ const blogPosts = {
         <li>Nordic Spirit: 可通過官方APP驗證產品</li>
       </ul>
       <p>使用這些工具是確認產品真實性的最可靠方法。</p>
-
       <h3>2. 視覺檢查</h3>
       <p>對比官方產品圖片，檢查以下細節：</p>
       <ul>
@@ -350,7 +302,6 @@ const blogPosts = {
         <li>批號和有效期的印刷質量</li>
         <li>防偽特徵（如全息圖、特殊油墨等）</li>
       </ul>
-
       <h3>3. 購買渠道</h3>
       <p>從可靠的渠道購買可大幅降低購買到假冒產品的風險：</p>
       <ul>
@@ -359,10 +310,8 @@ const blogPosts = {
         <li>有良好聲譽的專業尼古丁替代品店</li>
       </ul>
       <p>避免來源不明的網絡賣家或價格異常低廉的供應商。</p>
-
       <h2>主要品牌品質比較</h2>
       <p>以下是市場上主要尼古丁袋品牌的品質概況：</p>
-
       <h3>1. ZYN (Swedish Match)</h3>
       <ul>
         <li>原產地：瑞典/美國</li>
@@ -371,7 +320,6 @@ const blogPosts = {
         <li>強度範圍：3-8mg</li>
         <li>特色：白色袋裝，無煙草，使用食品級成分</li>
       </ul>
-
       <h3>2. VELO (BAT)</h3>
       <ul>
         <li>原產地：丹麥/瑞典</li>
@@ -380,7 +328,6 @@ const blogPosts = {
         <li>強度範圍：2-11mg</li>
         <li>特色：多樣化口味，創新袋裝設計</li>
       </ul>
-
       <h3>3. Nordic Spirit (JTI)</h3>
       <ul>
         <li>原產地：瑞典</li>
@@ -389,7 +336,6 @@ const blogPosts = {
         <li>強度範圍：3-9mg</li>
         <li>特色：經典北歐風味，舒適袋裝</li>
       </ul>
-
       <h2>儲存與保存</h2>
       <p>正確的儲存方式可以維持產品品質：</p>
       <ul>
@@ -399,7 +345,6 @@ const blogPosts = {
         <li>避免與強氣味物品一起存放</li>
         <li>注意有效期，避免使用過期產品</li>
       </ul>
-
       <h2>結論與建議</h2>
       <p>選擇高品質的尼古丁替代品對於減少健康風險至關重要。作為消費者，您應該：</p>
       <ul>
@@ -411,16 +356,117 @@ const blogPosts = {
         <li>正確儲存以維持產品品質</li>
       </ul>
       <p>記住，即使是最高品質的尼古丁產品也含有尼古丁，這是一種具有成癮性的物質。這些產品主要適合已經使用尼古丁的成年人作為減害選擇，不適合非尼古丁使用者、未成年人、孕婦或有特定健康問題的人群。</p>
-    `,
-  },
-}
+    `;
 
-export default function BlogPostPage({ params }: { params: { id: number } }) {
-  const post = blogPosts[params.id]
+export const blogPostsData: BlogPost[] = [
+  {
+    id: 1,
+    title: "尼古丁袋完整介紹：成分、使用方法與科學原理",
+    excerpt: "什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。",
+    readingTime: 6,
+    publishDate: "2024-10-01",
+    author: "編輯團隊",
+    content: "<p>詳細內容即將推出。</p>",
+  },
+  {
+    id: 2,
+    title: "科學研究：不同尼古丁產品的健康風險比較",
+    excerpt: "基於國際同行評議研究，客觀比較香菸、電子菸、加熱菸與尼古丁袋的健康風險。了解各產品的有害物質含量、FDA評估結果，以及目前科學界的共識與爭議。",
+    readingTime: 6,
+    publishDate: "2024-11-15",
+    author: "醫學研究團隊",
+    content: contentForPostToxinComparison,
+  },
+  {
+    id: 3,
+    title: "工作場所使用指南：謹慎、專業的尼古丁消費方式",
+    excerpt: "如何在辦公室、會議中、或通勤時謹慎使用尼古丁產品？針對台灣工作文化特色，提供實用建議與注意事項，讓您在職場環境中維持專業形象。",
+    readingTime: 5,
+    publishDate: "2024-10-02",
+    author: "編輯團隊",
+    content: "<p>詳細內容即將推出。</p>",
+  },
+  {
+    id: 4,
+    title: "加熱菸 vs 電子菸 vs 尼古丁袋：價格與便利性完整比較",
+    excerpt: "三大尼古丁替代方案的全面比較分析。從價格成本、使用便利性、維護需求到場所限制，幫助您根據個人需求與生活方式，選擇最適合的產品類型。",
+    readingTime: 7,
+    publishDate: "2024-10-03",
+    author: "編輯團隊",
+    content: "<p>詳細內容即將推出。</p>",
+  },
+  {
+    id: 5,
+    title: "加熱菸購買指南：IQOS台灣現況與替代方案評析",
+    excerpt: "IQOS在台灣面臨哪些取得困難？分析加熱菸的法規現況、進口挑戰，以及為何越來越多消費者轉向其他替代方案。客觀評估各種選項的優缺點。",
+    readingTime: 7,
+    publishDate: "2024-12-01",
+    author: "健康科學團隊",
+    content: contentForPostIQOSAlternatives,
+  },
+  {
+    id: 6,
+    title: "國際品牌介紹：ZYN、VELO等知名尼古丁袋品牌分析",
+    excerpt: "深入了解全球主要尼古丁袋品牌的特色與差異。從ZYN的市場地位到VELO的產品線，分析各品牌的製造標準、認證狀況，以及在台灣的可取得性。",
+    readingTime: 6,
+    publishDate: "2024-10-04",
+    author: "編輯團隊",
+    content: "<p>詳細內容即將推出。</p>",
+  },
+  {
+    id: 7,
+    title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
+    excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
+    readingTime: 7,
+    publishDate: "2024-11-05",
+    author: "消費者保護團隊",
+    content: contentForQualityGuide,
+  },
+  {
+    id: 8,
+    title: "台灣法規現況：尼古丁袋的合法性與使用須知",
+    excerpt: "尼古丁袋在台灣的法律地位如何？了解相關法規、使用限制，以及如何在法律框架內安全使用。包含最新政策動態與合規建議。",
+    readingTime: 4,
+    publishDate: "2024-10-05",
+    author: "編輯團隊",
+    content: "<p>詳細內容即將推出。</p>",
+  },
+  {
+    id: 9,
+    title: "全球減害法規方針",
+    excerpt: "全球各國對尼古丁替代品的監管策略存在顯著差異，反映了不同的公共衛生理念和政策方向。探討主要國家和地區的尼古丁減害法規方針，以及這些政策對公共健康和消費者選擇的影響。",
+    readingTime: 5,
+    publishDate: "2024-10-20",
+    author: "政策研究團隊",
+    content: contentForGlobalHarmReductionPolicies,
+  }
+];
+
+export const getPostByIdString = (idString: string): BlogPost | undefined => {
+  const id = Number(idString);
+  if (isNaN(id)) {
+    return undefined;
+  }
+  return blogPostsData.find(post => post.id === id);
+};
+
+export const getAllPosts = (): BlogPost[] => {
+  return blogPostsData;
+};
+// --- End of Blog Data and Helpers ---
+
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  // params.slug is the ID of the post from the URL, as a string
+  const post = getPostByIdString(params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
+
+  const currentPostId = Number(params.slug);
+  const relatedPosts = getAllPosts()
+    .filter((relatedPost) => relatedPost.id !== currentPostId)
+    .slice(0, 2); // Get 2 related posts
 
   return (
     <main className="flex flex-col min-h-screen">
@@ -463,11 +509,9 @@ export default function BlogPostPage({ params }: { params: { id: number } }) {
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-blue-800 mb-6">相關文章</h2>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {Object.values(blogPosts)
-                .filter((relatedPost) => relatedPost.id !== params.slug)
-                .slice(0, 2)
-                .map((relatedPost) => (
+            {relatedPosts.length > 0 ? (
+              <div className="grid gap-6 sm:grid-cols-2">
+                {relatedPosts.map((relatedPost) => (
                   <Card key={relatedPost.id} className="shadow-sm hover:shadow-md transition-shadow duration-300">
                     <CardHeader>
                       <CardTitle className="text-blue-700 text-lg">{relatedPost.title}</CardTitle>
@@ -476,16 +520,27 @@ export default function BlogPostPage({ params }: { params: { id: number } }) {
                       <p className="text-gray-600 text-sm line-clamp-2">{relatedPost.excerpt}</p>
                     </CardContent>
                     <CardFooter>
-                      <Link href={`/blog/${relatedPost.slug}`} className="text-blue-600 hover:underline">
+                      <Link href={`/blog/${relatedPost.id}`} className="text-blue-600 hover:underline">
                         閱讀更多
                       </Link>
                     </CardFooter>
                   </Card>
                 ))}
-            </div>
+              </div>
+            ) : (
+              <p className="text-gray-600">目前沒有相關文章。</p>
+            )}
           </div>
         </div>
       </section>
     </main>
   )
+}
+
+// Optional: If you want to generate static paths for your blog posts
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.id.toString(), // slug here refers to the post ID as a string
+  }));
 }
