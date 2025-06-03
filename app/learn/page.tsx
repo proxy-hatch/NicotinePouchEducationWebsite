@@ -1,13 +1,13 @@
 // app/learn/page.tsx
-import Link from "next/link";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock } from "lucide-react";
+import Link from "next/link"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Clock } from "lucide-react"
 // Import from the blog page file where blogPostsData and getAllPosts are exported
 // Make sure this path alias is correct or adjust as needed.
-import { getAllPosts, BlogPost } from "@/app/blog/[slug]/page";
+import { getAllPosts, type BlogPost } from "@/app/blog/[id]/page"
 
 export default function LearnPage() {
-  const postsToDisplay: BlogPost[] = getAllPosts();
+  const postsToDisplay: BlogPost[] = getAllPosts()
 
   return (
     <main className="flex flex-col min-h-screen">
@@ -43,7 +43,7 @@ export default function LearnPage() {
                     <span>{post.readingTime}分鐘閱讀</span>
                   </div>
                   {/* Link uses the post's slug */}
-                  <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:underline">
+                  <Link href={`/blog/${post.id}`} className="text-blue-600 hover:underline">
                     閱讀更多
                   </Link>
                 </CardFooter>
@@ -53,5 +53,5 @@ export default function LearnPage() {
         </div>
       </section>
     </main>
-  );
+  )
 }
