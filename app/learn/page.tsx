@@ -3,10 +3,11 @@ import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock } from "lucide-react";
 // Import from the blog page file where blogPostsData and getAllPosts are exported
-import { getAllPosts } from "@/app/blog/[slug]/page"; // Adjust path if your project structure differs or if ESLint flags this
+// Make sure this path alias is correct or adjust as needed.
+import { getAllPosts, BlogPost } from "@/app/blog/[slug]/page";
 
 export default function LearnPage() {
-  const postsToDisplay = getAllPosts();
+  const postsToDisplay: BlogPost[] = getAllPosts();
 
   return (
     <main className="flex flex-col min-h-screen">
@@ -27,7 +28,7 @@ export default function LearnPage() {
       {/* Blog Post Grid */}
       <section className="w-full py-12 md:py-16 bg-white">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2"> {/* Consider lg:grid-cols-3 if you have many posts */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {postsToDisplay.map((post) => (
               <Card key={post.id} className="shadow-sm hover:shadow-md transition-shadow duration-300">
                 <CardHeader>
@@ -41,7 +42,8 @@ export default function LearnPage() {
                     <Clock className="h-4 w-4 mr-1" />
                     <span>{post.readingTime}分鐘閱讀</span>
                   </div>
-                  <Link href={`/blog/${post.id}`} className="text-blue-600 hover:underline">
+                  {/* Link uses the post's slug */}
+                  <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:underline">
                     閱讀更多
                   </Link>
                 </CardFooter>

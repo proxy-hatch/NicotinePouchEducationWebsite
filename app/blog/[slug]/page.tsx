@@ -1,3 +1,4 @@
+// app/blog/[slug]/page.tsx
 import { CardFooter, CardContent, CardTitle, CardHeader, Card } from "@/components/ui/card";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,10 +6,8 @@ import { ArrowLeft, Clock } from "lucide-react";
 
 // --- Blog Data and Helpers (Exported) ---
 export interface BlogPost {
-  id: number;
-  // slug field is not strictly necessary here if post.id is used in URL
-  // but can be kept if you plan to use string slugs later.
-  // For now, routing is by ID via the 'slug' param.
+  id: number; // Sequential internal ID
+  slug: string; // URL-friendly slug
   title: string;
   publishDate: string;
   readingTime: number;
@@ -17,7 +16,9 @@ export interface BlogPost {
   excerpt: string;
 }
 
-// Full Content for Posts (ensure these are the complete HTML strings)
+// ----- Full Content for Posts (ensure these are the complete HTML strings) -----
+// These constants should contain the full HTML content for the respective posts.
+// I'm using the content from your previous file uploads.
 const contentForPostIQOSAlternatives = `
       <h2>台灣IQOS市場現況</h2>
       <p>自2017年起，IQOS在全球多個市場取得合法銷售資格，但在台灣，加熱菸產品的法規環境仍處於灰色地帶。根據最新的菸害防制法修正案，加熱菸產品需經過衛福部審查核准才能合法進口銷售。然而，截至目前為止，尚未有任何加熱菸產品獲得正式核准。</p>
@@ -357,97 +358,103 @@ const contentForQualityGuide = `
       </ul>
       <p>記住，即使是最高品質的尼古丁產品也含有尼古丁，這是一種具有成癮性的物質。這些產品主要適合已經使用尼古丁的成年人作為減害選擇，不適合非尼古丁使用者、未成年人、孕婦或有特定健康問題的人群。</p>
     `;
+// ----- End of Full Content Definitions -----
 
 export const blogPostsData: BlogPost[] = [
   {
     id: 1,
+    slug: "what-is-nicotine-pouch",
     title: "尼古丁袋完整介紹：成分、使用方法與科學原理",
-    excerpt: "什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。",
-    readingTime: 6,
     publishDate: "2024-10-01",
+    readingTime: 6,
     author: "編輯團隊",
-    content: "<p>詳細內容即將推出。</p>",
+    content: "<p>詳細內容即將推出。敬請期待關於尼古丁袋成分、正確使用方式以及其背後科學根據的全面解析。</p>",
+    excerpt: "什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。",
   },
   {
     id: 2,
+    slug: "nicotine-products-risk",
     title: "科學研究：不同尼古丁產品的健康風險比較",
-    excerpt: "基於國際同行評議研究，客觀比較香菸、電子菸、加熱菸與尼古丁袋的健康風險。了解各產品的有害物質含量、FDA評估結果，以及目前科學界的共識與爭議。",
-    readingTime: 6,
     publishDate: "2024-11-15",
+    readingTime: 6, // Updated from 8 to match [slug]/page.tsx's original data
     author: "醫學研究團隊",
     content: contentForPostToxinComparison,
+    excerpt: "基於國際同行評議研究，客觀比較香菸、電子菸、加熱菸與尼古丁袋的健康風險。了解各產品的有害物質含量、FDA評估結果，以及目前科學界的共識與爭議。",
   },
   {
     id: 3,
+    slug: "nicotine-in-the-workplace",
     title: "工作場所使用指南：謹慎、專業的尼古丁消費方式",
-    excerpt: "如何在辦公室、會議中、或通勤時謹慎使用尼古丁產品？針對台灣工作文化特色，提供實用建議與注意事項，讓您在職場環境中維持專業形象。",
-    readingTime: 5,
     publishDate: "2024-10-02",
+    readingTime: 5,
     author: "編輯團隊",
-    content: "<p>詳細內容即將推出。</p>",
+    content: "<p>詳細內容即將推出。本篇將探討如何在職場環境中（例如辦公室、會議期間或通勤路上）得體且專業地使用尼古丁產品，並提供符合台灣職場文化的實用建議。</p>",
+    excerpt: "如何在辦公室、會議中、或通勤時謹慎使用尼古丁產品？針對台灣工作文化特色，提供實用建議與注意事項，讓您在職場環境中維持專業形象。",
   },
   {
     id: 4,
+    slug: "modern-nicotine-products-comparison",
     title: "加熱菸 vs 電子菸 vs 尼古丁袋：價格與便利性完整比較",
-    excerpt: "三大尼古丁替代方案的全面比較分析。從價格成本、使用便利性、維護需求到場所限制，幫助您根據個人需求與生活方式，選擇最適合的產品類型。",
-    readingTime: 7,
     publishDate: "2024-10-03",
+    readingTime: 7,
     author: "編輯團隊",
-    content: "<p>詳細內容即將推出。</p>",
+    content: "<p>詳細內容即將推出。本文將對加熱菸、電子菸及尼古丁袋這三種主要的尼古丁替代品進行全面比較，涵蓋價格成本、使用便利性、維護需求及場所限制等方面。</p>",
+    excerpt: "三大尼古丁替代方案的全面比較分析。從價格成本、使用便利性、維護需求到場所限制，幫助您根據個人需求與生活方式，選擇最適合的產品類型。",
   },
   {
     id: 5,
+    slug: "taiwan-htp-analysis",
     title: "加熱菸購買指南：IQOS台灣現況與替代方案評析",
-    excerpt: "IQOS在台灣面臨哪些取得困難？分析加熱菸的法規現況、進口挑戰，以及為何越來越多消費者轉向其他替代方案。客觀評估各種選項的優缺點。",
-    readingTime: 7,
     publishDate: "2024-12-01",
+    readingTime: 7, // Updated from 6 to match [slug]/page.tsx's original data
     author: "健康科學團隊",
     content: contentForPostIQOSAlternatives,
+    excerpt: "IQOS在台灣面臨哪些取得困難？分析加熱菸的法規現況、進口挑戰，以及為何越來越多消費者轉向其他替代方案。客觀評估各種選項的優缺點。",
   },
   {
     id: 6,
+    slug: "nicotine-pouch-brands",
     title: "國際品牌介紹：ZYN、VELO等知名尼古丁袋品牌分析",
-    excerpt: "深入了解全球主要尼古丁袋品牌的特色與差異。從ZYN的市場地位到VELO的產品線，分析各品牌的製造標準、認證狀況，以及在台灣的可取得性。",
-    readingTime: 6,
     publishDate: "2024-10-04",
+    readingTime: 6,
     author: "編輯團隊",
-    content: "<p>詳細內容即將推出。</p>",
+    content: "<p>詳細內容即將推出。本篇將深入介紹全球主要的尼古丁袋品牌，如ZYN、VELO等，分析其產品特點、製造標準、認證情況及在台灣市場的可獲得性。</p>",
+    excerpt: "深入了解全球主要尼古丁袋品牌的特色與差異。從ZYN的市場地位到VELO的產品線，分析各品牌的製造標準、認證狀況，以及在台灣的可取得性。",
   },
   {
     id: 7,
+    slug: "nicotine-pouch-retailers",
     title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
-    excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
-    readingTime: 7,
     publishDate: "2024-11-05",
+    readingTime: 7, // Updated from 5 to match [slug]/page.tsx's original data
     author: "消費者保護團隊",
     content: contentForQualityGuide,
+    excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
   },
   {
     id: 8,
+    slug: "nicotine-pouch-legality-in-taiwan",
     title: "台灣法規現況：尼古丁袋的合法性與使用須知",
-    excerpt: "尼古丁袋在台灣的法律地位如何？了解相關法規、使用限制，以及如何在法律框架內安全使用。包含最新政策動態與合規建議。",
-    readingTime: 4,
     publishDate: "2024-10-05",
+    readingTime: 4,
     author: "編輯團隊",
-    content: "<p>詳細內容即將推出。</p>",
+    content: "<p>詳細內容即將推出。本文將闡釋尼古丁袋在台灣的現行法律地位，包括相關法規、使用限制，並提供在法律框架內安全使用的建議及最新政策動態。</p>",
+    excerpt: "尼古丁袋在台灣的法律地位如何？了解相關法規、使用限制，以及如何在法律框架內安全使用。包含最新政策動態與合規建議。",
   },
   {
     id: 9,
+    slug: "global-harm-reduction-policies", // Slug for the previously unmatched post
     title: "全球減害法規方針",
-    excerpt: "全球各國對尼古丁替代品的監管策略存在顯著差異，反映了不同的公共衛生理念和政策方向。探討主要國家和地區的尼古丁減害法規方針，以及這些政策對公共健康和消費者選擇的影響。",
-    readingTime: 5,
     publishDate: "2024-10-20",
+    readingTime: 5,
     author: "政策研究團隊",
     content: contentForGlobalHarmReductionPolicies,
+    excerpt: "全球各國對尼古丁替代品的監管策略存在顯著差異，反映了不同的公共衛生理念和政策方向。探討主要國家和地區的尼古丁減害法規方針，以及這些政策對公共健康和消費者選擇的影響。",
   }
 ];
 
-export const getPostByIdString = (idString: string): BlogPost | undefined => {
-  const id = Number(idString);
-  if (isNaN(id)) {
-    return undefined;
-  }
-  return blogPostsData.find(post => post.id === id);
+export const getPostBySlug = (slug: string): BlogPost | undefined => {
+  return blogPostsData.find(post => post.slug === slug);
 };
 
 export const getAllPosts = (): BlogPost[] => {
@@ -455,17 +462,17 @@ export const getAllPosts = (): BlogPost[] => {
 };
 // --- End of Blog Data and Helpers ---
 
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  // params.slug is the ID of the post from the URL, as a string
-  const post = getPostByIdString(params.slug);
+  // params.slug is the string slug from the URL
+  const post = getPostBySlug(params.slug);
 
   if (!post) {
     notFound();
   }
 
-  const currentPostId = Number(params.slug);
   const relatedPosts = getAllPosts()
-    .filter((relatedPost) => relatedPost.id !== currentPostId)
+    .filter((relatedPost) => relatedPost.slug !== params.slug) // Filter by slug, not ID
     .slice(0, 2); // Get 2 related posts
 
   return (
@@ -520,7 +527,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                       <p className="text-gray-600 text-sm line-clamp-2">{relatedPost.excerpt}</p>
                     </CardContent>
                     <CardFooter>
-                      <Link href={`/blog/${relatedPost.id}`} className="text-blue-600 hover:underline">
+                      {/* Link uses the slug now */}
+                      <Link href={`/blog/${relatedPost.slug}`} className="text-blue-600 hover:underline">
                         閱讀更多
                       </Link>
                     </CardFooter>
@@ -537,10 +545,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   )
 }
 
-// Optional: If you want to generate static paths for your blog posts
+// Generate static paths using slugs
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({
-    slug: post.id.toString(), // slug here refers to the post ID as a string
+    slug: post.slug, // Use the string slug for static path generation
   }));
 }
