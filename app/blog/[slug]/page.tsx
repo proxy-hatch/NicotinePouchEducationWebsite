@@ -371,6 +371,7 @@ export const blogPostsData: BlogPost[] = [
     content: "<p>詳細內容即將推出。敬請期待關於尼古丁袋成分、正確使用方式以及其背後科學根據的全面解析。</p>",
     excerpt: "什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。",
   },
+/*
   {
     id: 2,
     slug: "nicotine-products-risk",
@@ -381,6 +382,7 @@ export const blogPostsData: BlogPost[] = [
     content: contentForPostToxinComparison,
     excerpt: "基於國際同行評議研究，客觀比較香菸、電子菸、加熱菸與尼古丁袋的健康風險。了解各產品的有害物質含量、FDA評估結果，以及目前科學界的共識與爭議。",
   },
+*/
   {
     id: 3,
     slug: "nicotine-in-the-workplace",
