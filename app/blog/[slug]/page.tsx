@@ -9,7 +9,7 @@ import { ArrowLeft, Clock } from "lucide-react"
 
 // Blog post data structure - this would typically come from a CMS or database
 const blogPosts = {
-  "1": {
+  1: {
     title: "加熱菸購買指南：IQOS台灣現況與最佳替代方案",
     publishDate: "2024-12-01",
     readingTime: 7,
@@ -80,7 +80,7 @@ const blogPosts = {
       <p>在台灣現行法規環境下，尼古丁袋提供了一個便利、可靠的替代選擇，特別適合那些尋找IQOS替代品的消費者。雖然使用體驗與加熱菸有所不同，但其便利性和可靠性優勢明顯。隨著台灣對減害產品認知的提升，我們預期尼古丁袋將在未來幾年內獲得更廣泛的接受。</p>
     `,
   },
-  "2": {
+  2: {
     title: "研究顯示：各產品毒素含量比較",
     publishDate: "2024-11-15",
     readingTime: 6,
@@ -166,7 +166,7 @@ const blogPosts = {
       <p>對於無法或不願完全戒除尼古丁的使用者，選擇有害物質含量較低的替代品可能是一種減害策略。然而，任何尼古丁產品的使用都應在了解風險的情況下謹慎選擇。</p>
     `,
   },
-  "3": {
+  3: {
     title: "全球減害法規方針",
     publishDate: "2024-10-20",
     readingTime: 5,
@@ -268,7 +268,7 @@ const blogPosts = {
       <p>對台灣而言，借鑒英國、瑞典等成功案例，採取基於科學證據的減害策略，可能有助於加速降低吸菸率，同時保護公共健康。然而，任何政策調整都應考慮本地文化和社會因素，並確保有足夠措施防止青少年使用。</p>
     `,
   },
-  "4": {
+  4: {
     title: "消費者指南：評估尼古丁產品品質",
     publishDate: "2024-11-05",
     readingTime: 7,
@@ -415,8 +415,8 @@ const blogPosts = {
   },
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts[params.slug]
+export default function BlogPostPage({ params }: { params: { id: number } }) {
+  const post = blogPosts[params.id]
 
   if (!post) {
     notFound()

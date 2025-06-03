@@ -5,7 +5,7 @@ import { Clock } from "lucide-react"
 // Blog post data structure
 const blogPosts = [
   {
-    id: "1",
+    id: 1,
     slug: "what-is-nicotine-pouch",
     title: "尼古丁袋完整介紹：成分、使用方法與科學原理",
     excerpt: 
@@ -13,7 +13,7 @@ const blogPosts = [
     readingTime: 6,
   },
   {
-    id: "2",
+    id: 2,
     slug: "nicotine-products-risk",
     title: "科學研究：不同尼古丁產品的健康風險比較",
     excerpt:
@@ -21,7 +21,7 @@ const blogPosts = [
     readingTime: 8,
   },
   {
-    id: "3",
+    id: 3,
     slug: "nicotine-in-the-workplace",
     title: "工作場所使用指南：謹慎、專業的尼古丁消費方式",
     excerpt:
@@ -29,7 +29,7 @@ const blogPosts = [
     readingTime: 5,
   },
   {
-    id: "4",
+    id: 4,
     slug: "modern-nicotine-products-comparison",
     title: "加熱菸 vs 電子菸 vs 尼古丁袋：價格與便利性完整比較",
     excerpt:
@@ -37,7 +37,7 @@ const blogPosts = [
     readingTime: 7,
   },
   {
-    id: "5",
+    id: 5,
     slug: "taiwan-htp-analysis",
     title: "加熱菸購買指南：IQOS台灣現況與替代方案評析",
     excerpt:
@@ -45,7 +45,7 @@ const blogPosts = [
     readingTime: 6,
   },
   {
-    id: "6",
+    id: 6,
     slug: "nicotine-pouch-brands",
     title: "國際品牌介紹：ZYN、VELO等知名尼古丁袋品牌分析",
     excerpt:
@@ -53,7 +53,7 @@ const blogPosts = [
     readingTime: 6,
   },
   {
-    id: "7",
+    id: 7,
     slug: "nicotine-pouch-retailers",
     title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
     excerpt:
@@ -61,7 +61,7 @@ const blogPosts = [
     readingTime: 5,
   },
   {
-    id: "8",
+    id: 8,
     slug: "nicotine-pouch-legality-in-taiwan",
     title: "台灣法規現況：尼古丁袋的合法性與使用須知",
     excerpt:
@@ -104,7 +104,7 @@ export default function LearnPage() {
                     <Clock className="h-4 w-4 mr-1" />
                     <span>{post.readingTime}分鐘閱讀</span>
                   </div>
-                  <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:underline">
+                  <Link href={`/blog/${post.id}`} className="text-blue-600 hover:underline">
                     閱讀更多
                   </Link>
                 </CardFooter>
