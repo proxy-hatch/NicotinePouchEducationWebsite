@@ -376,7 +376,7 @@ export const blogPostsData: BlogPost[] = [
     slug: "nicotine-products-risk",
     title: "科學研究：不同尼古丁產品的健康風險比較",
     publishDate: "2024-11-15",
-    readingTime: 6, // Updated from 8 to match [slug]/page.tsx's original data
+    readingTime: 8, // Updated from 8 to match [slug]/page.tsx's original data
     author: "醫學研究團隊",
     content: contentForPostToxinComparison,
     excerpt: "基於國際同行評議研究，客觀比較香菸、電子菸、加熱菸與尼古丁袋的健康風險。了解各產品的有害物質含量、FDA評估結果，以及目前科學界的共識與爭議。",
@@ -406,7 +406,7 @@ export const blogPostsData: BlogPost[] = [
     slug: "taiwan-htp-analysis",
     title: "加熱菸購買指南：IQOS台灣現況與替代方案評析",
     publishDate: "2024-12-01",
-    readingTime: 7, // Updated from 6 to match [slug]/page.tsx's original data
+    readingTime: 6, // Updated from 6 to match [slug]/page.tsx's original data
     author: "健康科學團隊",
     content: contentForPostIQOSAlternatives,
     excerpt: "IQOS在台灣面臨哪些取得困難？分析加熱菸的法規現況、進口挑戰，以及為何越來越多消費者轉向其他替代方案。客觀評估各種選項的優缺點。",
@@ -426,7 +426,7 @@ export const blogPostsData: BlogPost[] = [
     slug: "nicotine-pouch-retailers",
     title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
     publishDate: "2024-11-05",
-    readingTime: 7, // Updated from 5 to match [slug]/page.tsx's original data
+    readingTime: 5, // Updated from 5 to match [slug]/page.tsx's original data
     author: "消費者保護團隊",
     content: contentForQualityGuide,
     excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
@@ -440,16 +440,6 @@ export const blogPostsData: BlogPost[] = [
     author: "編輯團隊",
     content: "<p>詳細內容即將推出。本文將闡釋尼古丁袋在台灣的現行法律地位，包括相關法規、使用限制，並提供在法律框架內安全使用的建議及最新政策動態。</p>",
     excerpt: "尼古丁袋在台灣的法律地位如何？了解相關法規、使用限制，以及如何在法律框架內安全使用。包含最新政策動態與合規建議。",
-  },
-  {
-    id: 9,
-    slug: "global-harm-reduction-policies", // Slug for the previously unmatched post
-    title: "全球減害法規方針",
-    publishDate: "2024-10-20",
-    readingTime: 5,
-    author: "政策研究團隊",
-    content: contentForGlobalHarmReductionPolicies,
-    excerpt: "全球各國對尼古丁替代品的監管策略存在顯著差異，反映了不同的公共衛生理念和政策方向。探討主要國家和地區的尼古丁減害法規方針，以及這些政策對公共健康和消費者選擇的影響。",
   }
 ];
 
