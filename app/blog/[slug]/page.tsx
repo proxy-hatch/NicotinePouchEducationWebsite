@@ -393,6 +393,7 @@ export const blogPostsData: BlogPost[] = [
     content: "<p>詳細內容即將推出。本篇將探討如何在職場環境中（例如辦公室、會議期間或通勤路上）得體且專業地使用尼古丁產品，並提供符合台灣職場文化的實用建議。</p>",
     excerpt: "如何在辦公室、會議中、或通勤時謹慎使用尼古丁產品？針對台灣工作文化特色，提供實用建議與注意事項，讓您在職場環境中維持專業形象。",
   },
+  /*
   {
     id: 4,
     slug: "modern-nicotine-products-comparison",
@@ -423,6 +424,7 @@ export const blogPostsData: BlogPost[] = [
     content: "<p>詳細內容即將推出。本篇將深入介紹全球主要的尼古丁袋品牌，如ZYN、VELO等，分析其產品特點、製造標準、認證情況及在台灣市場的可獲得性。</p>",
     excerpt: "深入了解全球主要尼古丁袋品牌的特色與差異。從ZYN的市場地位到VELO的產品線，分析各品牌的製造標準、認證狀況，以及在台灣的可取得性。",
   },
+  */
   {
     id: 7,
     slug: "nicotine-pouch-retailers",
@@ -433,6 +435,7 @@ export const blogPostsData: BlogPost[] = [
     content: contentForQualityGuide,
     excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
   },
+  /*
   {
     id: 8,
     slug: "nicotine-pouch-legality-in-taiwan",
@@ -443,6 +446,7 @@ export const blogPostsData: BlogPost[] = [
     content: "<p>詳細內容即將推出。本文將闡釋尼古丁袋在台灣的現行法律地位，包括相關法規、使用限制，並提供在法律框架內安全使用的建議及最新政策動態。</p>",
     excerpt: "尼古丁袋在台灣的法律地位如何？了解相關法規、使用限制，以及如何在法律框架內安全使用。包含最新政策動態與合規建議。",
   }
+  */
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
