@@ -1,7 +1,90 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { InfoIcon, CheckCircle, Truck } from "lucide-react"
+import { ArrowRight, CheckCircle, ExternalLink, ShoppingBag, Globe } from "lucide-react"
+import Link from "next/link"
+
+interface Vendor {
+  id: string
+  name: string
+  logoUrl: string
+  description: string
+  websiteUrl: string
+  features: string[]
+  shippingInfo: string
+}
+
+interface Brand {
+  id: string
+  name: string
+  logoUrl: string
+  productImageUrl: string
+  description: string
+  websiteUrl: string
+  origin: string
+}
+
+const vendorsData: Vendor[] = [
+  {
+    id: "vendor-1",
+    name: "Pouch Direct TW",
+    logoUrl: "/placeholder.svg?height=60&width=150",
+    description: "專注於台灣市場的尼古丁袋零售商，提供多種國際品牌選擇，並強調快速本地配送服務。",
+    websiteUrl: "https://example.com/pouchdirect",
+    features: ["多品牌選擇", "本地快速配送", "中文客服"],
+    shippingInfo: "台灣地區 1-3 工作日送達",
+  },
+  {
+    id: "vendor-2",
+    name: "Global Pouches",
+    logoUrl: "/placeholder.svg?height=60&width=150",
+    description: "國際尼古丁袋供應商，運送至全球多個地區，包括台灣。擁有廣泛的產品目錄。",
+    websiteUrl: "https://example.com/globalpouches",
+    features: ["全球運送", "品牌種類齊全", "多語言支持"],
+    shippingInfo: "國際運送約 7-14 工作日",
+  },
+  {
+    id: "vendor-3",
+    name: "Nicotine World Hub",
+    logoUrl: "/placeholder.svg?height=60&width=150",
+    description: "提供來自瑞典、美國等地的優質尼古丁袋，專注於最新產品和限量版。",
+    websiteUrl: "https://example.com/nicoworldhub",
+    features: ["歐美優質品牌", "新品速遞", "會員專享"],
+    shippingInfo: "依地區而定，可查詢運費",
+  },
+]
+
+const brandsData: Brand[] = [
+  {
+    id: "zyn",
+    name: "ZYN",
+    logoUrl: "/placeholder.svg?height=50&width=100",
+    productImageUrl: "/placeholder.svg?height=150&width=150",
+    description:
+      "ZYN 是瑞典著名品牌 Swedish Match 旗下的無菸草尼古丁袋產品。以其多樣的口味和不同尼古丁強度選擇而聞名，並獲得美國FDA的市場銷售授權。",
+    websiteUrl: "https://example.com/zyn",
+    origin: "瑞典 / 美國",
+  },
+  {
+    id: "velo",
+    name: "VELO",
+    logoUrl: "/placeholder.svg?height=50&width=100",
+    productImageUrl: "/placeholder.svg?height=150&width=150",
+    description:
+      "VELO 是英美菸草公司 (BAT) 推出的現代口含尼古丁袋品牌。提供多種創新口味和時尚包裝，在全球市場廣受歡迎。",
+    websiteUrl: "https://example.com/velo",
+    origin: "丹麥 / 瑞典",
+  },
+  {
+    id: "nordic-spirit",
+    name: "Nordic Spirit",
+    logoUrl: "/placeholder.svg?height=50&width=100",
+    productImageUrl: "/placeholder.svg?height=150&width=150",
+    description: "Nordic Spirit 是日本菸草國際 (JTI) 旗下的尼古丁袋品牌，源於瑞典。強調純淨的北歐風味和高品質的成分。",
+    websiteUrl: "https://example.com/nordicspirit",
+    origin: "瑞典",
+  },
+]
 
 export default function VendorsPage() {
   return (
@@ -11,135 +94,127 @@ export default function VendorsPage() {
         <div className="container px-4 md:px-6 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800">
-              經驗證供應商網絡
+              推薦供應商與品牌
             </h1>
             <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              符合我們品質與透明度標準的西方品牌
+              探索經驗證的尼古丁袋零售商和國際知名品牌
             </p>
           </div>
         </div>
       </section>
 
-      {/* Quality Standards Callout */}
-      <section className="w-full py-8 bg-blue-50">
+      {/* Vendors Section */}
+      <section id="vendors" className="w-full py-12 md:py-16 bg-white">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center gap-4 p-6 rounded-lg bg-white shadow-sm">
-            <div className="rounded-full bg-blue-100 p-3">
-              <InfoIcon className="h-6 w-6 text-blue-700" />
-            </div>
-            <div>
-              <h2 className="text-xl font-semibold text-blue-800 mb-2">品質標準</h2>
-              <p className="text-gray-600">
-                我們推薦的供應商必須提供：成分透明度、第三方檢測、法規合規文件，以及經驗證的供應鏈。
-              </p>
-            </div>
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800 mb-10 text-center md:text-left">
+            經驗證供應商
+          </h2>
+          <div className="grid gap-6 md:gap-8 sm:grid-cols-1 lg:grid-cols-3">
+            {vendorsData.map((vendor) => (
+              <Card
+                key={vendor.id}
+                className="shadow-lg rounded-xl overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300"
+              >
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <CardTitle className="text-xl font-semibold text-blue-700">{vendor.name}</CardTitle>
+                    <ShoppingBag className="h-8 w-8 text-blue-500" />
+                  </div>
+                  <img
+                    src={vendor.logoUrl || "/placeholder.svg"}
+                    alt={`${vendor.name} Logo`}
+                    className="h-12 object-contain mb-2 self-start"
+                  />
+                  <CardDescription className="text-sm text-gray-600">{vendor.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3 flex-grow">
+                  <div>
+                    <p className="text-sm font-medium text-gray-700 mb-1">主要特色：</p>
+                    <div className="flex flex-wrap gap-2">
+                      {vendor.features.map((feature, index) => (
+                        <Badge key={index} variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                          <CheckCircle className="h-3 w-3 mr-1" /> {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-gray-700">配送資訊：</p>
+                    <p className="text-sm text-gray-600">{vendor.shippingInfo}</p>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+                    <Link href={vendor.websiteUrl} target="_blank" rel="noopener noreferrer">
+                      前往選購 <ExternalLink className="h-4 w-4 ml-2" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Vendor Cards */}
-      <section className="w-full py-12 md:py-16 bg-white">
+      {/* Brands Section */}
+      <section id="brands" className="w-full py-12 md:py-16 bg-gray-50">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-blue-700">Nordic Spirit</CardTitle>
-                  <img src="/placeholder.svg?height=40&width=40" alt="Nordic Spirit Logo" className="h-10 w-10" />
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                    <CheckCircle className="h-3 w-3 mr-1" /> 瑞典製造
-                  </Badge>
-                  <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                    <CheckCircle className="h-3 w-3 mr-1" /> 第三方檢測
-                  </Badge>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-gray-700">可用產品:</p>
-                  <p className="text-sm text-gray-600">薄荷、漿果、柑橘</p>
-                </div>
-                <div className="flex items-center text-sm text-green-600">
-                  <Truck className="h-4 w-4 mr-1" />
-                  <span>台灣配送: 可用</span>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg">了解更多</Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-blue-700">ZYN</CardTitle>
-                  <img src="/placeholder.svg?height=40&width=40" alt="ZYN Logo" className="h-10 w-10" />
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                    <CheckCircle className="h-3 w-3 mr-1" /> 美國製造
-                  </Badge>
-                  <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                    <CheckCircle className="h-3 w-3 mr-1" /> FDA合規
-                  </Badge>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-gray-700">可用產品:</p>
-                  <p className="text-sm text-gray-600">薄荷、肉桂、咖啡</p>
-                </div>
-                <div className="flex items-center text-sm text-green-600">
-                  <Truck className="h-4 w-4 mr-1" />
-                  <span>台灣配送: 可用</span>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg">了解更多</Button>
-              </CardFooter>
-            </Card>
-
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-blue-700">VELO</CardTitle>
-                  <img src="/placeholder.svg?height=40&width=40" alt="VELO Logo" className="h-10 w-10" />
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                    <CheckCircle className="h-3 w-3 mr-1" /> 丹麥製造
-                  </Badge>
-                  <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                    <CheckCircle className="h-3 w-3 mr-1" /> 歐盟認證
-                  </Badge>
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-gray-700">可用產品:</p>
-                  <p className="text-sm text-gray-600">薄荷、熱帶水果、檸檬</p>
-                </div>
-                <div className="flex items-center text-sm text-green-600">
-                  <Truck className="h-4 w-4 mr-1" />
-                  <span>台灣配送: 可用</span>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg">了解更多</Button>
-              </CardFooter>
-            </Card>
+          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800 mb-10 text-center md:text-left">
+            國際知名品牌
+          </h2>
+          <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {brandsData.map((brand) => (
+              <Link
+                key={brand.id}
+                href={brand.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
+                <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <CardTitle className="text-xl font-semibold text-blue-700">{brand.name}</CardTitle>
+                      <Globe className="h-6 w-6 text-blue-500" />
+                    </div>
+                    <img
+                      src={brand.logoUrl || "/placeholder.svg"}
+                      alt={`${brand.name} Logo`}
+                      className="h-10 object-contain self-start"
+                    />
+                  </CardHeader>
+                  <CardContent className="space-y-4 flex-grow">
+                    <div className="aspect-square bg-gray-100 rounded-md flex items-center justify-center overflow-hidden mb-3">
+                      <img
+                        src={brand.productImageUrl || "/placeholder.svg"}
+                        alt={`${brand.name} Product Sample`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    <p className="text-sm text-gray-600 line-clamp-4">{brand.description}</p>
+                    <div>
+                      <p className="text-xs font-medium text-gray-500">產地：{brand.origin}</p>
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <p className="text-sm text-blue-600 group-hover:underline flex items-center">
+                      探索 {brand.name} 官方網站{" "}
+                      <ArrowRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                    </p>
+                  </CardFooter>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Legal Disclaimer */}
-      <section className="w-full py-8 bg-gray-50">
+      {/* Legal Disclaimer (Optional - kept from original structure, can be removed or modified) */}
+      <section className="w-full py-8 bg-white">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm text-gray-500">
-              我們與這些供應商無關聯關係。此清單基於我們的品質評估標準提供，僅供教育用途。使用前請務必驗證產品真實性並諮詢醫療專業人員。
+              本頁面提供之供應商與品牌資訊僅供教育參考。我們與所列商家或品牌可能無直接合作關係，除非另有說明。購買前請務必自行驗證產品真偽與商家信譽，並依個人需求謹慎選擇。
             </p>
           </div>
         </div>
