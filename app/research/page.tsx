@@ -140,7 +140,7 @@ export default function ResearchPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Conversion to Vendors Page Section */}
       <section className="w-full py-12 md:py-16 bg-blue-50">
         <div className="container px-4 md:px-6 text-center">
@@ -153,7 +153,7 @@ export default function ResearchPage() {
               href="/vendors"
               className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-md transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
             >
-              查看推薦品牌和可信供應商指南 →
+              查看推薦品牌和可信供應商
             </Link>
             <p className="text-gray-600 text-sm">
               了解哪些產品通過我們的四階段品質認證標準，瀏覽經我們驗證、能夠提供國際品牌正品的可靠採購渠道。
