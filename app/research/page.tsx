@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
 
 export default function ResearchPage() {
   return (
@@ -110,6 +111,39 @@ export default function ResearchPage() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Conversion to Vendors Page Section */}
+      <section className="w-full py-12 md:py-16 bg-blue-50">
+        <div className="container px-4 md:px-6 text-center">
+          <div className="max-w-2xl mx-auto space-y-6">
+            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">查看通過驗證的產品</h2>
+            <p className="text-gray-700 md:text-lg/relaxed">
+              基於上述FDA級別的嚴格評估標準，我們已完成對全球主要尼古丁袋品牌的綜合評估。
+            </p>
+            <Link
+              href="/vendors"
+              className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-md transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            >
+              查看推薦品牌和可信供應商指南 →
+            </Link>
+            <p className="text-gray-600 text-sm">
+              了解哪些產品通過我們的四階段品質認證標準，瀏覽經我們驗證、能夠提供國際品牌正品的可靠採購渠道。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signal Subtext */}
+      <section className="w-full py-8 bg-white">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-sm text-gray-500">
+              我們的評估標準參考FDA
+              PMTA審查流程，確保推薦產品達到國際醫藥級品質要求。所有推薦供應商均經過供應鏈透明度驗證，為台灣消費者提供最可靠的產品資訊。
+            </p>
           </div>
         </div>
       </section>
