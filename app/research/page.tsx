@@ -147,7 +147,7 @@ export default function ResearchPage() {
           <div className="max-w-2xl mx-auto space-y-6">
             <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">查看通過驗證的產品</h2>
             <p className="text-gray-700 md:text-lg/relaxed">
-              基於上述FDA級別的嚴格評估標準，我們已完成對全球主要尼古丁袋品牌的綜合評估。
+              基於上述FDA級別的嚴格評估標準，我們會持續追蹤對全球主要尼古丁袋品牌的綜合評估。
             </p>
             <Link
               href="/vendors"
