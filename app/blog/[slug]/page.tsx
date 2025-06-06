@@ -314,9 +314,9 @@ export const blogPostsData: BlogPost[] = [
     slug: "nicotine-pouch-retailers",
     title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
     publishDate: "2024-11-05",
-    readingTime: 5, // Updated from 5 to match [slug]/page.tsx's original data
+    readingTime: 5,
     author: "消費者保護團隊",
-    content: contentForQualityGuide,
+    content: article7Content,
     excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
   },
   /*
