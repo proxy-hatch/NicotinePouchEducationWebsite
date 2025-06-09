@@ -8,6 +8,7 @@ import { ChevronRight } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay" // For self-wrapping/autoplay
 import "./styles/faq-styles.css"
+import NicotinePouch3D from "@/components/3d/nicotine-pouch-model"
 
 const mediaArticles = [
   {
@@ -83,11 +84,7 @@ export default function Home() {
             </div>
             <div className="mx-auto lg:ml-auto">
               <div className="aspect-video overflow-hidden rounded-xl bg-blue-100 flex items-center justify-center">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="尼古丁袋產品示意圖"
-                  className="object-cover w-full h-full"
-                />
+                <NicotinePouch3D />
               </div>
             </div>
           </div>
