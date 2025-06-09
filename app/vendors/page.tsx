@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, CheckCircle, ExternalLink, ShoppingBag, Globe } from "lucide-react"
+import { ArrowRight, CheckCircle, ExternalLink, ShoppingBag } from "lucide-react"
 import Link from "next/link"
 
 interface Vendor {
@@ -173,15 +173,9 @@ export default function VendorsPage() {
               >
                 <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300">
                   <CardHeader className="pb-4">
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="mb-3">
                       <CardTitle className="text-xl font-semibold text-blue-700">{brand.name}</CardTitle>
-                      <Globe className="h-6 w-6 text-blue-500" />
                     </div>
-                    <img
-                      src={brand.logoUrl || "/placeholder.svg"}
-                      alt={`${brand.name} Logo`}
-                      className="h-10 object-contain self-start"
-                    />
                   </CardHeader>
                   <CardContent className="space-y-4 flex-grow">
                     <div className="aspect-square bg-gray-100 rounded-md flex items-center justify-center overflow-hidden mb-3">
