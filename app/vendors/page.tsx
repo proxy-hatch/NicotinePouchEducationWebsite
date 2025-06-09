@@ -198,7 +198,6 @@ export default function VendorsPage() {
                       <CardTitle className="text-xl font-semibold text-blue-700">{brand.name}</CardTitle>
                     </div>
                   </CardHeader>
-                  </CardHeader>
                   <CardContent className="space-y-4 flex-grow">
                     <div className="aspect-square bg-gray-100 rounded-md flex items-center justify-center overflow-hidden mb-3">
                       <img
