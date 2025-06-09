@@ -60,53 +60,51 @@ const brandsData: Brand[] = [
   {
     id: "zyn",
     name: "ZYN",
-    productImageUrl: "/placeholder.svg?height=150&width=150",
-    description:
-      "ZYN 是瑞典著名品牌 Swedish Match 旗下的無菸草尼古丁袋產品。以其多樣的口味和不同尼古丁強度選擇而聞名，並獲得美國FDA的市場銷售授權。",
-    websiteUrl: "https://example.com/zyn",
-    origin: "瑞典 / 美國",
+    productImageUrl: "https://imgproxy.whitepouches.com/gravity:nowe/resize:fit:1250/quality:70/aHR0cHM6Ly93aGl0ZXBvdWNoZXMuY2VudHJhY2RuLm5ldC9jbGllbnQvZHluYW1pYy9pbWFnZXMvNDkwXzI0Njc5ZjM5NDMtNzExX3p5bi1jb29sLW1pbnQtbWluaS1kcnktc3VwZXItc3Ryb25nLW9yaWdpbmFsLmpwZw==",
+    description: "ZYN由Swedish Match（Philip Morris International）製造，是首個獲得美國FDA PMTA正式授權的尼古丁袋品牌。2025年1月FDA授權20項產品上市，確認其有害成分含量顯著低於香菸。提供多種口味與尼古丁強度選擇，採用高科技蒸餾純化技術，為全球市場領導品牌。",
+    websiteUrl: "https://www.zyn.com/",
+    origin: "瑞典 / 美國"
   },
   {
     id: "loop",
     name: "LOOP",
-    productImageUrl: "/placeholder.svg?height=150&width=150",
-    description: "",
-    websiteUrl: "https://example.com/nordicspirit",
-    origin: "瑞典",
+    productImageUrl: "https://loopnicotinepouches.com/wp-content/uploads/2024/09/Spicy_Apple_Studio_Right_Shadow_1500x1500.webp",
+    description: "LOOP由Another Snus Factory製造，以InstantRush™快速釋放技術聞名，提供創新辛辣口味系列。採用PlantCan™環保包裝罐，符合永續發展理念。在瑞典監管市場具有合法銷售地位，專為追求新奇體驗的年輕消費者設計。",
+    websiteUrl: "https://loopnicotinepouches.com/",
+    origin: "瑞典"
   },
   {
     id: "velo",
     name: "VELO",
-    productImageUrl: "/placeholder.svg?height=150&width=150",
-    description:
-      "VELO 是英美菸草公司 (BAT) 推出的現代口含尼古丁袋品牌。提供多種創新口味和時尚包裝，在全球市場廣受歡迎。",
-    websiteUrl: "https://example.com/velo",
-    origin: "丹麥 / 瑞典",
+    productImageUrl: "https://snusdiscount.co.uk/cdn/shop/files/Breezy_Mango_Right.png?v=1720813552&width=1946",
+    description: "VELO由英美菸草公司（BAT）推出，經第三方認證實驗室檢測，相較香菸減少99%有毒物質。提供傳統菸草尼古丁與VELO PLUS合成尼古丁選項，時尚包裝設計，在全球多個市場獲得合規銷售許可，包裝獲ISCC永續認證。",
+    websiteUrl: "https://www.velo.com/",
+    origin: "英國"
   },
   {
     id: "helwit",
     name: "Helwit",
-    productImageUrl: "/placeholder.svg?height=150&width=150",
-    description: "",
-    websiteUrl: "https://example.com/nordicspirit",
-    origin: "瑞典",
+    productImageUrl: "https://www.nicpouch.co.uk/cdn/shop/products/HELWITMINT2p.jpg?v=1629888315",
+    description: "Helwit由Yoik AB製造，強調永續發展理念，工廠採用100%水力發電，使用環保包裝罐。專注於自然風味研發，符合瑞典嚴格的品質標準。針對環保意識強、偏好自然風味的消費者，體現北歐簡約與可持續發展價值觀。",
+    websiteUrl: "https://helwit.com",
+    origin: "瑞典"
   },
   {
     id: "killa",
     name: "KILLA",
-    productImageUrl: "/placeholder.svg?height=150&width=150",
-    description: "",
-    websiteUrl: "https://example.com/nordicspirit",
-    origin: "瑞典",
+    productImageUrl: "https://management.flavourvapour.co.uk/res/user/fullsize/6478_killa-mini-blueberry-nicotine-pouch-snus-uk.jpg",
+    description: "KILLA由N.G.P. Empire/N.G.P. Tobacco ApS製造，專為經驗豐富的尼古丁使用者設計，提供超高尼古丁含量選項。口味濃烈多樣，包裝設計前衛，在丹麥監管框架下生產。適合追求強烈刺激感的資深使用者，為高強度市場區塊的代表品牌。",
+    websiteUrl: "https://killapods.eu/",
+    origin: "丹麥"
   },
   {
     id: "on",
     name: "on!",
-    productImageUrl: "/placeholder.svg?height=150&width=150",
-    description: "",
-    websiteUrl: "https://example.com/nordicspirit",
-    origin: "瑞典",
-  },
+    productImageUrl: "https://nicopouches.fr/en/1958-large_default/mint-mini-medium-6-mg.jpg",
+    description: "on!由Helix Innovations LLC（Altria Group旗下）製造，採用獨特長方形包裝設計，提供從低到高的多樣化尼古丁強度選擇。Altria已向FDA提交35項on!產品的PMTA申請，並發表同行評議研究證實其減害潛力。適合尋求靈活劑量選擇的使用者。",
+    websiteUrl: "https://www.onnicotine.com/",
+    origin: "瑞典 / 美國"
+  }
 ]
 
 export default function VendorsPage() {
