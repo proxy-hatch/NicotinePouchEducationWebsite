@@ -25,6 +25,7 @@ interface Brand {
 }
 
 const vendorsData: Vendor[] = [
+/*
   {
     id: "vendor-1",
     name: "Pouch Direct TW",
@@ -52,6 +53,7 @@ const vendorsData: Vendor[] = [
     features: ["歐美優質品牌", "新品速遞", "會員專享"],
     shippingInfo: "依地區而定，可查詢運費",
   },
+  */
 ]
 
 const brandsData: Brand[] = [
