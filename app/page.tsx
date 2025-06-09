@@ -66,13 +66,16 @@ export default function Home() {
                 告別傳統菸和電子菸的使用困擾，選擇透明成分的健康可靠替代方案
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg w-full sm:w-auto">
+                <Button
+                  asChild
+                  className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
+                >
                   <Link href="/vendors">查看推薦品牌</Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
-                  className="border-blue-200 text-blue-600 hover:bg-blue-50 rounded-lg w-full sm:w-auto"
+                  className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium border-blue-200 text-blue-600 hover:bg-blue-50 rounded-lg"
                 >
                   <Link href="/learn">了解更多</Link>
                 </Button>
