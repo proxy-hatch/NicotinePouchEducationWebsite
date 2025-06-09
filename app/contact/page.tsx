@@ -55,15 +55,15 @@ export default function ContactPage() {
           {/* Common Inquiry Types Card */}
           <Card className="shadow-lg">
             <CardHeader className="flex flex-row items-center space-x-3 pb-4">
-              <HelpCircle className="h-8 w-8 text-emerald-600" />
-              <CardTitle className="text-2xl text-emerald-700">常見詢問類型</CardTitle>
+              <HelpCircle className="h-8 w-8 text-teal-600" />
+              <CardTitle className="text-2xl text-teal-700">常見詢問類型</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <p className="text-gray-700">我們經常收到關於以下主題的詢問：</p>
               <ul className="space-y-2 pl-5">
                 {inquiryTypes.map((type, index) => (
                   <li key={index} className="flex items-start">
-                    <ChevronRight className="h-5 w-5 text-emerald-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <ChevronRight className="h-5 w-5 text-teal-500 mr-2 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-600">{type}</span>
                   </li>
                 ))}
@@ -74,8 +74,8 @@ export default function ContactPage() {
           {/* Response Time Card */}
           <Card className="shadow-lg">
             <CardHeader className="flex flex-row items-center space-x-3 pb-4">
-              <Clock className="h-8 w-8 text-amber-600" />
-              <CardTitle className="text-2xl text-amber-700">回覆時間</CardTitle>
+              <Clock className="h-8 w-8 text-slate-600" />
+              <CardTitle className="text-2xl text-slate-700">回覆時間</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700">
