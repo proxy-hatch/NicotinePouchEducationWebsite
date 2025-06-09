@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, CheckCircle, ExternalLink, ShoppingBag } from "lucide-react"
+import { CheckCircle, ExternalLink, ShoppingBag } from "lucide-react"
 import Link from "next/link"
 
 interface Vendor {
@@ -130,50 +130,57 @@ export default function VendorsPage() {
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800 mb-10 text-center md:text-left">
             經驗證供供應商
           </h2>
-          <div className="grid gap-6 md:gap-8 sm:grid-cols-1 lg:grid-cols-3">
-            {vendorsData.map((vendor) => (
-              <Card
-                key={vendor.id}
-                className="shadow-lg rounded-xl overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300"
-              >
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <CardTitle className="text-xl font-semibold text-blue-700">{vendor.name}</CardTitle>
-                    <ShoppingBag className="h-8 w-8 text-blue-500" />
-                  </div>
-                  <img
-                    src={vendor.logoUrl || "/placeholder.svg"}
-                    alt={`${vendor.name} Logo`}
-                    className="h-12 object-contain mb-2 self-start"
-                  />
-                  <CardDescription className="text-sm text-gray-600">{vendor.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3 flex-grow">
-                  <div>
-                    <p className="text-sm font-medium text-gray-700 mb-1">主要特色：</p>
-                    <div className="flex flex-wrap gap-2">
-                      {vendor.features.map((feature, index) => (
-                        <Badge key={index} variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                          <CheckCircle className="h-3 w-3 mr-1" /> {feature}
-                        </Badge>
-                      ))}
+          {vendorsData.length > 0 ? (
+            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 lg:grid-cols-3">
+              {vendorsData.map((vendor) => (
+                <Card
+                  key={vendor.id}
+                  className="shadow-lg rounded-xl overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300"
+                >
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <CardTitle className="text-xl font-semibold text-blue-700">{vendor.name}</CardTitle>
+                      <ShoppingBag className="h-8 w-8 text-blue-500" />
                     </div>
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-700">配送資訊：</p>
-                    <p className="text-sm text-gray-600">{vendor.shippingInfo}</p>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
-                    <Link href={vendor.websiteUrl} target="_blank" rel="noopener noreferrer">
-                      前往選購 <ExternalLink className="h-4 w-4 ml-2" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+                    <img
+                      src={vendor.logoUrl || "/placeholder.svg"}
+                      alt={`${vendor.name} Logo`}
+                      className="h-12 object-contain mb-2 self-start"
+                    />
+                    <CardDescription className="text-sm text-gray-600">{vendor.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3 flex-grow">
+                    <div>
+                      <p className="text-sm font-medium text-gray-700 mb-1">主要特色：</p>
+                      <div className="flex flex-wrap gap-2">
+                        {vendor.features.map((feature, index) => (
+                          <Badge key={index} variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                            <CheckCircle className="h-3 w-3 mr-1" /> {feature}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-gray-700">配送資訊：</p>
+                      <p className="text-sm text-gray-600">{vendor.shippingInfo}</p>
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+                      <Link href={vendor.websiteUrl} target="_blank" rel="noopener noreferrer">
+                        前往選購 <ExternalLink className="h-4 w-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-xl text-gray-500">即將推出</p>
+              <p className="text-gray-400 mt-2">我們正在努力整理更多優質供應商資訊，敬請期待！</p>
+            </div>
+          )}
         </div>
       </section>
 
