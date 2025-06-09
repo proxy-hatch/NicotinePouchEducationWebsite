@@ -198,6 +198,7 @@ export default function VendorsPage() {
                       <CardTitle className="text-xl font-semibold text-blue-700">{brand.name}</CardTitle>
                     </div>
                   </CardHeader>
+                  </CardHeader>
                   <CardContent className="space-y-4 flex-grow">
                     <div className="aspect-square bg-gray-100 rounded-md flex items-center justify-center overflow-hidden mb-3">
                       <img
@@ -207,7 +208,9 @@ export default function VendorsPage() {
                       />
                     </div>
                     <p className="text-sm text-gray-600 line-clamp-4">{brand.description}</p>
-
+                    <div>
+                      <p className="text-xs font-medium text-gray-500">產地：{brand.origin}</p>
+                    </div>
                   </CardContent>
                   <CardFooter>
                     <p className="text-sm text-blue-600 group-hover:underline flex items-center">
