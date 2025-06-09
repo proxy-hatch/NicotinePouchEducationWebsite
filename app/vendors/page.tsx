@@ -58,7 +58,6 @@ const brandsData: Brand[] = [
   {
     id: "zyn",
     name: "ZYN",
-    logoUrl: "/placeholder.svg?height=50&width=100",
     productImageUrl: "/placeholder.svg?height=150&width=150",
     description:
       "ZYN 是瑞典著名品牌 Swedish Match 旗下的無菸草尼古丁袋產品。以其多樣的口味和不同尼古丁強度選擇而聞名，並獲得美國FDA的市場銷售授權。",
@@ -66,9 +65,16 @@ const brandsData: Brand[] = [
     origin: "瑞典 / 美國",
   },
   {
+    id: "loop",
+    name: "LOOP",
+    productImageUrl: "/placeholder.svg?height=150&width=150",
+    description: "",
+    websiteUrl: "https://example.com/nordicspirit",
+    origin: "瑞典",
+  },
+  {
     id: "velo",
     name: "VELO",
-    logoUrl: "/placeholder.svg?height=50&width=100",
     productImageUrl: "/placeholder.svg?height=150&width=150",
     description:
       "VELO 是英美菸草公司 (BAT) 推出的現代口含尼古丁袋品牌。提供多種創新口味和時尚包裝，在全球市場廣受歡迎。",
@@ -76,11 +82,26 @@ const brandsData: Brand[] = [
     origin: "丹麥 / 瑞典",
   },
   {
-    id: "nordic-spirit",
-    name: "Nordic Spirit",
-    logoUrl: "/placeholder.svg?height=50&width=100",
+    id: "helwit",
+    name: "Helwit",
     productImageUrl: "/placeholder.svg?height=150&width=150",
-    description: "Nordic Spirit 是日本菸草國際 (JTI) 旗下的尼古丁袋品牌，源於瑞典。強調純淨的北歐風味和高品質的成分。",
+    description: "",
+    websiteUrl: "https://example.com/nordicspirit",
+    origin: "瑞典",
+  },
+  {
+    id: "killa",
+    name: "KILLA",
+    productImageUrl: "/placeholder.svg?height=150&width=150",
+    description: "",
+    websiteUrl: "https://example.com/nordicspirit",
+    origin: "瑞典",
+  },
+  {
+    id: "on",
+    name: "on!",
+    productImageUrl: "/placeholder.svg?height=150&width=150",
+    description: "",
     websiteUrl: "https://example.com/nordicspirit",
     origin: "瑞典",
   },
@@ -187,8 +208,7 @@ export default function VendorsPage() {
                     </div>
                     <p className="text-sm text-gray-600 line-clamp-4">{brand.description}</p>
                     <div>
-                      <p className="text-xs font-medium text-gray-500">產地：{brand.origin}</p>
-                    </div>
+              本頁面提供的品牌與供應商資訊僅供研究參考，旨在幫助消費者了解國際品質標準與驗證方法。我們不直接銷售任何產品，所列資訊基於公開的監管資料與第三方檢測結果。消費者應自行評估相關風險並遵守當地法規。                    </div>
                   </CardContent>
                   <CardFooter>
                     <p className="text-sm text-blue-600 group-hover:underline flex items-center">
