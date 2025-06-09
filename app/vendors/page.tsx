@@ -211,12 +211,6 @@ export default function VendorsPage() {
                       <p className="text-xs font-medium text-gray-500">產地：{brand.origin}</p>
                     </div>
                   </CardContent>
-                  <CardFooter>
-                    <p className="text-sm text-blue-600 group-hover:underline flex items-center">
-                      探索 {brand.name} 官方網站{" "}
-                      <ArrowRight className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-                    </p>
-                  </CardFooter>
                 </Card>
               </Link>
             ))}
