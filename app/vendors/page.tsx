@@ -118,7 +118,7 @@ export default function VendorsPage() {
               推薦供應商與品牌
             </h1>
             <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              探索經驗證的尼古丁袋零售商和國際知名品牌
+              探索國際知名尼古丁袋品牌與可信通路
             </p>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function VendorsPage() {
       <section id="vendors" className="w-full py-12 md:py-16 bg-white">
         <div className="container px-4 md:px-6">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800 mb-10 text-center md:text-left">
-            經驗證供應商
+            經驗證供供應商
           </h2>
           <div className="grid gap-6 md:gap-8 sm:grid-cols-1 lg:grid-cols-3">
             {vendorsData.map((vendor) => (
@@ -207,8 +207,7 @@ export default function VendorsPage() {
                       />
                     </div>
                     <p className="text-sm text-gray-600 line-clamp-4">{brand.description}</p>
-                    <div>
-              本頁面提供的品牌與供應商資訊僅供研究參考，旨在幫助消費者了解國際品質標準與驗證方法。我們不直接銷售任何產品，所列資訊基於公開的監管資料與第三方檢測結果。消費者應自行評估相關風險並遵守當地法規。                    </div>
+
                   </CardContent>
                   <CardFooter>
                     <p className="text-sm text-blue-600 group-hover:underline flex items-center">
@@ -228,7 +227,7 @@ export default function VendorsPage() {
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-sm text-gray-500">
-              本頁面提供之供應商與品牌資訊僅供教育參考。我們與所列商家或品牌可能無直接合作關係，除非另有說明。購買前請務必自行驗證產品真偽與商家信譽，並依個人需求謹慎選擇。
+              本頁面提供的品牌與供應商資訊僅供研究參考，旨在幫助消費者了解國際品質標準與驗證方法。我們不直接銷售任何產品，所列資訊基於公開的監管資料與第三方檢測結果。消費者應自行評估相關風險並遵守當地法規。
             </p>
           </div>
         </div>
