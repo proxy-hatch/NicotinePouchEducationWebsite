@@ -179,7 +179,7 @@ export default function VendorsPage() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-xl text-gray-500">即將推出</p>
+              <p className="text-xl text-gray-500">Coming Soon</p>
               <p className="text-gray-400 mt-2">我們正在努力整理更多優質供應商資訊，敬請期待！</p>
             </div>
           )}
