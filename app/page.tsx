@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
@@ -83,10 +84,13 @@ export default function Home() {
             </div>
             <div className="mx-auto lg:ml-auto">
               <div className="aspect-video overflow-hidden rounded-xl bg-blue-100 flex items-center justify-center">
-                <img
-                    src="/placeholder.svg?height=400&width=600"
+                <Image
+                    src="/hero-image.png"
                     alt="尼古丁袋產品示意圖"
+                    width={1024}
+                    height={556}
                     className="object-cover w-full h-full"
+                    priority
                 />
               </div>
             </div>
