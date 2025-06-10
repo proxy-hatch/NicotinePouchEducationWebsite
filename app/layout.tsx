@@ -6,7 +6,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
+const siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: "台灣尼古丁袋科普網",
   description: "為臺灣消費者提供關於尼古丁袋的可靠資訊",
   generator: "v0.dev",
@@ -21,7 +24,7 @@ export const metadata = {
   openGraph: {
     title: "台灣尼古丁袋科普網",
     description: "純淨尼古丁，明智選擇。為臺灣消費者提供關於尼古丁袋的可靠資訊。",
-    url: "https://[YOUR_WEBSITE_URL]", // TODO: Replace with your actual website URL
+    url: siteUrl,
     siteName: "台灣尼古丁袋科普網",
     images: [
       {

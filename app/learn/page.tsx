@@ -2,9 +2,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock } from "lucide-react";
-// Import from the blog page file where blogPostsData and getAllPosts are exported
-// Make sure this path alias is correct or adjust as needed.
-import { getAllPosts, BlogPost } from "@/app/blog/[slug]/page";
+import {BlogPost, getAllPosts} from '@/lib/blog';
 
 export default function LearnPage() {
   const postsToDisplay: BlogPost[] = getAllPosts();
