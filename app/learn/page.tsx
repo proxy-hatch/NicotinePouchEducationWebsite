@@ -1,8 +1,12 @@
-import Link from "next/link"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Clock } from "lucide-react"
+// app/learn/page.tsx
+import Link from "next/link";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Clock } from "lucide-react";
+import {BlogPost, getAllPosts} from '@/lib/blog';
 
 export default function LearnPage() {
+  const postsToDisplay: BlogPost[] = getAllPosts();
+
   return (
     <main className="flex flex-col min-h-screen">
       {/* Page Header */}
@@ -23,77 +27,29 @@ export default function LearnPage() {
       <section className="w-full py-12 md:py-16 bg-white">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-blue-700">尼古丁傳遞方式的科學原理</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">不同產品如何傳遞尼古丁及其對健康的影響</p>
-              </CardContent>
-              <CardFooter className="flex justify-between items-center">
-                <div className="flex items-center text-sm text-gray-500">
-                  <Clock className="h-4 w-4 mr-1" />
-                  <span>8分鐘閱讀</span>
-                </div>
-                <Link href="#" className="text-blue-600 hover:underline">
-                  閱讀更多
-                </Link>
-              </CardFooter>
-            </Card>
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-blue-700">研究顯示：各產品毒素含量比較</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">比較香菸、電子菸及替代品的有害化學物質暴露</p>
-              </CardContent>
-              <CardFooter className="flex justify-between items-center">
-                <div className="flex items-center text-sm text-gray-500">
-                  <Clock className="h-4 w-4 mr-1" />
-                  <span>6分鐘閱讀</span>
-                </div>
-                <Link href="#" className="text-blue-600 hover:underline">
-                  閱讀更多
-                </Link>
-              </CardFooter>
-            </Card>
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-blue-700">全球減害法規方針</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">各國如何在創新與公共健康間取得平衡</p>
-              </CardContent>
-              <CardFooter className="flex justify-between items-center">
-                <div className="flex items-center text-sm text-gray-500">
-                  <Clock className="h-4 w-4 mr-1" />
-                  <span>5分鐘閱讀</span>
-                </div>
-                <Link href="#" className="text-blue-600 hover:underline">
-                  閱讀更多
-                </Link>
-              </CardFooter>
-            </Card>
-            <Card className="shadow-sm hover:shadow-md transition-shadow duration-300">
-              <CardHeader>
-                <CardTitle className="text-blue-700">消費者指南：評估尼古丁產品品質</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">應避免的警示信號與值得注意的品質指標</p>
-              </CardContent>
-              <CardFooter className="flex justify-between items-center">
-                <div className="flex items-center text-sm text-gray-500">
-                  <Clock className="h-4 w-4 mr-1" />
-                  <span>7分鐘閱讀</span>
-                </div>
-                <Link href="#" className="text-blue-600 hover:underline">
-                  閱讀更多
-                </Link>
-              </CardFooter>
-            </Card>
+            {postsToDisplay.map((post) => (
+              <Card key={post.id} className="shadow-sm hover:shadow-md transition-shadow duration-300">
+                <CardHeader>
+                  <CardTitle className="text-blue-700">{post.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">{post.excerpt}</p>
+                </CardContent>
+                <CardFooter className="flex justify-between items-center">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Clock className="h-4 w-4 mr-1" />
+                    <span>{post.readingTime}分鐘閱讀</span>
+                  </div>
+                  {/* Link uses the post's slug */}
+                  <Link href={`/blog/${post.slug}`} className="text-blue-600 hover:underline">
+                    閱讀更多
+                  </Link>
+                </CardFooter>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
     </main>
-  )
+  );
 }

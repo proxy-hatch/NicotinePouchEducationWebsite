@@ -28,14 +28,3 @@ Continue building your app on:
 2. Deploy your chats from the v0 interface
 3. Changes are automatically pushed to this repository
 4. Vercel deploys the latest version from this repository
-
-
-## Other Miscellaneous Resources
-- Zipping this repository to be examined by LLMs:
-    ```
-    zip -r NicotinePouchEducationWebsite.zip NicotinePouchEducationWebsite \
-        -x "NicotinePouchEducationWebsite/node_modules/*" \
-        -x "NicotinePouchEducationWebsite/.next/*" \
-        -x "NicotinePouchEducationWebsite/.idea/*" \
-        -x "NicotinePouchEducationWebsite/.git/*"
-    ```
