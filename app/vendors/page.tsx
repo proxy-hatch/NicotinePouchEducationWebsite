@@ -17,7 +17,6 @@ interface Vendor {
 interface Brand {
   id: string
   name: string
-  logoUrl: string
   productImageUrl: string
   description: string
   websiteUrl: string
