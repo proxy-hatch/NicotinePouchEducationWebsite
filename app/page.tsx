@@ -8,7 +8,6 @@ import { ChevronRight } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay" // For self-wrapping/autoplay
 import "./styles/faq-styles.css"
-import NicotinePouch3D from "@/components/3d/nicotine-pouch-model"
 
 const mediaArticles = [
   {
@@ -67,24 +66,21 @@ export default function Home() {
                 告別傳統菸和電子菸的使用困擾，選擇透明成分的健康可靠替代方案
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button
-                  asChild
-                  className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
-                >
+                <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
                   <Link href="/vendors">查看推薦品牌</Link>
                 </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium border-blue-200 text-blue-600 hover:bg-blue-50 rounded-lg"
-                >
+                <Button asChild variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50 rounded-lg">
                   <Link href="/learn">了解更多</Link>
                 </Button>
               </div>
             </div>
             <div className="mx-auto lg:ml-auto">
               <div className="aspect-video overflow-hidden rounded-xl bg-blue-100 flex items-center justify-center">
-                <NicotinePouch3D />
+                <img
+                  src="/placeholder.svg?height=400&width=600"
+                  alt="尼古丁袋產品示意圖"
+                  className="object-cover w-full h-full"
+                />
               </div>
             </div>
           </div>
@@ -457,7 +453,7 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left font-medium">可以在工作場使用嗎？</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">可以在工作場���使用嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
                     尼古丁袋不產生煙霧或蒸氣，使用時無味無煙，因此可以在大多數禁止吸菸的場所使用，特別適合台灣的工作環境與生活型態。
@@ -465,7 +461,7 @@ export default function Home() {
                   <p className="mb-2">
                     <strong>具體使用場景：</strong>
                   </p>
-                  <ul className="list-disc list-inside pl-5 mb-4">
+                  <ul className="list-disc list-inside pl-5 mb-4"> 
                     <li>長時間會議或研習 - 無需中途離席吸菸休息</li>
                     <li>工廠作業環境 - 符合安全規範，不影響生產線工作</li>
                     <li>辦公大樓 - 無需搭電梯到戶外吸菸區，節省時間</li>
@@ -473,8 +469,12 @@ export default function Home() {
                     <li>餐廳用餐 - 不影響用餐體驗或他人感受</li>
                     <li>商務場合 - 客戶會議、商務談判時保持專業形象</li>
                   </ul>
-                  <p>這讓使用者可以更靈活地安排工作與生活節奏，無需因尼古丁需求而中斷重要事務或影響專業表現。</p>
-                  <p>由於產品完全無味無煙，使用時幾乎無法察覺，因此適合各種正式或非正式場合。</p>
+                  <p>
+                    這讓使用者可以更靈活地安排工作與生活節奏，無需因尼古丁需求而中斷重要事務或影響專業表現。
+                  </p>
+                  <p>
+                    由於產品完全無味無煙，使用時幾乎無法察覺，因此適合各種正式或非正式場合。
+                  </p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
@@ -505,7 +505,9 @@ export default function Home() {
                   <p>
                     部分使用者初期可能會感到輕微的牙齦刺激或刺痛感，這是正常現象，通常在使用一至兩週後會逐漸適應並減輕。這種初期反應主要是口腔組織適應新產品的過程。
                   </p>
-                  <p>某些口味可能會產生刺激性唾液，使用時應避免吞嚥唾液，以免造成胃部不適、噁心或消化問題。</p>
+                  <p>
+                    某些口味可能會產生刺激性唾液，使用時應避免吞嚥唾液，以免造成胃部不適、噁心或消化問題。
+                  </p>
                   <p>
                     為減少不適感，建議從較低強度產品開始，正確放置於牙齦與嘴唇之間，並定期更換放置位置。初次使用時可縮短使用時間（如15-20分鐘），待適應後再延長至建議時間。
                   </p>
@@ -517,7 +519,9 @@ export default function Home() {
               <AccordionItem value="item-6">
                 <AccordionTrigger className="text-left font-medium">可以持續多久？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p>一般來說，尼古丁袋的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。</p>
+                  <p>
+                    一般來說，尼古丁袋的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。
+                  </p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-7">
@@ -542,25 +546,23 @@ export default function Home() {
             </Accordion>
           </div>
         </div>
-      </section>
-      <section className="w-full py-12 md:py-24 bg-blue-50">
-        <div className="container px-4 md:px-6 text-center">
-          <div className="max-w-2xl mx-auto space-y-4">
-            <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">
-              尋找符合品質標準的供應商？
-            </h2>
-            <p className="text-gray-600 md:text-lg">瀏覽歐美原廠品牌的認證經銷商，獲得品質保證的選擇</p>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-lg">
-              <Link href="/vendors">查看推薦品牌</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-      <div className="w-full py-6 bg-gray-100 text-center text-sm text-gray-500">
-        <div className="container px-4 md:px-6">
-          <p>本網站僅提供教育資訊供參考。使用任何尼古丁產品前請評估個人需求並謹慎選擇。</p>
-        </div>
+  </section>
+  <section className="w-full py-12 md:py-24 bg-blue-50">
+    <div className="container px-4 md:px-6 text-center">
+      <div className="max-w-2xl mx-auto space-y-4">
+        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">尋找符合品質標準的供應商？</h2>
+        <p className="text-gray-600 md:text-lg">瀏覽歐美原廠品牌的認證經銷商，獲得品質保證的選擇</p>
+        <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-8 py-6 text-lg">
+          <Link href="/vendors">查看推薦品牌</Link>
+        </Button>
       </div>
-    </main>
+    </div>
+  </section>
+  <div className="w-full py-6 bg-gray-100 text-center text-sm text-gray-500">
+    <div className="container px-4 md:px-6">
+      <p>本網站僅提供教育資訊供參考。使用任何尼古丁產品前請評估個人需求並謹慎選擇。</p>
+    </div>
+  </div>
+  </main>
   )
 }

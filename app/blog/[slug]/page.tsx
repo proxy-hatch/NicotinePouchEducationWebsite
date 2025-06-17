@@ -1,19 +1,22 @@
 // app/blog/[slug]/page.tsx
-import { CardFooter, CardContent, CardTitle, CardHeader, Card } from "@/components/ui/card";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { ArrowLeft, Clock } from "lucide-react";
+import { CardFooter, CardContent, CardTitle, CardHeader, Card } from "@/components/ui/card"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { ArrowLeft, Clock } from "lucide-react"
+import Image from "next/image" // Import Next Image
 
 // --- Blog Data and Helpers (Exported) ---
 export interface BlogPost {
-  id: number; // Sequential internal ID
-  slug: string; // URL-friendly slug
-  title: string;
-  publishDate: string;
-  readingTime: number;
-  author: string;
-  content: string; // HTML content
-  excerpt: string;
+  id: number // Sequential internal ID
+  slug: string // URL-friendly slug
+  title: string
+  publishDate: string
+  readingTime: number
+  author: string
+  heroImageUrl: string // Added for hero image
+  heroImageAlt: string // Added for hero image alt text
+  content: string // HTML content
+  excerpt: string
 }
 
 // ----- Full Content for Posts (ensure these are the complete HTML strings) -----
@@ -151,7 +154,7 @@ const article1Content = `
   <hr>
 
   <p><em>本文內容僅供教育參考用途。使用任何尼古丁產品前，請諮詢醫療專業人員的建議。</em></p>
-`;
+`
 
 const article3Content = `
   <h1>工作場所使用指南：謹慎、專業的尼古丁消費方式</h1>
@@ -238,7 +241,7 @@ const article3Content = `
   <hr>
 
   <p><em>本文內容僅供職場應用參考。使用任何尼古丁產品前，請了解相關法規並諮詢醫療專業人員的建議。在工作場所使用前，建議先了解公司相關政策。</em></p>
-`;
+`
 
 const contentForGlobalHarmReductionPolicies = `
       <h2>全球尼古丁減害政策概述</h2>
@@ -322,7 +325,7 @@ const contentForGlobalHarmReductionPolicies = `
       <h2>結論</h2>
       <p>全球尼古丁減害政策呈現多元化發展路徑。研究證據越來越支持差異化監管策略，即對風險較低的產品採取相對寬鬆的監管，同時維持對傳統香菸的嚴格控制。</p>
       <p>對台灣而言，借鑒英國、瑞典等成功案例，採取基於科學證據的減害策略，可能有助於加速降低吸菸率，同時保護公共健康。然而，任何政策調整都應考慮本地文化和社會因素，並確保有足夠措施防止青少年使用。</p>
-    `;
+    `
 
 const contentForQualityGuide = `
       <h2>如何辨別高品質尼古丁替代品</h2>
@@ -448,7 +451,7 @@ const contentForQualityGuide = `
         <li>正確儲存以維持產品品質</li>
       </ul>
       <p>記住，即使是最高品質的尼古丁產品也含有尼古丁，這是一種具有成癮性的物質。這些產品主要適合已經使用尼古丁的成年人作為減害選擇，不適合非尼古丁使用者、未成年人、孕婦或有特定健康問題的人群。</p>
-    `;
+    `
 // ----- End of Full Content Definitions -----
 
 export const blogPostsData: BlogPost[] = [
@@ -459,21 +462,12 @@ export const blogPostsData: BlogPost[] = [
     publishDate: "2024-10-01",
     readingTime: 6,
     author: "健康科學團隊",
+    heroImageUrl: "/placeholder.svg?width=1200&height=630",
+    heroImageAlt: "尼古丁袋成分與使用方法圖解",
     content: article1Content,
-    excerpt: "什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。",
+    excerpt:
+      "什麼是尼古丁袋？與傳統菸草產品有何不同？深入了解這種源自北歐的創新產品，包括成分分析、正確使用方法，以及背後的科學原理。適合初次接觸者的完整入門指南。",
   },
-/*
-  {
-    id: 2,
-    slug: "nicotine-products-risk",
-    title: "科學研究：不同尼古丁產品的健康風險比較",
-    publishDate: "2024-11-15",
-    readingTime: 8, // Updated from 8 to match [slug]/page.tsx's original data
-    author: "醫學研究團隊",
-    content: contentForPostToxinComparison,
-    excerpt: "基於國際同行評議研究，客觀比較香菸、電子菸、加熱菸與尼古丁袋的健康風險。了解各產品的有害物質含量、FDA評估結果，以及目前科學界的共識與爭議。",
-  },
-*/
   {
     id: 3,
     slug: "nicotine-in-the-workplace",
@@ -481,10 +475,39 @@ export const blogPostsData: BlogPost[] = [
     publishDate: "2024-10-02",
     readingTime: 5,
     author: "編輯團隊",
+    heroImageUrl: "/placeholder.svg?width=1200&height=630",
+    heroImageAlt: "專業人士在辦公室謹慎使用尼古丁袋示意圖",
     content: article3Content,
-    excerpt: "如何在辦公室、會議中、或通勤時謹慎使用尼古丁產品？針對台灣工作文化特色，提供實用建議與注意事項，讓您在職場環境中維持專業形象。",
+    excerpt:
+      "如何在辦公室、會議中、或通勤時謹慎使用尼古丁產品？針對台灣工作文化特色，提供實用建議與注意事項，讓您在職場環境中維持專業形象。",
   },
+  {
+    id: 7,
+    slug: "nicotine-pouch-retailers",
+    title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
+    publishDate: "2024-11-05",
+    readingTime: 5,
+    author: "消費者保護團隊",
+    heroImageUrl: "/placeholder.svg?width=1200&height=630",
+    heroImageAlt: "辨識高品質尼古丁袋與可靠供應商指南",
+    content: contentForQualityGuide,
+    excerpt:
+      "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
+  },
+  // Add heroImageUrl and heroImageAlt for other posts if they are uncommented
   /*
+  {
+    id: 2,
+    slug: "nicotine-products-risk",
+    title: "科學研究：不同尼古丁產品的健康風險比較",
+    publishDate: "2024-11-15",
+    readingTime: 8,
+    author: "醫學研究團隊",
+    heroImageUrl: "/placeholder.svg?width=1200&height=630",
+    heroImageAlt: "不同尼古丁產品健康風險比較圖表",
+    content: "<p>Content for '科學研究：不同尼古丁產品的健康風險比較'</p>", // Replace with actual content
+    excerpt: "基於國際同行評議研究，客觀比較香菸、電子菸、加熱菸與尼古丁袋的健康風險。了解各產品的有害物質含量、FDA評估結果，以及目前科學界的共識與爭議。",
+  },
   {
     id: 4,
     slug: "modern-nicotine-products-comparison",
@@ -492,6 +515,8 @@ export const blogPostsData: BlogPost[] = [
     publishDate: "2024-10-03",
     readingTime: 7,
     author: "編輯團隊",
+    heroImageUrl: "/placeholder.svg?width=1200&height=630",
+    heroImageAlt: "加熱菸、電子菸、尼古丁袋產品比較",
     content: "<p>詳細內容即將推出。本文將對加熱菸、電子菸及尼古丁袋這三種主要的尼古丁替代品進行全面比較，涵蓋價格成本、使用便利性、維護需求及場所限制等方面。</p>",
     excerpt: "三大尼古丁替代方案的全面比較分析。從價格成本、使用便利性、維護需求到場所限制，幫助您根據個人需求與生活方式，選擇最適合的產品類型。",
   },
@@ -500,9 +525,11 @@ export const blogPostsData: BlogPost[] = [
     slug: "taiwan-htp-analysis",
     title: "加熱菸購買指南：IQOS台灣現況與替代方案評析",
     publishDate: "2024-12-01",
-    readingTime: 6, // Updated from 6 to match [slug]/page.tsx's original data
+    readingTime: 6,
     author: "健康科學團隊",
-    content: contentForPostIQOSAlternatives,
+    heroImageUrl: "/placeholder.svg?width=1200&height=630",
+    heroImageAlt: "IQOS台灣現況與加熱菸替代方案分析",
+    content: "<p>Content for '加熱菸購買指南：IQOS台灣現況與替代方案評析'</p>", // Replace with actual content
     excerpt: "IQOS在台灣面臨哪些取得困難？分析加熱菸的法規現況、進口挑戰，以及為何越來越多消費者轉向其他替代方案。客觀評估各種選項的優缺點。",
   },
   {
@@ -512,21 +539,11 @@ export const blogPostsData: BlogPost[] = [
     publishDate: "2024-10-04",
     readingTime: 6,
     author: "編輯團隊",
+    heroImageUrl: "/placeholder.svg?width=1200&height=630",
+    heroImageAlt: "ZYN、VELO等國際尼古丁袋品牌介紹",
     content: "<p>詳細內容即將推出。本篇將深入介紹全球主要的尼古丁袋品牌，如ZYN、VELO等，分析其產品特點、製造標準、認證情況及在台灣市場的可獲得性。</p>",
     excerpt: "深入了解全球主要尼古丁袋品牌的特色與差異。從ZYN的市場地位到VELO的產品線，分析各品牌的製造標準、認證狀況，以及在台灣的可取得性。",
   },
-  */
-  {
-    id: 7,
-    slug: "nicotine-pouch-retailers",
-    title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
-    publishDate: "2024-11-05",
-    readingTime: 5, // Updated from 5 to match [slug]/page.tsx's original data
-    author: "消費者保護團隊",
-    content: contentForQualityGuide,
-    excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
-  },
-  /*
   {
     id: 8,
     slug: "nicotine-pouch-legality-in-taiwan",
@@ -534,33 +551,33 @@ export const blogPostsData: BlogPost[] = [
     publishDate: "2024-10-05",
     readingTime: 4,
     author: "編輯團隊",
+    heroImageUrl: "/placeholder.svg?width=1200&height=630",
+    heroImageAlt: "台灣尼古丁袋法規現況與合法性分析",
     content: "<p>詳細內容即將推出。本文將闡釋尼古丁袋在台灣的現行法律地位，包括相關法規、使用限制，並提供在法律框架內安全使用的建議及最新政策動態。</p>",
     excerpt: "尼古丁袋在台灣的法律地位如何？了解相關法規、使用限制，以及如何在法律框架內安全使用。包含最新政策動態與合規建議。",
   }
   */
-];
+]
 
 export const getPostBySlug = (slug: string): BlogPost | undefined => {
-  return blogPostsData.find(post => post.slug === slug);
-};
+  return blogPostsData.find((post) => post.slug === slug)
+}
 
 export const getAllPosts = (): BlogPost[] => {
-  return blogPostsData;
-};
+  return blogPostsData
+}
 // --- End of Blog Data and Helpers ---
 
-
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  // params.slug is the string slug from the URL
-  const post = getPostBySlug(params.slug);
+  const post = getPostBySlug(params.slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   const relatedPosts = getAllPosts()
-    .filter((relatedPost) => relatedPost.slug !== params.slug) // Filter by slug, not ID
-    .slice(0, 2); // Get 2 related posts
+    .filter((relatedPost) => relatedPost.slug !== params.slug)
+    .slice(0, 2)
 
   return (
     <main className="flex flex-col min-h-screen" lang="zh-TW">
@@ -572,6 +589,21 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <ArrowLeft className="h-4 w-4 mr-2" />
               返回文章列表
             </Link>
+
+            {/* Hero Image Placeholder */}
+            {post.heroImageUrl && (
+              <div className="mb-8 overflow-hidden rounded-lg shadow-lg">
+                <Image
+                  src={post.heroImageUrl || "/placeholder.svg"}
+                  alt={post.heroImageAlt}
+                  width={1200}
+                  height={630}
+                  className="w-full h-auto object-cover"
+                  priority // Prioritize loading for LCP
+                />
+              </div>
+            )}
+
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800 mb-4">
               {post.title}
             </h1>
@@ -614,7 +646,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                       <p className="text-gray-600 text-sm line-clamp-2">{relatedPost.excerpt}</p>
                     </CardContent>
                     <CardFooter>
-                      {/* Link uses the slug now */}
                       <Link href={`/blog/${relatedPost.slug}`} className="text-blue-600 hover:underline">
                         閱讀更多
                       </Link>
@@ -632,10 +663,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   )
 }
 
-// Generate static paths using slugs
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllPosts()
   return posts.map((post) => ({
-    slug: post.slug, // Use the string slug for static path generation
-  }));
+    slug: post.slug,
+  }))
 }
