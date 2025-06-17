@@ -3,6 +3,7 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
+Disallow: /graph/
 
 # Sitemap location
 Sitemap: https://nicopouch.tw/sitemap.xml
