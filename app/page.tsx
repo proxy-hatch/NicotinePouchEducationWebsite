@@ -486,7 +486,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left font-medium">尼古丁袋到底是什麼？</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">口含菸到底是什麼？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
                     尼古丁袋是一種無煙尼古丁產品，通常放置在上唇與牙齦之間。它不含煙草，而是由尼古丁、調味劑和植物纖維等成分組成，提供無煙、無味的尼古丁體驗。
@@ -523,7 +523,7 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left font-medium">尼古丁袋安全嗎？</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">口含菸安全嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
                     相較於傳統吸菸，尼古丁袋避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品，認定其相較於香菸具有顯著較低的健康風險。
@@ -571,7 +571,7 @@ export default function Home() {
                     ) 等神經精神疾病方面展現治療潛力。
                   </p>
                   <p>
-                    每個人對尼古丁的代謝和反應存在基因差異，使用目的也不同。真正的風險來自輸送方式：香菸的燃燒產生焦油和數千種致癌物質，而尼古丁袋作為無燃燒、無菸草、無二手菸害的方式，消除了這些主要風險源。西方國家的減害政策正是基於這種科學認知，將尼古丁袋定位為風險階梯中最低的選項。
+                    每個人對尼古丁的代謝和反應存在基因差異，使用目的也不同。真正的風險來自輸送方式：香菸的燃燒產生焦油和數千種致癌物質，而尼古丁袋作為無燃燒、無菸草、無二手菸害的方式，消除了這些主要風險源。西方國家的減害政策正是基於這種科學認知，將口含菸定位為風險階梯中最低的選項。
                   </p>
                 </AccordionContent>
               </AccordionItem>
