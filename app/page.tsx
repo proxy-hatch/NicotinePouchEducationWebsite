@@ -537,6 +537,45 @@ export default function Home() {
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left font-medium">尼古丁真的像大家說的那麼有害嗎？</AccordionTrigger>
+                <AccordionContent className="faq-accordion-content">
+                  <p>
+                    這是一個常見的誤解。純尼古丁本身與香菸的危害完全不同。科學研究顯示，尼古丁可能對認知功能、注意力、執行功能和工作記憶帶來益處
+                    (
+                    <a
+                      href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1201375/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      source
+                    </a>
+                    )，並在治療妥瑞症 (
+                    <a
+                      href="https://www.sciencedirect.com/science/article/abs/pii/S0163725896001994"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      source
+                    </a>
+                    )、早期阿茲海默症 (
+                    <a
+                      href="https://optoceutics.com/nicotine-and-alzheimers-connection-risks-benefits-impact/?srsltid=AfmBOopqouLKCUFtQIiEU4hpjtIpij-7h4w9mdQpBgLSHZw8LzC48VEH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      source
+                    </a>
+                    ) 等神經精神疾病方面展現治療潛力。
+                  </p>
+                  <p>
+                    每個人對尼古丁的代謝和反應存在基因差異，使用目的也不同。真正的風險來自輸送方式：香菸的燃燒產生焦油和數千種致癌物質，而尼古丁袋作為無燃燒、無菸草、無二手菸害的方式，消除了這些主要風險源。西方國家的減害政策正是基於這種科學認知，將尼古丁袋定位為風險階梯中最低的選項。
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-6">
                 <AccordionTrigger className="text-left font-medium">會影響牙齦健康嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
@@ -551,13 +590,13 @@ export default function Home() {
                   </p>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-6">
+              <AccordionItem value="item-7">
                 <AccordionTrigger className="text-left font-medium">可以持續多久？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>一般來說，尼古丁袋的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。</p>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-7">
+              <AccordionItem value="item-8">
                 <AccordionTrigger className="text-left font-medium">如何辨別產品是否正品？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
@@ -565,7 +604,7 @@ export default function Home() {
                   </p>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-8">
+              <AccordionItem value="item-9">
                 <AccordionTrigger className="text-left font-medium">費用會很昂貴嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
