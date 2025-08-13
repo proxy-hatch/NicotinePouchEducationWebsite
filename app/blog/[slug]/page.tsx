@@ -327,7 +327,7 @@ const contentForGlobalHarmReductionPolicies = `
       <p>對台灣而言，借鑒英國、瑞典等成功案例，採取基於科學證據的減害策略，可能有助於加速降低吸菸率，同時保護公共健康。然而，任何政策調整都應考慮本地文化和社會因素，並確保有足夠措施防止青少年使用。</p>
     `
 
-const contentForQualityGuide = `
+const article7Content = `
       <h2>如何辨別高品質尼古丁替代品</h2>
       <p>隨著尼古丁替代品市場的快速發展，消費者面臨越來越多的產品選擇。然而，市場上產品品質參差不齊，選擇優質產品對於減少健康風險至關重要。本指南將幫助您識別高品質尼古丁替代品的關鍵指標，以及如何避免劣質或假冒產品。</p>
       <h2>口含菸品質評估標準</h2>
@@ -490,7 +490,7 @@ export const blogPostsData: BlogPost[] = [
     author: "消費者保護團隊",
     heroImageUrl: "/placeholder.svg?width=1200&height=630",
     heroImageAlt: "辨識高品質口含菸與可靠供應商指南",
-    content: contentForQualityGuide,
+    content: article7Content,
     excerpt:
       "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
   },
