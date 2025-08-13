@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "台灣尼古丁袋科普網",
-  description: "為臺灣消費者提供關於尼古丁袋的可靠資訊",
+  title: "台灣口含菸（尼古丁袋）科普平台",
+  description: "為臺灣消費者提供關於口含菸的可靠資訊",
   generator: "v0.dev",
   icons: {
     icon: [
@@ -19,16 +19,16 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "台灣尼古丁袋科普網",
-    description: "純淨尼古丁，明智選擇。為臺灣消費者提供關於尼古丁袋的可靠資訊。",
+    title: "台灣口含菸（尼古丁袋）科普平台",
+    description: "純淨尼古丁，明智選擇。為臺灣消費者提供關於口含菸的可靠資訊。",
     url: "https://[YOUR_WEBSITE_URL]", // TODO: Replace with your actual website URL
-    siteName: "台灣尼古丁袋科普網",
+    siteName: "台灣口含菸（尼古丁袋）科普平台",
     images: [
       {
         url: "/og-image.png", // Relative path, will be resolved to absolute by Next.js/Vercel
         width: 1200,
         height: 630,
-        alt: "台灣尼古丁袋科普網 - 純淨尼古丁，明智選擇",
+        alt: "台灣口含菸（尼古丁袋）科普平台 - 純淨尼古丁，明智選擇",
       },
     ],
     locale: "zh_TW",
@@ -36,8 +36,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "台灣尼古丁袋科普平台",
-    description: "純淨尼古丁，明智選擇。為臺灣消費者提供關於尼古丁袋的可靠資訊。",
+    title: "台灣口含菸（尼古丁袋）科普平台",
+    description: "純淨尼古丁，明智選擇。為臺灣消費者提供關於口含菸的可靠資訊。",
     images: ["/og-image.png"], // Relative path
   },
 }
@@ -111,7 +111,7 @@ export default function RootLayout({
                   </Link>
                 </div>
                 <div className="mt-6 text-center text-sm text-gray-500">
-                  <p>© {new Date().getFullYear()} 台灣尼古丁袋科普網. 版權所有.</p>
+                  <p>© {new Date().getFullYear()} 台灣口含菸（尼古丁袋）科普平台. 版權所有.</p>
                 </div>
               </div>
             </footer>
