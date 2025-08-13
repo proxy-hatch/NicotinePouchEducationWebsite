@@ -489,7 +489,7 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">口含菸到底是什麼？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    尼古丁袋是一種無煙尼古丁產品，通常放置在上唇與牙齦之間。它不含煙草，而是由尼古丁、調味劑和植物纖維等成分組成，提供無煙、無味的尼古丁體驗。
+                    口含菸（又稱尼古丁袋）是一種無煙尼古丁產品，通常放置在上唇與牙齦之間。它不含煙草，而是由尼古丁、調味劑和植物纖維等成分組成，提供無煙、無味的尼古丁體驗。
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -497,7 +497,7 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">可以在工作場使用嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    尼古丁袋不產生煙霧或蒸氣，使用時無味無煙，因此可以在大多數禁止吸菸的場所使用，特別適合台灣的工作環境與生活型態。
+                    口含菸不產生煙霧或蒸氣，使用時無味無煙，因此可以在大多數禁止吸菸的場所使用，特別適合台灣的工作環境與生活型態。
                   </p>
                   <p className="mb-2">
                     <strong>具體使用場景：</strong>
@@ -518,7 +518,7 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">與電子菸有何差別？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    與電子菸不同，尼古丁袋不需要任何設備、電池或充電。它們不產生蒸氣或煙霧，使用時完全無味，且不需要吸入任何物質。
+                    與電子菸不同，口含菸不需要任何設備或充電。它們不產生蒸氣或煙霧，使用時完全無味，且不需要吸入任何物質。
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -526,13 +526,13 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">口含菸安全嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    相較於傳統吸菸，尼古丁袋避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品，認定其相較於香菸具有顯著較低的健康風險。
+                    相較於傳統吸菸，口含菸避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品，認定其相較於香菸具有顯著較低的健康風險。
                   </p>
                   <p>
-                    然而，尼古丁本身仍具有成癮性，且可能對心血管系統產生影響。尼古丁袋主要適合已經使用尼古丁產品的成年人作為減害替代選擇，不建議非尼古丁使用者開始使用。
+                    然而，尼古丁本身仍具有較低成癮性，且可能對心血管系統產生影響。尼古丁袋主要適合已經使用尼古丁產品的成年人作為減害替代選擇，不建議非尼古丁使用者開始使用。
                   </p>
                   <p>
-                    與電子菸不同，尼古丁袋透過口腔吸收，完全避免肺部接觸任何物質。任何尼古丁產品都應在了解風險的情況下謹慎使用，建議諮詢醫療專業人員的建議。
+                    與電子菸不同，口含菸透過口腔吸收，完全避免肺部接觸任何物質。任何尼古丁產品都應在了解風險的情況下謹慎使用，建議諮詢醫療專業人員的建議。
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -586,14 +586,14 @@ export default function Home() {
                     為減少不適感，建議從較低強度產品開始，正確放置於牙齦與嘴唇之間，並定期更換放置位置。初次使用時可縮短使用時間（如15-20分鐘），待適應後再延長至建議時間。
                   </p>
                   <p>
-                    相較於傳統煙草產品，尼古丁袋不含菸葉，避免了與口腔癌、牙齦疾病、牙齒染色等相關的風險。建議保持良好的口腔衛生習慣，定期進行口腔檢查。如有持續不適或異常症狀，應停止使用並諮詢牙醫或醫療專業人員。
+                    相較於傳統煙草產品，口含菸不含菸葉，避免了與口腔癌、牙齦疾病、牙齒染色等相關的風險。建議保持良好的口腔衛生習慣，定期進行口腔檢查。如有持續不適或異常症狀，應停止使用並諮詢牙醫或醫療專業人員。
                   </p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-7">
-                <AccordionTrigger className="text-left font-medium">可以持續多久？</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">一錠可以持續多久呢？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p>一般來說，尼古丁袋的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。</p>
+                  <p>一般來說，口含菸的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。</p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-8">
@@ -608,10 +608,10 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">費用會很昂貴嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    尼古丁袋的價格因品牌和強度而異，但考慮總成本效益具有優勢：無需購買設備、充電器或耗材，避免設備故障維修費用。相較於進口IQOS的複雜成本或黑市電子菸的品質風險，正品尼古丁袋提供可預期的使用成本。
+                    口含菸的價格因品牌和強度而異，但考慮總成本效益具有優勢：無需購買設備、充電器或耗材，避免設備故障維修費用。相較於進口IQOS的複雜成本或黑市電子菸的品質風險，正品口含菸提供可預期的使用成本。
                   </p>
                   <p>
-                    此外，每個袋裝可使用30-60分鐘，使用頻率通常低於電子菸的短時間吸食，長期而言更具成本效益。許多使用者認為便利性、可靠性和品質保證使投資物有所值。
+                    此外，每錠可使用30-60分鐘，使用頻率通常低於電子菸的短時間吸食，長期而言更具成本效益。許多使用者認為便利性、可靠性和品質保證使投資物有所值。
                   </p>
                 </AccordionContent>
               </AccordionItem>
