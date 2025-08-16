@@ -62,7 +62,7 @@ const brandsData: Brand[] = [
     productImageUrl:
       "https://imgproxy.whitepouches.com/gravity:nowe/resize:fit:1250/quality:70/aHR0cHM6Ly93aGl0ZXBvdWNoZXMuY2VudHJhY2RuLm5ldC9jbGllbnQvZHluYW1pYy9pbWFnZXMvNDkwXzI0Njc5ZjM5NDMtNzExX3p5bi1jb29sLW1pbnQtbWluaS1kcnktc3VwZXItc3Ryb25nLW9yaWdpbmFsLmpwZw==",
     description:
-      "ZYN由Swedish Match（Philip Morris International）製造，是首個獲得美國FDA PMTA正式授權的尼古丁袋品牌。2025年1月FDA授權20項產品上市，確認其有害成分含量顯著低於香菸。提供多種口味與尼古丁強度選擇，採用高科技蒸餾純化技術，為全球市場領導品牌。",
+      "ZYN由Swedish Match（Philip Morris International）製造，是首個獲得美國FDA PMTA正式授權的口含菸品牌。2025年1月FDA授權20項產品上市，確認其有害成分含量顯著低於香菸。提供多種口味與尼古丁強度選擇，採用高科技蒸餾純化技術，為全球市場領導品牌。",
     websiteUrl: "https://www.zyn.com/gb/en/home.html/",
     origin: "瑞典 / 美國",
   },
@@ -126,7 +126,7 @@ export default function VendorsPage() {
               推薦供應商與品牌
             </h1>
             <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              探索國際知名尼古丁袋品牌與可信通路
+              探索國際知名口含菸（尼古丁袋）品牌與可信通路
             </p>
           </div>
         </div>

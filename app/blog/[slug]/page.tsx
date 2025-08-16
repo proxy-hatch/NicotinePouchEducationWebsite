@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock } from "lucide-react";
 import {getAllPosts, getPostBySlug} from '@/lib/blog';
+import Image from "next/image" // Import Next Image
+
 
 
 
@@ -14,7 +16,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = getPostBySlug(slug);
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   const relatedPosts = getAllPosts()
@@ -31,6 +33,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <ArrowLeft className="h-4 w-4 mr-2" />
               返回文章列表
             </Link>
+
+            {/* Hero Image Placeholder */}
+            {post.heroImageUrl && (
+                <div className="mb-8 overflow-hidden rounded-lg shadow-lg">
+                  <Image
+                      src={post.heroImageUrl || "/placeholder.svg"}
+                      alt={post.heroImageAlt}
+                      width={1200}
+                      height={630}
+                      className="w-full h-auto object-cover"
+                      priority // Prioritize loading for LCP
+                  />
+                </div>
+            )}
+
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800 mb-4">
               {post.title}
             </h1>
@@ -73,7 +90,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       <p className="text-gray-600 text-sm line-clamp-2">{relatedPost.excerpt}</p>
                     </CardContent>
                     <CardFooter>
-                      {/* Link uses the slug now */}
                       <Link href={`/blog/${relatedPost.slug}`} className="text-blue-600 hover:underline">
                         閱讀更多
                       </Link>
@@ -91,9 +107,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   )
 }
 
-// Generate static paths using slugs
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllPosts()
   return posts.map((post) => ({
     slug: post.slug, // Use the string slug for static path generation
   }));

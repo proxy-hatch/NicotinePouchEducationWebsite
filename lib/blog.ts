@@ -7,6 +7,8 @@ export interface BlogPost {
     publishDate: string;
     readingTime: number;
     author: string;
+    heroImageUrl: string; // Added for hero image
+    heroImageAlt: string; // Added for hero image alt text
     content: string; // HTML content
     excerpt: string;
 }
@@ -451,6 +453,9 @@ export const blogPostsData: BlogPost[] = [
         id: 1,
         slug: "what-is-nicotine-pouch",
         title: "尼古丁袋完整介紹：成分、使用方法與科學原理",
+        // TODO
+        heroImageUrl:"TODO",
+        heroImageAlt: "TODO",
         publishDate: "2024-10-01",
         readingTime: 6,
         author: "健康科學團隊",
@@ -473,6 +478,9 @@ export const blogPostsData: BlogPost[] = [
         id: 3,
         slug: "nicotine-in-the-workplace",
         title: "工作場所使用指南：謹慎、專業的尼古丁消費方式",
+        // TODO
+        heroImageUrl:"TODO",
+        heroImageAlt: "TODO",
         publishDate: "2024-10-02",
         readingTime: 5,
         author: "編輯團隊",
@@ -515,6 +523,9 @@ export const blogPostsData: BlogPost[] = [
         id: 7,
         slug: "nicotine-pouch-retailers",
         title: "品質辨識指南：如何選擇可靠的尼古丁袋供應商",
+        // TODO
+        heroImageUrl:"TODO",
+        heroImageAlt: "TODO",
         publishDate: "2024-11-05",
         readingTime: 5, // Updated from 5 to match [slug]/page.tsx's original data
         author: "消費者保護團隊",
