@@ -16,15 +16,15 @@ const mediaArticles = [
     source: "經濟日報",
     articleTitle: "台灣菸草減害研究院發布《無煙台灣宣言》",
     excerpt:
-      "研究院強調菸草減害是基本人權，呼籲政府重啟科學對話，停止對電子菸、加熱菸與尼古丁袋等減害菸品的一體適用式打壓，以實現真正的無煙台灣...",
+      "研究院強調菸草減害是基本人權，呼籲政府重啟科學對話，停止對電子菸、加熱菸與口含菸等減害菸品的一體適用式打壓，以實現真正的無煙台灣...",
     link: "https://money.udn.com/money/story/5635/8774968",
   },
   {
     id: 2,
     source: "世界新聞網",
-    articleTitle: "職場菁英新歡：尼古丁袋提神又增進效率",
+    articleTitle: "職場菁英新歡：口含菸提神又增進效率",
     excerpt:
-      "彭博社報導指出，尼古丁袋在財經界與高科技業大為風行，投資人使用後可專注完成工作，矽谷科技界使用情況越來越普遍，成為職場提神聖品...",
+      "彭博社報導指出，口含菸在財經界與高科技業大為風行，投資人使用後可專注完成工作，矽谷科技界使用情況越來越普遍，成為職場提神聖品...",
     link: "https://www.worldjournal.com/wj/story/121472/7824800",
   },
   {
@@ -32,7 +32,7 @@ const mediaArticles = [
     source: "2firsts",
     articleTitle: "世界無菸日2025：前WHO執行主任呼籲擁抱菸草減害",
     excerpt:
-      "全球知名菸害防制專家Derek Yach博士強調，科學證據顯示電子菸、尼古丁袋等產品危害顯著低於傳統香菸，呼籲國際社會支持減害策略拯救生命...",
+      "全球知名菸害防制專家Derek Yach博士強調，科學證據顯示電子菸、口含菸等產品危害顯著低於傳統香菸，呼籲國際社會支持減害策略拯救生命...",
     link: "https://www.2firsts.com/news/world-no-tobacco-day-2025-embracing-tobacco-harm-reduction-to-save-millions",
   },
   {
@@ -86,7 +86,7 @@ export default function Home() {
               <div className="aspect-video overflow-hidden rounded-xl bg-blue-100 flex items-center justify-center">
                 <Image
                     src="/hero-image.png"
-                    alt="尼古丁袋產品示意圖"
+                    alt="口含菸產品示意圖"
                     width={1024}
                     height={556}
                     className="object-cover w-full h-full"
@@ -132,7 +132,7 @@ export default function Home() {
               <CardContent className="p-6 space-y-3 text-gray-700">
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
-                  <p>設備維護充電煩惱，使用便利性受限</p>
+                  <p>新興菸品進口困難，傳統香菸燃燒產生焦油危害肺功能</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
@@ -140,11 +140,11 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
-                  <p>新興菸品進口困難，傳統香菸燃燒產生焦油危害肺功能</p>
+                  <p>設備維護充電煩惱，便利性受限</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-orange-400" />
-                  <p> 使用場所受限影響工作與生活便利性，二手煙霧影響他人</p>
+                  <p> 使用場所受限影響工作與生活，二手煙霧影響他人</p>
                 </div>
               </CardContent>
             </Card>
@@ -189,7 +189,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
-                  <p>持續30-60分鐘平穩體驗，適應各種生活與工作狀態</p>
+                  <p>持續30-60分鐘平穩體驗，適應各種生活與工作情景，享受持久尼古丁釋放</p>
                 </div>
               </CardContent>
             </Card>
@@ -446,6 +446,43 @@ export default function Home() {
           </Carousel>
         </div>
       </section>
+      {/* Video Section */}
+      <section className="w-full py-12 md:py-16 bg-gray-50">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center space-y-4 mb-8">
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800">
+                重新認識尼古丁：科學與事實
+              </h2>
+              <p className="text-gray-600 md:text-lg leading-relaxed">
+                尼古丁長期被誤解和污名化，但科學研究顯示純尼古丁本身可能對認知功能、注意力和工作記憶帶來益處，甚至在治療妥瑞症和早期阿茲海默症方面展現潛力。每個人對尼古丁的反應不同，關鍵在於選擇最潔淨的輸送方式。口含菸作為無燃燒、無菸草、無二手菸害的輸送方法，代表著當今最安全的尼古丁使用選擇。
+              </p>
+            </div>
+
+            <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-lg mb-6">
+              <iframe
+                src="https://www.youtube.com/embed/Oi9127gilT0?si=qE1H9eAmfmrI9sbL"
+                title="重新認識尼古丁：科學與事實"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-gray-500 mb-2">深入了解</p>
+              <Link
+                href="https://ihavenotv.com/you-dont-know-nicotine"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-700 underline text-sm"
+              >
+                觀看完整紀錄片「你不了解的尼古丁」
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="w-full py-12 md:py-16 bg-gray-50">
@@ -456,10 +493,10 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left font-medium">尼古丁袋到底是什麼？</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">口含菸到底是什麼？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    尼古丁袋是一種無煙尼古丁產品，通常放置在上唇與牙齦之間。它不含煙草，而是由尼古丁、調味劑和植物纖維等成分組成，提供無煙、無味的尼古丁體驗。
+                    口含菸（又稱尼古丁袋）是一種無煙尼古丁產品，通常放置在上唇與牙齦之間。它不含煙草，而是由尼古丁、調味劑和植物纖維等成分組成，提供無煙、無味的尼古丁體驗。
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -467,7 +504,7 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">可以在工作場使用嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    尼古丁袋不產生煙霧或蒸氣，使用時無味無煙，因此可以在大多數禁止吸菸的場所使用，特別適合台灣的工作環境與生活型態。
+                    口含菸不產生煙霧或蒸氣，使用時無味無煙，因此可以在大多數禁止吸菸的場所使用，特別適合台灣的工作環境與生活型態。
                   </p>
                   <p className="mb-2">
                     <strong>具體使用場景：</strong>
@@ -488,25 +525,64 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">與電子菸有何差別？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    與電子菸不同，尼古丁袋不需要任何設備、電池或充電。它們不產生蒸氣或煙霧，使用時完全無味，且不需要吸入任何物質。
+                    與電子菸不同，口含菸不需要任何設備或充電。它們不產生蒸氣或煙霧，使用時完全無味，且不需要吸入任何物質。
                   </p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-4">
-                <AccordionTrigger className="text-left font-medium">尼古丁袋安全嗎？</AccordionTrigger>
+                <AccordionTrigger className="text-left font-medium">口含菸安全嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    相較於傳統吸菸，尼古丁袋避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品，認定其相較於香菸具有顯著較低的健康風險。
+                    相較於傳統吸菸，口含菸避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品，認定其相較於香菸具有顯著較低的健康風險。
                   </p>
                   <p>
-                    然而，尼古丁本身仍具有成癮性，且可能對心血管系統產生影響。尼古丁袋主要適合已經使用尼古丁產品的成年人作為減害替代選擇，不建議非尼古丁使用者開始使用。
+                    然而，尼古丁本身仍具有較低成癮性，且可能對心血管系統產生影響。口含菸主要適合已經使用尼古丁產品的成年人作為減害替代選擇，不建議非尼古丁使用者開始使用。
                   </p>
                   <p>
-                    與電子菸不同，尼古丁袋透過口腔吸收，完全避免肺部接觸任何物質。任何尼古丁產品都應在了解風險的情況下謹慎使用，建議諮詢醫療專業人員的建議。
+                    與電子菸不同，口含菸透過口腔吸收，完全避免肺部接觸任何物質。任何尼古丁產品都應在了解風險的情況下謹慎使用，建議諮詢醫療專業人員的建議。
                   </p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left font-medium">尼古丁真的像大家說的那麼有害嗎？</AccordionTrigger>
+                <AccordionContent className="faq-accordion-content">
+                  <p>
+                    這是一個常見的誤解。純尼古丁本身與香菸的危害完全不同。科學研究顯示，尼古丁可能對認知功能、注意力、執行功能和工作記憶帶來益處
+                    (
+                    <a
+                      href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1201375/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      source
+                    </a>
+                    )，並在治療妥瑞症 (
+                    <a
+                      href="https://www.sciencedirect.com/science/article/abs/pii/S0163725896001994"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      source
+                    </a>
+                    )、早期阿茲海默症 (
+                    <a
+                      href="https://optoceutics.com/nicotine-and-alzheimers-connection-risks-benefits-impact/?srsltid=AfmBOopqouLKCUFtQIiEU4hpjtIpij-7h4w9mdQpBgLSHZw8LzC48VEH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      source
+                    </a>
+                    ) 等神經精神疾病方面展現治療潛力。
+                  </p>
+                  <p>
+                    每個人對尼古丁的代謝和反應存在基因差異，使用目的也不同。真正的風險來自輸送方式：香菸的燃燒產生焦油和數千種致癌物質，而口含菸作為無燃燒、無菸草、無二手菸害的方式，消除了這些主要風險源。西方國家的減害政策正是基於這種科學認知，將口含菸定位為風險階梯中最低的選項。
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-6">
                 <AccordionTrigger className="text-left font-medium">會影響牙齦健康嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
@@ -517,17 +593,17 @@ export default function Home() {
                     為減少不適感，建議從較低強度產品開始，正確放置於牙齦與嘴唇之間，並定期更換放置位置。初次使用時可縮短使用時間（如15-20分鐘），待適應後再延長至建議時間。
                   </p>
                   <p>
-                    相較於傳統煙草產品，尼古丁袋不含菸葉，避免了與口腔癌、牙齦疾病、牙齒染色等相關的風險。建議保持良好的口腔衛生習慣，定期進行口腔檢查。如有持續不適或異常症狀，應停止使用並諮詢牙醫或醫療專業人員。
+                    相較於傳統煙草產品，口含菸不含菸葉，避免了與口腔癌、牙齦疾病、牙齒染色等相關的風險。建議保持良好的口腔衛生習慣，定期進行口腔檢查。如有持續不適或異常症狀，應停止使用並諮詢牙醫或醫療專業人員。
                   </p>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-6">
-                <AccordionTrigger className="text-left font-medium">可以持續多久？</AccordionTrigger>
+              <AccordionItem value="item-7">
+                <AccordionTrigger className="text-left font-medium">一錠可以持續多久呢？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
-                  <p>一般來說，尼古丁袋的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。</p>
+                  <p>一般來說，口含菸的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。</p>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-7">
+              <AccordionItem value="item-8">
                 <AccordionTrigger className="text-left font-medium">如何辨別產品是否正品？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
@@ -535,14 +611,14 @@ export default function Home() {
                   </p>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="item-8">
+              <AccordionItem value="item-9">
                 <AccordionTrigger className="text-left font-medium">費用會很昂貴嗎？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    尼古丁袋的價格因品牌和強度而異，但考慮總成本效益具有優勢：無需購買設備、充電器或耗材，避免設備故障維修費用。相較於進口IQOS的複雜成本或黑市電子菸的品質風險，正品尼古丁袋提供可預期的使用成本。
+                    口含菸的價格因品牌和強度而異，但考慮總成本效益具有優勢：無需購買設備、充電器或耗材，避免設備故障維修費用。相較於進口IQOS的複雜成本或黑市電子菸的品質風險，正品口含菸提供可預期的使用成本。
                   </p>
                   <p>
-                    此外，每個袋裝可使用30-60分鐘，使用頻率通常低於電子菸的短時間吸食，長期而言更具成本效益。許多使用者認為便利性、可靠性和品質保證使投資物有所值。
+                    此外，每錠可使用30-60分鐘，使用頻率通常低於電子菸的短時間吸食，長期而言更具成本效益。許多使用者認為便利性、可靠性和品質保證使投資物有所值。
                   </p>
                 </AccordionContent>
               </AccordionItem>
