@@ -34,7 +34,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               返回文章列表
             </Link>
 
-            {/* Hero Image Placeholder */}
             {post.heroImageUrl && (
                 <div className="mb-8 overflow-hidden rounded-lg shadow-lg">
                   <Image
