@@ -502,7 +502,13 @@ export default function Home() {
                   poster="/jfk_jr_nicotine_poster.jpg"
                   aria-label="JFK Jr. 談論尼古丁的益處"
               >
+                {/* WebM for modern browsers - best compression */}
+                <source src="/jfk_jr_nicotine_endorsement.webm" type="video/webm" />
+                
+                {/* Multiple MP4 qualities - browser picks based on connection */}
+                <source src="/jfk_jr_nicotine_480p.mp4" type="video/mp4" media="(max-width: 640px)" />
                 <source src="/jfk_jr_nicotine_endorsement.mp4" type="video/mp4" />
+                
                 <p className="text-white text-center p-4">
                   您的瀏覽器不支援影片播放。請升級您的瀏覽器或
                   <a href="/jfk_jr_nicotine_endorsement.mp4" className="text-blue-400 underline" download>
