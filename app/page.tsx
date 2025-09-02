@@ -459,23 +459,43 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-lg mb-6">
-              <iframe
-                src="https://www.youtube.com/embed/Oi9127gilT0?si=qE1H9eAmfmrI9sbL"
-                title="重新認識尼古丁：科學與事實"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full"
-              />
+            <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-lg mb-6 relative">
+              <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster="/placeholder.svg?width=1280&height=720&text=Video+Thumbnail"
+                  aria-label="重新認識尼古丁：科學與事實"
+              >
+                <source src="https://your-domain.com/videos/nicotine-facts-video.mp4" type="video/mp4" />
+                <source src="https://your-domain.com/videos/nicotine-facts-video.webm" type="video/webm" />
+                <p className="text-white text-center p-4">
+                  您的瀏覽器不支援影片播放。請升級您的瀏覽器或
+                  <a href="https://your-domain.com/videos/nicotine-facts-video.mp4" className="text-blue-400 underline">
+                    直接下載影片
+                  </a>
+                </p>
+              </video>
+
+              {/* Loading overlay */}
+              <div
+                  className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none"
+                  id="video-loading"
+              >
+                <div className="text-white text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
+                  <p className="text-sm">載入中...</p>
+                </div>
+              </div>
             </div>
 
             <div className="text-center">
               <p className="text-sm text-gray-500 mb-2">深入了解</p>
               <Link
-                href="https://ihavenotv.com/you-dont-know-nicotine"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-700 underline text-sm"
+                  href="https://ihavenotv.com/you-dont-know-nicotine"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 underline text-sm"
               >
                 觀看完整紀錄片「你不了解的尼古丁」
               </Link>
@@ -483,7 +503,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <section className="w-full py-12 md:py-16 bg-gray-50">
         <div className="container px-4 md:px-6">
