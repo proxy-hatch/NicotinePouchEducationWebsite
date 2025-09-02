@@ -9,6 +9,7 @@ import { ChevronRight } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay" // For self-wrapping/autoplay
 import "./styles/faq-styles.css"
+import { useState, useRef, useEffect } from "react"
 
 const mediaArticles = [
   {
@@ -53,6 +54,39 @@ const mediaArticles = [
 ]
 
 export default function Home() {
+  const [showPlayButton, setShowPlayButton] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play()
+      setShowPlayButton(false)
+    }
+  }
+  
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+    
+    const handlePlay = () => setShowPlayButton(false)
+    const handlePause = () => {
+      if (video.currentTime > 0 && !video.ended) {
+        setShowPlayButton(true)
+      }
+    }
+    const handleEnded = () => setShowPlayButton(true)
+    
+    video.addEventListener('play', handlePlay)
+    video.addEventListener('pause', handlePause)
+    video.addEventListener('ended', handleEnded)
+    
+    return () => {
+      video.removeEventListener('play', handlePlay)
+      video.removeEventListener('pause', handlePause)
+      video.removeEventListener('ended', handleEnded)
+    }
+  }, [])
+  
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -459,34 +493,43 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-lg mb-6 relative">
+            <div className="aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-lg mb-6 relative group">
               <video
-                  className="w-full h-full object-cover"
+                  ref={videoRef}
+                  className="w-full h-full object-contain"
                   controls
-                  preload="metadata"
-                  poster="/placeholder.svg?width=1280&height=720&text=Video+Thumbnail"
-                  aria-label="重新認識尼古丁：科學與事實"
+                  preload="none"
+                  poster="/jfk_jr_nicotine_poster.jpg"
+                  aria-label="JFK Jr. 談論尼古丁的益處"
               >
-                <source src="https://your-domain.com/videos/nicotine-facts-video.mp4" type="video/mp4" />
-                <source src="https://your-domain.com/videos/nicotine-facts-video.webm" type="video/webm" />
+                <source src="/jfk_jr_nicotine_endorsement.mp4" type="video/mp4" />
                 <p className="text-white text-center p-4">
                   您的瀏覽器不支援影片播放。請升級您的瀏覽器或
-                  <a href="https://your-domain.com/videos/nicotine-facts-video.mp4" className="text-blue-400 underline">
+                  <a href="/jfk_jr_nicotine_endorsement.mp4" className="text-blue-400 underline" download>
                     直接下載影片
                   </a>
                 </p>
               </video>
-
-              {/* Loading overlay */}
-              <div
-                  className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 pointer-events-none"
-                  id="video-loading"
-              >
-                <div className="text-white text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
-                  <p className="text-sm">載入中...</p>
+              
+              {/* Custom Play Button Overlay */}
+              {showPlayButton && (
+                <div
+                    className="absolute inset-0 flex items-center justify-center cursor-pointer transition-opacity duration-200 hover:opacity-90"
+                    onClick={handlePlayClick}
+                >
+                  <div className="bg-black bg-opacity-40 w-full h-full absolute inset-0"></div>
+                  <div className="relative z-10 bg-white bg-opacity-90 rounded-full p-6 md:p-8 shadow-2xl transform transition-transform hover:scale-110">
+                    <svg 
+                      className="w-16 h-16 md:w-20 md:h-20 text-gray-900" 
+                      fill="currentColor" 
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <div className="text-center">
