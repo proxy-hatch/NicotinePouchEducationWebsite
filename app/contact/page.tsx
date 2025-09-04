@@ -4,6 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, HelpCircle, Clock, ChevronRight } from "lucide-react"
 
 export default function ContactPage() {
+  // Extract domain from SITE_URL for email
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const domain = new URL(siteUrl).hostname
+  const contactEmail = `info@${domain}`
   const inquiryTypes = [
     "產品品質評估標準的詳細說明",
     "國際市場發展動態與趨勢",
@@ -42,10 +46,10 @@ export default function ContactPage() {
               <div className="flex items-center space-x-2 p-3 bg-blue-50 rounded-md">
                 <Mail className="h-5 w-5 text-blue-700" />
                 <a
-                  href="mailto:info@TBD_DOMAIN.com"
+                  href={`mailto:${contactEmail}`}
                   className="text-lg font-medium text-blue-600 hover:text-blue-700 hover:underline break-all"
                 >
-                  info@TBD_DOMAIN.com
+                  {contactEmail}
                 </a>
               </div>
               <p className="text-sm text-gray-500 italic">我們期待您的來信！</p>
