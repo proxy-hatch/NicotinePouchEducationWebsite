@@ -447,6 +447,17 @@ const article7Content = `
         <li>正確儲存以維持產品品質</li>
       </ul>
       <p>切記，即使是最高品質的尼古丁產品也含有尼古丁，這是一種具有成癮性的物質。這些產品主要適合已經使用尼古丁的成年人作為減害選擇，不適合非尼古丁使用者、未成年人、孕婦或有特定健康問題的人群。</p>
+
+      <h2>推薦供應商與品牌</h2>
+      <p>為了幫助您找到可靠的購買渠道，我們已整理了經過驗證的<strong>供應商與品牌資訊</strong>。</p>
+      <p>👉 <strong><a href="/vendors" style="color: #1e40af; text-decoration: underline;">查看完整的推薦供應商與品牌列表</a></strong></p>
+      <p>在推薦頁面中，您可以找到：</p>
+      <ul>
+        <li>經驗證的台灣供應商詳細資訊</li>
+        <li>國際知名品牌完整介紹</li>
+        <li>各品牌的特色與差異分析</li>
+        <li>供應商的服務特色與配送資訊</li>
+      </ul>
     `;
 // ----- End of Full Content Definitions -----
 
