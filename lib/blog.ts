@@ -452,7 +452,7 @@ export const blogPostsData: BlogPost[] = [
     {
         id: 1,
         slug: "what-is-nicotine-pouch",
-        title: "口含菸完整介紹：成分、使用方法與科學原理",
+        title: `口含菸完整介紹 ${new Date().getFullYear()}：成分分析、使用方法與科學原理指南`,
         heroImageUrl: "/blog/holding_nicotine_pouch_wood_background.jpg?width=1200&height=630",
         heroImageAlt: "口含菸成分與使用方法圖解",
         publishDate: "2024-10-01",
@@ -475,8 +475,8 @@ export const blogPostsData: BlogPost[] = [
     */
     {
         id: 3,
-        slug: "nicotine-in-the-workplace",
-        title: "工作場所使用指南：隱形、專業的尼古丁消費方式",
+        slug: "workplace-nicotine-pouch-guide",
+        title: "職場口含菸使用攻略：辦公室、會議室專業隱形使用技巧",
         heroImageUrl: "/blog/workplace_optimized.webp?width=1200&height=800",
         heroImageAlt: "專業人士在辦公室低調使用口含菸示意圖",
         publishDate: "2024-10-02",
@@ -489,7 +489,7 @@ export const blogPostsData: BlogPost[] = [
     {
       id: 4,
       slug: "modern-nicotine-products-comparison",
-      title: "加熱菸 vs 電子菸 vs 尼古丁袋：價格與便利性完整比較",
+      title: `加熱菸 vs 電子菸 vs 尼古丁袋：${new Date().getFullYear()}價格與便利性完整比較`,
       publishDate: "2024-10-03",
       readingTime: 7,
       author: "編輯團隊",
@@ -499,7 +499,7 @@ export const blogPostsData: BlogPost[] = [
     {
       id: 5,
       slug: "taiwan-htp-analysis",
-      title: "加熱菸購買指南：IQOS台灣現況與替代方案評析",
+      title: `加熱菸購買指南：IQOS台灣${new Date().getFullYear()}現況與替代方案評析`,
       publishDate: "2024-12-01",
       readingTime: 6, // Updated from 6 to match [slug]/page.tsx's original data
       author: "健康科學團隊",
@@ -519,13 +519,12 @@ export const blogPostsData: BlogPost[] = [
     */
     {
         id: 7,
-        slug: "nicotine-pouch-retailers",
-        title: "品質辨識指南：如何選擇可靠的口含菸供應商",
-        // TODO
+        slug: "nicotine-pouch-where-to-buy-taiwan",
+        title: `口含菸哪裡買？${new Date().getFullYear()}台灣購買指南與推薦商家評價`,
         heroImageUrl: "/blog/zyn_manufacturing.jpeg?width=1200&height=630",
         heroImageAlt: "辨識高品質口含菸與可靠供應商指南",
         publishDate: "2024-11-05",
-        readingTime: 5, // Updated from 5 to match [slug]/page.tsx's original data
+        readingTime: 5,
         author: "消費者保護團隊",
         content: article7Content,
         excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",
