@@ -453,8 +453,7 @@ export const blogPostsData: BlogPost[] = [
         id: 1,
         slug: "what-is-nicotine-pouch",
         title: "口含菸完整介紹：成分、使用方法與科學原理",
-        // TODO
-        heroImageUrl: "/placeholder.svg?width=1200&height=630",
+        heroImageUrl: "/blog/holding_nicotine_pouch_wood_background.jpg?width=1200&height=630",
         heroImageAlt: "口含菸成分與使用方法圖解",
         publishDate: "2024-10-01",
         readingTime: 6,
@@ -478,8 +477,7 @@ export const blogPostsData: BlogPost[] = [
         id: 3,
         slug: "nicotine-in-the-workplace",
         title: "工作場所使用指南：隱形、專業的尼古丁消費方式",
-        // TODO
-        heroImageUrl: "/placeholder.svg?width=1200&height=630",
+        heroImageUrl: "/blog/workplace.webp?width=1200&height=630",
         heroImageAlt: "專業人士在辦公室低調使用口含菸示意圖",
         publishDate: "2024-10-02",
         readingTime: 5,
@@ -524,7 +522,7 @@ export const blogPostsData: BlogPost[] = [
         slug: "nicotine-pouch-retailers",
         title: "品質辨識指南：如何選擇可靠的口含菸供應商",
         // TODO
-        heroImageUrl: "/placeholder.svg?width=1200&height=630",
+        heroImageUrl: "/blog/zyn_manufacturing.jpeg?width=1200&height=630",
         heroImageAlt: "辨識高品質口含菸與可靠供應商指南",
         publishDate: "2024-11-05",
         readingTime: 5, // Updated from 5 to match [slug]/page.tsx's original data
