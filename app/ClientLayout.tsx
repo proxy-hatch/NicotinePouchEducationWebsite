@@ -4,6 +4,7 @@ import type React from "react"
 import Link from "next/link"
 import { ThemeProvider } from "@/components/theme-provider"
 import { useState, useEffect } from "react"
+import Script from "next/script"
 
 export default function ClientLayout({
   children,
@@ -11,6 +12,29 @@ export default function ClientLayout({
   children: React.ReactNode
 }>) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        "name": "台灣口含菸（尼古丁袋）科普平台",
+        "url": siteUrl,
+        "description": "為臺灣消費者提供關於口含菸的可靠資訊",
+        "inLanguage": "zh-TW"
+      },
+      {
+        "@type": "WebSite", 
+        "@id": `${siteUrl}/#website`,
+        "url": siteUrl,
+        "name": "台灣口含菸（尼古丁袋）科普平台",
+        "publisher": {"@id": `${siteUrl}/#organization`}
+      }
+    ]
+  }
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -48,6 +72,14 @@ export default function ClientLayout({
 
   return (
     <html lang="zh-TW" suppressHydrationWarning>
+      <head>
+        <Script
+          id="json-ld-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          strategy="afterInteractive"
+        />
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="flex flex-col min-h-screen">

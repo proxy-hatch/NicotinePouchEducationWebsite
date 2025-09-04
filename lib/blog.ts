@@ -477,7 +477,7 @@ export const blogPostsData: BlogPost[] = [
         id: 3,
         slug: "nicotine-in-the-workplace",
         title: "工作場所使用指南：隱形、專業的尼古丁消費方式",
-        heroImageUrl: "/blog/workplace.webp?width=1200&height=630",
+        heroImageUrl: "/blog/workplace_optimized.webp?width=1200&height=800",
         heroImageAlt: "專業人士在辦公室低調使用口含菸示意圖",
         publishDate: "2024-10-02",
         readingTime: 5,

@@ -31,3 +31,6 @@ next-env.d.ts
 
 # File system
 .DS_Store
+
+# AI
+.playwright-mcp/
