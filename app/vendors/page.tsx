@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, ExternalLink, ShoppingBag } from "lucide-react"
+import { CheckCircle, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface Vendor {
   id: string
@@ -153,9 +154,11 @@ export default function VendorsPage() {
                       <CardTitle className="text-xl font-semibold text-blue-700">{vendor.name}</CardTitle>
                       {/*<ShoppingBag className="h-8 w-8 text-blue-500" />*/}
                     </div>
-                    <img
+                    <Image
                       src={vendor.logoUrl || "/placeholder.svg"}
                       alt={`${vendor.name} Logo`}
+                      width={150}
+                      height={60}
                       className="h-12 object-contain mb-2 self-start"
                     />
                     <CardDescription className="text-sm text-gray-600">{vendor.description}</CardDescription>
@@ -218,9 +221,11 @@ export default function VendorsPage() {
                   </CardHeader>
                   <CardContent className="space-y-4 flex-grow">
                     <div className="aspect-square bg-white rounded-md flex items-center justify-center overflow-hidden mb-3">
-                      <img
+                      <Image
                         src={brand.productImageUrl || "/placeholder.svg"}
                         alt={`${brand.name} Product Sample`}
+                        width={300}
+                        height={300}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
