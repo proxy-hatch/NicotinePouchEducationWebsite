@@ -140,7 +140,7 @@ export default function VendorsPage() {
       <section id="vendors" className="w-full py-12 md:py-16 bg-white">
         <div className="container px-4 md:px-6">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800 mb-10 text-center md:text-left">
-            經驗證供供應商
+            經驗證供應商
           </h2>
           {vendorsData.length > 0 ? (
             <div className="grid gap-6 md:gap-8 sm:grid-cols-1 lg:grid-cols-3">
