@@ -237,6 +237,7 @@ const article3Content = `
   <p><em>本文內容僅供職場應用參考。使用任何尼古丁產品前，請了解相關法規並諮詢醫療專業人員的建議。在工作場所使用前，建議先了解公司相關政策。</em></p>
 `;
 
+/*
 const contentForGlobalHarmReductionPolicies = `
       <h2>全球尼古丁減害政策概述</h2>
       <p>全球各國對尼古丁替代品的監管策略存在顯著差異，反映了不同的公共衛生理念和政策方向。本文將探討主要國家和地區的尼古丁減害法規方針，以及這些政策對公共健康和消費者選擇的影響。</p>
@@ -320,6 +321,7 @@ const contentForGlobalHarmReductionPolicies = `
       <p>全球尼古丁減害政策呈現多元化發展路徑。研究證據越來越支持差異化監管策略，即對風險較低的產品採取相對寬鬆的監管，同時維持對傳統香菸的嚴格控制。</p>
       <p>對台灣而言，借鑒英國、瑞典等成功案例，採取基於科學證據的減害策略，可能有助於加速降低吸菸率，同時保護公共健康。然而，任何政策調整都應考慮本地文化和社會因素，並確保有足夠措施防止青少年使用。</p>
     `;
+*/
 
 const article7Content = `
       <h2>如何辨別高品質尼古丁替代品</h2>
@@ -445,6 +447,17 @@ const article7Content = `
         <li>正確儲存以維持產品品質</li>
       </ul>
       <p>切記，即使是最高品質的尼古丁產品也含有尼古丁，這是一種具有成癮性的物質。這些產品主要適合已經使用尼古丁的成年人作為減害選擇，不適合非尼古丁使用者、未成年人、孕婦或有特定健康問題的人群。</p>
+
+      <h2>推薦供應商與品牌</h2>
+      <p>為了幫助您找到可靠的購買渠道，我們已整理了經過驗證的<strong>供應商與品牌資訊</strong>。</p>
+      <p>👉 <strong><a href="/vendors" style="color: #1e40af; text-decoration: underline;">查看完整的推薦供應商與品牌列表</a></strong></p>
+      <p>在推薦頁面中，您可以找到：</p>
+      <ul>
+        <li>經驗證的台灣供應商詳細資訊</li>
+        <li>國際知名品牌完整介紹</li>
+        <li>各品牌的特色與差異分析</li>
+        <li>供應商的服務特色與配送資訊</li>
+      </ul>
     `;
 // ----- End of Full Content Definitions -----
 
@@ -452,9 +465,8 @@ export const blogPostsData: BlogPost[] = [
     {
         id: 1,
         slug: "what-is-nicotine-pouch",
-        title: "口含菸完整介紹：成分、使用方法與科學原理",
-        // TODO
-        heroImageUrl: "/placeholder.svg?width=1200&height=630",
+        title: `口含菸完整介紹 ${new Date().getFullYear()}：成分分析、使用方法與科學原理指南`,
+        heroImageUrl: "/blog/holding_nicotine_pouch_wood_background.jpg?width=1200&height=630",
         heroImageAlt: "口含菸成分與使用方法圖解",
         publishDate: "2024-10-01",
         readingTime: 6,
@@ -476,10 +488,9 @@ export const blogPostsData: BlogPost[] = [
     */
     {
         id: 3,
-        slug: "nicotine-in-the-workplace",
-        title: "工作場所使用指南：隱形、專業的尼古丁消費方式",
-        // TODO
-        heroImageUrl: "/placeholder.svg?width=1200&height=630",
+        slug: "workplace-nicotine-pouch-guide",
+        title: "職場口含菸使用攻略：辦公室、會議室專業隱形使用技巧",
+        heroImageUrl: "/blog/workplace_optimized.webp?width=1200&height=800",
         heroImageAlt: "專業人士在辦公室低調使用口含菸示意圖",
         publishDate: "2024-10-02",
         readingTime: 5,
@@ -491,7 +502,7 @@ export const blogPostsData: BlogPost[] = [
     {
       id: 4,
       slug: "modern-nicotine-products-comparison",
-      title: "加熱菸 vs 電子菸 vs 尼古丁袋：價格與便利性完整比較",
+      title: `加熱菸 vs 電子菸 vs 尼古丁袋：${new Date().getFullYear()}價格與便利性完整比較`,
       publishDate: "2024-10-03",
       readingTime: 7,
       author: "編輯團隊",
@@ -501,7 +512,7 @@ export const blogPostsData: BlogPost[] = [
     {
       id: 5,
       slug: "taiwan-htp-analysis",
-      title: "加熱菸購買指南：IQOS台灣現況與替代方案評析",
+      title: `加熱菸購買指南：IQOS台灣${new Date().getFullYear()}現況與替代方案評析`,
       publishDate: "2024-12-01",
       readingTime: 6, // Updated from 6 to match [slug]/page.tsx's original data
       author: "健康科學團隊",
@@ -521,13 +532,12 @@ export const blogPostsData: BlogPost[] = [
     */
     {
         id: 7,
-        slug: "nicotine-pouch-retailers",
-        title: "品質辨識指南：如何選擇可靠的口含菸供應商",
-        // TODO
-        heroImageUrl: "/placeholder.svg?width=1200&height=630",
+        slug: "nicotine-pouch-where-to-buy-taiwan",
+        title: `口含菸哪裡買？${new Date().getFullYear()}台灣購買指南與推薦商家評價`,
+        heroImageUrl: "/blog/zyn_manufacturing.jpeg?width=1200&height=630",
         heroImageAlt: "辨識高品質口含菸與可靠供應商指南",
         publishDate: "2024-11-05",
-        readingTime: 5, // Updated from 5 to match [slug]/page.tsx's original data
+        readingTime: 5,
         author: "消費者保護團隊",
         content: article7Content,
         excerpt: "市場上產品品質參差不齊，如何避開劣質產品？學會辨識正品特徵、驗證供應商可靠性的實用技巧，確保您購買到符合安全標準的產品。",

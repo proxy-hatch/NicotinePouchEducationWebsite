@@ -1,5 +1,6 @@
 // app/sitemap.ts
 import {MetadataRoute} from 'next';
+import {blogPostsData} from '@/lib/blog';
 
 export const dynamic = 'force-static';
 
@@ -23,14 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {path: '/disclaimer/', lastModified: new Date('2024-12-01'), changeFrequency: 'yearly', priority: 0.3},
     ];
 
-    // If you have dynamic pages (e.g., blog posts, products), fetch them here
-    // const dynamicPosts = await fetchPostsFromCMS();
-    // const postEntries = dynamicPosts.map(post => ({
-    //   url: `${siteUrl}/blog/${post.slug}`,
-    //   lastModified: new Date(post.updatedAt),
-    //   changeFrequency: 'daily',
-    //   priority: 0.7,
-    // }));
+    // Add blog posts to sitemap
+    const blogEntries = blogPostsData.map(post => ({
+        url: `${siteUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.publishDate),
+        changeFrequency: 'monthly' as MetadataRoute.Sitemap[0]['changeFrequency'],
+        priority: 0.8,
+    }));
 
     const sitemapEntries = staticPages.map(page => ({
         url: `${siteUrl}${page.path === '/' ? '' : page.path}`, // Ensure no double slash for home page
@@ -41,6 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return [
         ...sitemapEntries,
-        // ...postEntries, // if you have dynamic ones
+        ...blogEntries,
     ];
 }

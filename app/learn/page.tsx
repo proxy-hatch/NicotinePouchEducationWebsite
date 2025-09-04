@@ -28,14 +28,14 @@ export default function LearnPage() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {postsToDisplay.map((post) => (
-              <Card key={post.id} className="shadow-sm hover:shadow-md transition-shadow duration-300">
+              <Card key={post.id} className="shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
                 <CardHeader>
                   <CardTitle className="text-blue-700">{post.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-gray-600">{post.excerpt}</p>
                 </CardContent>
-                <CardFooter className="flex justify-between items-center">
+                <CardFooter className="flex justify-between items-center mt-auto">
                   <div className="flex items-center text-sm text-gray-500">
                     <Clock className="h-4 w-4 mr-1" />
                     <span>{post.readingTime}分鐘閱讀</span>

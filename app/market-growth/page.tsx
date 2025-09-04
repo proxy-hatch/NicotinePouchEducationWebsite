@@ -5,13 +5,13 @@ import { useEffect, useRef } from 'react';
 
 declare global {
     interface Window {
-        Chart: any;
+        Chart: typeof import('chart.js').Chart;
     }
 }
 
 export default function MarketGrowthPage() {
     const chartRef = useRef<HTMLCanvasElement>(null);
-    const chartInstance = useRef<any>(null);
+    const chartInstance = useRef<typeof import('chart.js').Chart | null>(null);
 
     const initializeChart = () => {
         if (!window.Chart || !chartRef.current) {
@@ -60,7 +60,7 @@ export default function MarketGrowthPage() {
                         pointBackgroundColor: '#0ea5e9',
                         pointHoverBackgroundColor: '#fff',
                         pointHoverBorderColor: '#0ea5e9',
-                        pointRadius: (context: any) => (context.dataIndex === 0 || context.dataIndex === years.length - 1) ? 5 : 0,
+                        pointRadius: (context: { dataIndex: number }) => (context.dataIndex === 0 || context.dataIndex === years.length - 1) ? 5 : 0,
                         pointHoverRadius: 6,
                         tension: 0.4,
                     }
@@ -78,7 +78,7 @@ export default function MarketGrowthPage() {
                         beginAtZero: true,
                         grid: { color: 'rgba(226, 232, 240, 0.7)', borderDash: [3, 3] },
                         ticks: {
-                            callback: function(value: any) { return '$' + value + 'B'; },
+                            callback: function(value: string | number) { return '$' + value + 'B'; },
                             color: '#64748b', font: { weight: '500' }
                         },
                         title: {
@@ -95,7 +95,7 @@ export default function MarketGrowthPage() {
                     legend: { display: false },
                     tooltip: {
                         enabled: false, // Disable default tooltip
-                        external: function(context: any) {
+                        external: function(context: { chart: { canvas: HTMLCanvasElement }; tooltip: { opacity: number; yAlign?: string; title?: string[]; dataPoints: [{ dataIndex: number }]; caretX: number; caretY: number; body?: unknown } }) {
                             let tooltipEl = document.getElementById('chartjs-tooltip');
 
                             if (!tooltipEl) {
@@ -125,14 +125,14 @@ export default function MarketGrowthPage() {
                                 const conservative = conservativeData[dataIndex];
                                 const optimistic = optimisticData[dataIndex];
 
-                                let tableRoot = tooltipEl.querySelector('table');
+                                const tableRoot = tooltipEl.querySelector('table');
                                 if (tableRoot) {
                                     tableRoot.innerHTML = '';
 
-                                    let thead = document.createElement('thead');
+                                    const thead = document.createElement('thead');
                                     titleLines.forEach(function(title: string) {
-                                        let tr = document.createElement('tr');
-                                        let th = document.createElement('th');
+                                        const tr = document.createElement('tr');
+                                        const th = document.createElement('th');
                                         th.style.borderWidth = '0';
                                         th.style.fontWeight = '700';
                                         th.style.paddingBottom = '8px';
@@ -142,10 +142,10 @@ export default function MarketGrowthPage() {
                                     });
                                     tableRoot.appendChild(thead);
 
-                                    let tbody = document.createElement('tbody');
+                                    const tbody = document.createElement('tbody');
                                     if (dataIndex < 7) { // Historical data
-                                        let tr = document.createElement('tr');
-                                        let td = document.createElement('td');
+                                        const tr = document.createElement('tr');
+                                        const td = document.createElement('td');
                                         td.style.borderWidth = '0';
                                         td.innerHTML = `<div class="chartjs-tooltip-item"><span>Historical Value:</span> <strong>$${realistic}B</strong></div>`;
                                         tr.appendChild(td);
@@ -157,8 +157,8 @@ export default function MarketGrowthPage() {
                                             { label: 'Conservative', value: conservative, color: '#0369a1' },
                                         ];
                                         rows.forEach(row => {
-                                            let tr = document.createElement('tr');
-                                            let td = document.createElement('td');
+                                            const tr = document.createElement('tr');
+                                            const td = document.createElement('td');
                                             td.style.borderWidth = '0';
                                             td.innerHTML = `<div class="chartjs-tooltip-item"><span>${row.label}:</span> <strong style="color: ${row.color}">$${row.value}B</strong></div>`;
                                             tr.appendChild(td);
@@ -227,7 +227,7 @@ export default function MarketGrowthPage() {
                     <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-600">
                         <h3 className="font-semibold text-slate-800 mb-2">Key Insights:</h3>
                         <ul className="list-disc list-inside space-y-1">
-                            <li>This chart shows a smooth, unified curve representing the market's journey from infancy to a projected <strong>$30B+ industry</strong>.</li>
+                            <li>This chart shows a smooth, unified curve representing the market&apos;s journey from infancy to a projected <strong>$30B+ industry</strong>.</li>
                             <li>The solid blue line represents the most realistic estimate, blending historical data with future projections.</li>
                             <li>Hover over the chart from 2025 onward to see the specific values for the <strong>Optimistic</strong>, <strong>Realistic</strong>, and <strong>Conservative</strong> forecasts.</li>
                         </ul>

@@ -10,6 +10,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Autoplay from "embla-carousel-autoplay" // For self-wrapping/autoplay
 import "./styles/faq-styles.css"
 import { useState, useRef, useEffect } from "react"
+import { blogPostsData } from "@/lib/blog"
 
 const mediaArticles = [
   {
@@ -57,6 +58,12 @@ export default function Home() {
   const [showPlayButton, setShowPlayButton] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
   
+  // Helper function to get blog post title by slug
+  const getBlogTitle = (slug: string) => {
+    const post = blogPostsData.find(post => post.slug === slug)
+    return post?.title || '相關文章'
+  }
+  
   const handlePlayClick = () => {
     if (videoRef.current) {
       videoRef.current.play()
@@ -98,7 +105,7 @@ export default function Home() {
                 純淨尼古丁，明智選擇
               </h1>
               <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                告別傳統菸和電子菸的使用困擾，選擇透明成分的健康可靠替代方案
+                告別傳統菸和電子菸的使用困擾，選擇透明成分的口含菸（尼古丁袋）替代方案
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
@@ -120,7 +127,7 @@ export default function Home() {
               <div className="aspect-video overflow-hidden rounded-xl bg-blue-100 flex items-center justify-center">
                 <Image
                     src="/hero-image.png"
-                    alt="口含菸產品示意圖"
+                    alt="專業實驗室研究員使用顯微鏡進行科學研究 - 象徵口含菸產品的科學研發與品質檢測"
                     width={1024}
                     height={556}
                     className="object-cover w-full h-full"
@@ -215,7 +222,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
-                  <p>歐美品牌保障，藥用級成分完整透明標示</p>
+                  <p>歐美知名品牌保障如ZYN、VELO等，藥用級成分完整透明標示</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
@@ -564,7 +571,10 @@ export default function Home() {
                 <AccordionTrigger className="text-left font-medium">口含菸到底是什麼？</AccordionTrigger>
                 <AccordionContent className="faq-accordion-content">
                   <p>
-                    口含菸（又稱尼古丁袋）是一種無煙尼古丁產品，通常放置在上唇與牙齦之間。它不含煙草，而是由尼古丁、調味劑和植物纖維等成分組成，提供無煙、無味的尼古丁體驗。
+                    口含菸（又稱尼古丁袋、nicotine pouch）是一種無煙尼古丁產品，通常放置在上唇與牙齦之間。它不含煙草，而是由尼古丁、調味劑和植物纖維等成分組成，提供無煙、無味的尼古丁體驗。
+                  </p>
+                  <p>
+                    想深入了解？請閱讀我們的 <Link href="/blog/what-is-nicotine-pouch" className="text-blue-600 hover:text-blue-800 underline">{getBlogTitle('what-is-nicotine-pouch')}</Link>
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -587,6 +597,9 @@ export default function Home() {
                   </ul>
                   <p>這讓使用者可以更靈活地安排工作與生活節奏，無需因尼古丁需求而中斷重要事務或影響專業表現。</p>
                   <p>由於產品完全無味無煙，使用時幾乎無法察覺，因此適合各種正式或非正式場合。</p>
+                  <p>
+                    了解更多專業場合使用建議，請參考 <Link href="/blog/workplace-nicotine-pouch-guide" className="text-blue-600 hover:text-blue-800 underline">{getBlogTitle('workplace-nicotine-pouch-guide')}</Link>
+                  </p>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
@@ -676,6 +689,9 @@ export default function Home() {
                 <AccordionContent className="faq-accordion-content">
                   <p>
                     購買時應選擇有明確品牌標識、批號和成分標示的產品，並從可靠的供應商處購買。正品通常有防偽措施和完整的產品信息。
+                  </p>
+                  <p>
+                    詳細的辨識技巧請參考我們的 <Link href="/blog/nicotine-pouch-where-to-buy-taiwan" className="text-blue-600 hover:text-blue-800 underline">{getBlogTitle('nicotine-pouch-where-to-buy-taiwan')}</Link>
                   </p>
                 </AccordionContent>
               </AccordionItem>

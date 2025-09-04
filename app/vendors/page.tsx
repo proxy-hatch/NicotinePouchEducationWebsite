@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, ExternalLink, ShoppingBag } from "lucide-react"
+import { CheckCircle, ExternalLink } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 interface Vendor {
   id: string
@@ -24,35 +25,38 @@ interface Brand {
 }
 
 const vendorsData: Vendor[] = [
-  /*
   {
-    id: "vendor-1",
-    name: "Pouch Direct TW",
-    logoUrl: "/placeholder.svg?height=60&width=150",
-    description: "專注於台灣市場的尼古丁袋零售商，提供多種國際品牌選擇，並強調快速本地配送服務。",
-    websiteUrl: "https://example.com/pouchdirect",
-    features: ["多品牌選擇", "本地快速配送", "中文客服"],
-    shippingInfo: "台灣地區 1-3 工作日送達",
+    id: "1",
+    name: "Healthy Nic",
+    logoUrl: "/vendor/healthynic_logo.png?height=60&width=150",
+    description: "台灣唯一歐美原廠授權口含菸專賣店。獨家引進FDA認證ZYN等7大國際品牌，堅持原廠直送、防偽驗證、恆溫倉儲。",
+    websiteUrl: "https://healthynic.com/",
+    features: [
+      "FDA認證正品保證",
+      "原廠防偽QR驗證",
+      "LINE專業諮詢",
+      "隱密包裝配送"
+    ],
+    shippingInfo: "台灣地區 3-6 工作日送達",
   },
-  {
-    id: "vendor-2",
-    name: "Global Pouches",
-    logoUrl: "/placeholder.svg?height=60&width=150",
-    description: "國際尼古丁袋供應商，運送至全球多個地區，包括台灣。擁有廣泛的產品目錄。",
-    websiteUrl: "https://example.com/globalpouches",
-    features: ["全球運送", "品牌種類齊全", "多語言支持"],
-    shippingInfo: "國際運送約 7-14 工作日",
-  },
-  {
-    id: "vendor-3",
-    name: "Nicotine World Hub",
-    logoUrl: "/placeholder.svg?height=60&width=150",
-    description: "提供來自瑞典、美國等地的優質尼古丁袋，專注於最新產品和限量版。",
-    websiteUrl: "https://example.com/nicoworldhub",
-    features: ["歐美優質品牌", "新品速遞", "會員專享"],
-    shippingInfo: "依地區而定，可查詢運費",
-  },
-  */
+  // {
+  //   id: "vendor-2",
+  //   name: "Global Pouches",
+  //   logoUrl: "/placeholder.svg?height=60&width=150",
+  //   description: "國際尼古丁袋供應商，運送至全球多個地區，包括台灣。擁有廣泛的產品目錄。",
+  //   websiteUrl: "https://example.com/globalpouches",
+  //   features: ["全球運送", "品牌種類齊全", "多語言支持"],
+  //   shippingInfo: "國際運送約 7-14 工作日",
+  // },
+  // {
+  //   id: "vendor-3",
+  //   name: "Nicotine World Hub",
+  //   logoUrl: "/placeholder.svg?height=60&width=150",
+  //   description: "提供來自瑞典、美國等地的優質尼古丁袋，專注於最新產品和限量版。",
+  //   websiteUrl: "https://example.com/nicoworldhub",
+  //   features: ["歐美優質品牌", "新品速遞", "會員專享"],
+  //   shippingInfo: "依地區而定，可查詢運費",
+  // },
 ]
 
 const brandsData: Brand[] = [
@@ -136,7 +140,7 @@ export default function VendorsPage() {
       <section id="vendors" className="w-full py-12 md:py-16 bg-white">
         <div className="container px-4 md:px-6">
           <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800 mb-10 text-center md:text-left">
-            經驗證供供應商
+            經驗證供應商
           </h2>
           {vendorsData.length > 0 ? (
             <div className="grid gap-6 md:gap-8 sm:grid-cols-1 lg:grid-cols-3">
@@ -148,11 +152,13 @@ export default function VendorsPage() {
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-2">
                       <CardTitle className="text-xl font-semibold text-blue-700">{vendor.name}</CardTitle>
-                      <ShoppingBag className="h-8 w-8 text-blue-500" />
+                      {/*<ShoppingBag className="h-8 w-8 text-blue-500" />*/}
                     </div>
-                    <img
+                    <Image
                       src={vendor.logoUrl || "/placeholder.svg"}
                       alt={`${vendor.name} Logo`}
+                      width={150}
+                      height={60}
                       className="h-12 object-contain mb-2 self-start"
                     />
                     <CardDescription className="text-sm text-gray-600">{vendor.description}</CardDescription>
@@ -215,9 +221,11 @@ export default function VendorsPage() {
                   </CardHeader>
                   <CardContent className="space-y-4 flex-grow">
                     <div className="aspect-square bg-white rounded-md flex items-center justify-center overflow-hidden mb-3">
-                      <img
+                      <Image
                         src={brand.productImageUrl || "/placeholder.svg"}
                         alt={`${brand.name} Product Sample`}
+                        width={300}
+                        height={300}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
