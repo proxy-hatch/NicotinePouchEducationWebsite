@@ -5,11 +5,11 @@ import {blogPostsData} from '@/lib/blog';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    if (!process.env.SITE_URL) {
-        console.error('SITE_URL environment variable is not set.');
+    if (!process.env.NEXT_PUBLIC_SITE_URL) {
+        console.error('NEXT_PUBLIC_SITE_URL environment variable is not set.');
         return [];
     }
-    const siteUrl = process.env.SITE_URL;
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
     // Your static pages
     const staticPages = [
