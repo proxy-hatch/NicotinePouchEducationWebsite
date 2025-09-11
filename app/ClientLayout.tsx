@@ -5,6 +5,9 @@ import Link from "next/link"
 import { ThemeProvider } from "@/components/theme-provider"
 import { useState, useEffect } from "react"
 import Script from "next/script"
+import Clarity from "@microsoft/clarity"
+
+const microsoftClarityProjectId = "t8zin2xpe3";
 
 export default function ClientLayout({
   children,
@@ -99,6 +102,13 @@ export default function ClientLayout({
       document.body.style.overflow = "unset"
     }
   }, [isMobileMenuOpen])
+
+  // Initialize Microsoft Clarity
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      Clarity.init(microsoftClarityProjectId)
+    }
+  }, [])
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
