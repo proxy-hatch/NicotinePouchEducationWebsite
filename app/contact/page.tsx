@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, HelpCircle, Clock, ChevronRight } from "lucide-react"
 
 export default function ContactPage() {
-  // Extract domain from SITE_URL for email
+  // Extract domain from NEXT_PUBLIC_SITE_URL for email
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
   const domain = new URL(siteUrl).hostname
   const contactEmail = `info@${domain}`
