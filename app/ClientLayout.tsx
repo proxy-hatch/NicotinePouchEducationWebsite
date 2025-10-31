@@ -131,7 +131,11 @@ export default function ClientLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-NJMMFLSV38');
+            gtag('config', 'G-NJMMFLSV38', {
+              'linker': {
+                'domains': ['healthynic.com']
+              }
+            });
           `}
         </Script>
         
