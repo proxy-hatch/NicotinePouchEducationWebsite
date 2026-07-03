@@ -1,6 +1,6 @@
 {
-  "name": "台灣口含菸（尼古丁袋）科普平台",
-  "short_name": "口含菸科普平台",
+  "name": "NicoFacts",
+  "short_name": "NicoFacts",
   "icons": [
     {
       "src": "/favicon/web-app-manifest-192x192.png",

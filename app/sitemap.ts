@@ -1,11 +1,12 @@
 // app/sitemap.ts
 import {MetadataRoute} from 'next';
 import {getAllPosts} from '@/lib/content/blog';
+import {siteConfig} from '@/lib/site-config';
 
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    const siteUrl = siteConfig.url;
 
     // Your static pages
     const staticPages = [

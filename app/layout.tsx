@@ -1,14 +1,12 @@
 import type React from "react"
 import "./globals.css"
 import ClientLayout from "./ClientLayout"
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+import { siteConfig } from "@/lib/site-config"
 
 export const metadata = {
-  title: "台灣口含菸（尼古丁袋）科普平台",
-  description: "為臺灣消費者提供關於口含菸的可靠資訊",
-  metadataBase: new URL(siteUrl),
-  generator: "v0.dev",
+  title: siteConfig.fullTitle,
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "any", type: "image/x-icon" },
@@ -19,16 +17,16 @@ export const metadata = {
   },
   manifest: "/favicon/site.webmanifest",
   openGraph: {
-    title: "台灣口含菸（尼古丁袋）科普平台",
+    title: siteConfig.fullTitle,
     description: "純淨尼古丁，明智選擇。為臺灣消費者提供關於口含菸的可靠資訊。",
-    url: siteUrl,
-    siteName: "台灣口含菸（尼古丁袋）科普平台",
+    url: siteConfig.url,
+    siteName: siteConfig.fullTitle,
     images: [
       {
         url: "/og-image.png", // Relative path, will be resolved to absolute by Next.js/Vercel
         width: 1200,
         height: 630,
-        alt: "台灣口含菸（尼古丁袋）科普平台 - 純淨尼古丁，明智選擇",
+        alt: siteConfig.fullTitle + " - 純淨尼古丁，明智選擇",
       },
     ],
     locale: "zh_TW",
@@ -36,7 +34,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "台灣口含菸（尼古丁袋）科普平台",
+    title: siteConfig.fullTitle,
     description: "純淨尼古丁，明智選擇。為臺灣消費者提供關於口含菸的可靠資訊。",
     images: ["/og-image.png"], // Relative path
   },

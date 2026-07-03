@@ -6,4 +6,4 @@ Disallow: /static/
 Disallow: /graph/
 
 # Sitemap location
-Sitemap: https://nicopouch.tw/sitemap.xml
+Sitemap: https://nicofacts.com/sitemap.xml
