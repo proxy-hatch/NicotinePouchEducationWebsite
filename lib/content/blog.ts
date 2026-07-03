@@ -27,12 +27,34 @@ function loadPost(filename: string): BlogPost | null {
   const raw = fs.readFileSync(path.join(BLOG_DIR, filename), 'utf8')
   const { data, content } = matter(raw)
   if (data.draft) return null
+
+  // Validate required fields
+  const title = String(data.title || '').trim()
+  if (!title) {
+    throw new Error(`${filename}: frontmatter field 'title' must be a non-empty string`)
+  }
+
+  const publishDate = String(data.publishDate || '').trim()
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(publishDate)) {
+    throw new Error(`${filename}: frontmatter field 'publishDate' must match YYYY-MM-DD format`)
+  }
+
+  const readingTime = Number(data.readingTime)
+  if (!Number.isFinite(readingTime)) {
+    throw new Error(`${filename}: frontmatter field 'readingTime' must be a finite number`)
+  }
+
+  const author = String(data.author || '').trim()
+  if (!author) {
+    throw new Error(`${filename}: frontmatter field 'author' must be a non-empty string`)
+  }
+
   return {
     slug: filename.replace(/\.md$/, ''),
-    title: substituteYear(String(data.title)),
-    publishDate: String(data.publishDate),
-    readingTime: Number(data.readingTime),
-    author: String(data.author),
+    title: substituteYear(title),
+    publishDate: publishDate,
+    readingTime: readingTime,
+    author: author,
     heroImageUrl: String(data.heroImageUrl ?? ''),
     heroImageAlt: String(data.heroImageAlt ?? ''),
     excerpt: String(data.excerpt ?? ''),
