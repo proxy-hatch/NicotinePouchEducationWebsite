@@ -1,7 +1,9 @@
 import type React from "react"
 import "./globals.css"
-import ClientLayout from "./ClientLayout"
 import { siteConfig } from "@/lib/site-config"
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
+import { Analytics } from "@/components/layout/analytics"
 
 export const metadata = {
   title: siteConfig.fullTitle,
@@ -45,5 +47,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <ClientLayout>{children}</ClientLayout>
+  return (
+    <html lang="zh-TW">
+      <body>
+        <Analytics />
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          {children}
+          <Footer />
+        </div>
+      </body>
+    </html>
+  )
 }
