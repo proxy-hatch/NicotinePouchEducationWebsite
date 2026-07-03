@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock } from "lucide-react";
-import {BlogPost, getAllPosts} from '@/lib/blog';
+import {BlogPost, getAllPosts} from '@/lib/content/blog';
 
 export default function LearnPage() {
   const postsToDisplay: BlogPost[] = getAllPosts();
@@ -28,7 +28,7 @@ export default function LearnPage() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {postsToDisplay.map((post) => (
-              <Card key={post.id} className="shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+              <Card key={post.slug} className="shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
                 <CardHeader>
                   <CardTitle className="text-blue-700">{post.title}</CardTitle>
                 </CardHeader>

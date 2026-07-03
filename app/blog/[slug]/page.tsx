@@ -3,7 +3,7 @@ import {CardFooter, CardContent, CardTitle, CardHeader, Card} from '@/components
 import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ArrowLeft, Clock} from 'lucide-react';
-import {getAllPosts, getPostBySlug} from '@/lib/blog';
+import {getAllPosts, getPostBySlug} from '@/lib/content/blog';
 import Image from 'next/image'; // Import Next Image
 
 export default async function BlogPostPage({params}: { params: Promise<{ slug: string }> }) {
@@ -65,7 +65,7 @@ export default async function BlogPostPage({params}: { params: Promise<{ slug: s
             <section className="w-full py-8 md:py-12 bg-white">
                 <div className="container px-4 md:px-6">
                     <div className="max-w-3xl mx-auto prose prose-lg prose-blue">
-                        <div dangerouslySetInnerHTML={{__html: post.content}}/>
+                        <div dangerouslySetInnerHTML={{__html: post.contentHtml}}/>
                     </div>
                 </div>
             </section>
@@ -78,7 +78,7 @@ export default async function BlogPostPage({params}: { params: Promise<{ slug: s
                         {relatedPosts.length > 0 ? (
                             <div className="grid gap-6 sm:grid-cols-2">
                                 {relatedPosts.map((relatedPost) => (
-                                    <Card key={relatedPost.id} className="shadow-sm hover:shadow-md transition-shadow duration-300">
+                                    <Card key={relatedPost.slug} className="shadow-sm hover:shadow-md transition-shadow duration-300">
                                         <CardHeader>
                                             <CardTitle className="text-blue-700 text-lg">{relatedPost.title}</CardTitle>
                                         </CardHeader>
