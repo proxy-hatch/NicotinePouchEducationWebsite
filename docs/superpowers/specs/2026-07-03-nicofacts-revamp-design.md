@@ -23,7 +23,7 @@ Revamp the nicotine pouch education website (currently "Taiwan Nicotine Pouch Ed
 | Blog storage | Separate `content/blog/*.md` files with frontmatter; spec holds an index of them |
 | Spec pipeline | Human doc + manual sync for page copy; blog markdown parsed at build time. Workflow documented in README |
 | Content cuts | **Keep everything** (incl. JFK Jr. video, vendors page, market-growth page, media carousel) |
-| Approach | **A — incremental refactor in place**, each step diffable against current behavior |
+| Approach | **A — incremental refactor in place**, each step diffable against current behavior. Total revamp is permitted where the v0 structure resists incremental cleanup — rebuild a page/component outright when that's cleaner |
 
 ## 1. Content architecture
 
@@ -65,13 +65,15 @@ All hardcoded `blue-600` / `gray-500`-style utility classes across pages are rep
 
 `Noto Sans TC` via `next/font` (replacing Arial) for proper Traditional Chinese rendering; clear heading hierarchy with tighter tracking on large headings.
 
-### Animations — CSS-only, subtle, no new dependencies
+### Animations — subtle but creative; new dependencies allowed
 
-- Scroll-reveal (fade-up) on sections via a small `IntersectionObserver` hook adding a class
-- Card hover lift + soft shadow
-- Animated underline on nav links
-- Hero fade-up on load
-- All gated behind `prefers-reduced-motion: reduce`
+New dependencies are permitted (e.g., `motion`/framer-motion for orchestrated entrances, scroll-linked effects, and spring physics); plain CSS remains fine where it's simpler. Creative latitude is granted — the bar is "subtly elevates the experience", never over the top. Baseline set:
+
+- Orchestrated hero entrance (staggered fade-up of headline, subhead, CTAs)
+- Scroll-reveal on sections with slight stagger between child cards
+- Card hover lift + soft shadow; animated underline on nav links
+- Tasteful micro-interactions where they reinforce the clinical/credible tone (e.g., number count-ups on market-growth stats, smooth accordion easing on FAQ)
+- All gated behind `prefers-reduced-motion: reduce`; mobile gets the same treatment tuned for touch (no hover-dependent reveals)
 
 ## 3. Code refactor
 
@@ -88,7 +90,16 @@ All hardcoded `blue-600` / `gray-500`-style utility classes across pages are rep
 - Google Analytics + Microsoft Clarity wiring unchanged (env-driven).
 - Body copy remains verbatim.
 
-## 5. Verification
+## 5. Hosting constraint — Cloudflare Pages (do not regress)
+
+The site deploys to **Cloudflare Pages** as a static export. The current, tested-compatible build method must be preserved:
+
+- `next.config.mjs` keeps `output: 'export'`, `trailingSlash: true`, `images: { unoptimized: true }`.
+- `pnpm build` must continue to emit a fully static `out/` — no server runtime, no middleware, no server actions, no on-demand ISR.
+- Dynamic routes (blog `[slug]`) must remain fully enumerated via `generateStaticParams`.
+- Build-time-only techniques are safe: `fs`-based markdown loading, `next/font` self-hosted fonts. Client-side animation libraries are safe.
+
+## 6. Verification
 
 - `pnpm build` passes (static generation of all pages including blog).
 - Visual pass over every page at desktop and mobile widths in the preview browser: copy verbatim-identical to the pre-revamp site, palette coherent, animations subtle and functional, reduced-motion respected.
