@@ -8,7 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ChevronRight } from "lucide-react"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay" // For self-wrapping/autoplay
-import "@/app/styles/faq-styles.css"
 import { useState, useRef, useEffect } from "react"
 import type { BlogPost } from "@/lib/content/blog"
 

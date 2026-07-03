@@ -19,12 +19,18 @@ const config = {
             },
         },
         extend: {
+            fontFamily: {
+                sans: ['var(--font-noto-sans-tc)', 'sans-serif'],
+            },
             colors: {
                 border: 'hsl(var(--border))',
                 input: 'hsl(var(--input))',
                 ring: 'hsl(var(--ring))',
                 background: 'hsl(var(--background))',
                 foreground: 'hsl(var(--foreground))',
+                ink: 'hsl(var(--ink))',
+                surface: 'hsl(var(--surface))',
+                'primary-hover': 'hsl(var(--primary-hover))',
                 primary: {
                     DEFAULT: 'hsl(var(--primary))',
                     foreground: 'hsl(var(--primary-foreground))',
