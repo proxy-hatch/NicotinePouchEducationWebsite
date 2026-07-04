@@ -42,13 +42,13 @@ export function Header() {
   }
 
   return (
-    <header className="w-full py-4 bg-white border-b border-gray-200 relative">
+    <header className="w-full py-4 bg-card border-b border-border relative">
       <div className="container px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-blue-800">
+            <span className="text-xl font-bold text-ink">
               {siteConfig.name}
-              <span className="ml-2 text-sm font-normal text-gray-500">{siteConfig.titleZh}</span>
+              <span className="ml-2 text-sm font-normal text-muted-foreground">{siteConfig.titleZh}</span>
             </span>
           </Link>
 
@@ -58,7 +58,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-600 hover:text-blue-600 transition-colors"
+                className="relative text-muted-foreground hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {item.label}
               </Link>
@@ -69,7 +69,7 @@ export function Header() {
           <div className="md:hidden mobile-menu-container">
             <button
               onClick={toggleMobileMenu}
-              className="text-gray-600 hover:text-blue-600 transition-colors p-2 relative z-50"
+              className="text-muted-foreground hover:text-primary transition-colors p-2 relative z-50"
               aria-label="開啟選單"
               aria-expanded={isMobileMenuOpen}
             >
@@ -103,14 +103,14 @@ export function Header() {
                 />
 
                 {/* Mobile Menu */}
-                <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl z-50 md:hidden transform transition-transform duration-300 ease-in-out">
+                <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-card shadow-xl z-50 md:hidden transform transition-transform duration-300 ease-in-out">
                   <div className="flex flex-col h-full">
                     {/* Menu Header */}
-                    <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                      <span className="text-lg font-semibold text-blue-800">選單</span>
+                    <div className="flex items-center justify-between p-4 border-b border-border">
+                      <span className="text-lg font-semibold text-ink">選單</span>
                       <button
                         onClick={closeMobileMenu}
-                        className="text-gray-600 hover:text-blue-600 transition-colors p-2"
+                        className="text-muted-foreground hover:text-primary transition-colors p-2"
                         aria-label="關閉選單"
                       >
                         <svg
@@ -137,7 +137,7 @@ export function Header() {
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors border-l-4 border-transparent hover:border-blue-600"
+                            className="block px-4 py-3 text-muted-foreground hover:bg-secondary hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                             onClick={closeMobileMenu}
                           >
                             {item.label}
@@ -147,8 +147,8 @@ export function Header() {
                     </nav>
 
                     {/* Menu Footer */}
-                    <div className="p-4 border-t border-gray-200">
-                      <p className="text-sm text-gray-500 text-center">{siteConfig.fullTitle}</p>
+                    <div className="p-4 border-t border-border">
+                      <p className="text-sm text-muted-foreground text-center">{siteConfig.fullTitle}</p>
                     </div>
                   </div>
                 </div>
