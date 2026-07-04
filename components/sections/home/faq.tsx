@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import type { BlogPost } from "@/lib/content/blog"
 
-export function Faq({ posts }: { posts: BlogPost[] }) {
+export function Faq({ posts }: { posts: Pick<BlogPost, 'slug' | 'title'>[] }) {
   const getBlogTitle = (slug: string) => {
     const post = posts.find((post) => post.slug === slug)
     return post?.title || "相關文章"

@@ -10,7 +10,7 @@ import { BottomCta } from "@/components/sections/home/bottom-cta"
 import { DisclaimerStrip } from "@/components/sections/home/disclaimer-strip"
 
 export default function Home() {
-  const posts = getAllPosts()
+  const posts = getAllPosts().map(({ slug, title }) => ({ slug, title }))
 
   return (
     <main className="flex flex-col min-h-screen">

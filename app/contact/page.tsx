@@ -5,11 +5,11 @@ import { Mail, HelpCircle, Clock, ChevronRight } from "lucide-react"
 import { PageHeader } from "@/components/primitives/page-header"
 import { Section } from "@/components/primitives/section"
 import { Reveal } from "@/components/motion/reveal"
+import { siteConfig } from "@/lib/site-config"
 
 export default function ContactPage() {
-  // Extract domain from NEXT_PUBLIC_SITE_URL for email
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-  const domain = new URL(siteUrl).hostname
+  // Extract domain from siteConfig for email
+  const domain = new URL(siteConfig.url).hostname
   const contactEmail = `info@${domain}`
   const inquiryTypes = [
     "產品品質評估標準的詳細說明",

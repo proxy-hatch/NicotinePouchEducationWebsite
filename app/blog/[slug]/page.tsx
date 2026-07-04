@@ -5,7 +5,6 @@ import {notFound} from 'next/navigation';
 import {Clock} from 'lucide-react';
 import {getAllPosts, getPostBySlug} from '@/lib/content/blog';
 import Image from 'next/image';
-import {PageHeader} from '@/components/primitives/page-header';
 import {Section} from '@/components/primitives/section';
 import {Reveal} from '@/components/motion/reveal';
 import {Stagger, StaggerItem} from '@/components/motion/stagger';
