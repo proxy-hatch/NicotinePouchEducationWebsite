@@ -1,9 +1,7 @@
 "use client"
 
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { ExternalLink } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
@@ -14,6 +12,14 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 
 const mediaArticles = [
+  {
+    id: 0,
+    source: "CNN",
+    articleTitle: "美國FDA批准ZYN以「低於香菸風險」名義行銷",
+    excerpt:
+      "美國食品藥物管理局正式授權菲利普莫里斯旗下20款ZYN口含菸產品標示「改用ZYN取代香菸可降低罹患口腔癌、心臟病、肺癌、中風、肺氣腫與慢性支氣管炎的風險」，成為減害產品監管的重要里程碑...",
+    link: "https://edition.cnn.com/2026/07/01/health/zyn-cigarettes-fda",
+  },
   {
     id: 1,
     source: "經濟日報",
@@ -74,24 +80,27 @@ export function MediaCarousel() {
         {mediaArticles.map((article) => (
           <CarouselItem key={article.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
             <div className="p-1 h-full">
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
-                <CardHeader className="pb-2">
-                  <p className="text-sm font-medium text-muted-foreground">{article.source}</p>
-                  <CardTitle className="text-primary text-lg leading-tight mt-1">
-                    {article.articleTitle}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow pt-2">
-                  <p className="text-muted-foreground text-sm line-clamp-3">{article.excerpt}</p>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild variant="link" className="p-0 text-primary hover:text-primary-hover">
-                    <Link href={article.link} target="_blank" rel="noopener noreferrer">
-                      閱讀更多 <ChevronRight className="h-4 w-4 ml-1" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+              <a
+                href={article.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block h-full"
+              >
+                <Card className="shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                  <CardHeader className="pb-2">
+                    <p className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                      {article.source}
+                      <ExternalLink className="h-3.5 w-3.5 opacity-60" />
+                    </p>
+                    <CardTitle className="text-primary text-lg leading-tight mt-1 transition-colors group-hover:text-primary-hover">
+                      {article.articleTitle}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow pt-2">
+                    <p className="text-muted-foreground text-sm line-clamp-3">{article.excerpt}</p>
+                  </CardContent>
+                </Card>
+              </a>
             </div>
           </CarouselItem>
         ))}

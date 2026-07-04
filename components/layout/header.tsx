@@ -20,6 +20,18 @@ export function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [isMobileMenuOpen])
 
+  // Close mobile menu on Escape
+  useEffect(() => {
+    if (!isMobileMenuOpen) return
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false)
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown)
+    return () => document.removeEventListener("keydown", handleKeyDown)
+  }, [isMobileMenuOpen])
+
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -103,7 +115,12 @@ export function Header() {
                 />
 
                 {/* Mobile Menu */}
-                <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-card shadow-xl z-50 md:hidden transform transition-transform duration-300 ease-in-out">
+                <div
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label="選單"
+                  className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-card shadow-xl z-50 md:hidden transform transition-transform duration-300 ease-in-out"
+                >
                   <div className="flex flex-col h-full">
                     {/* Menu Header */}
                     <div className="flex items-center justify-between p-4 border-b border-border">

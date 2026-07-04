@@ -3,7 +3,7 @@
 **Goal:** Education platform for Taiwanese consumers about nicotine pouches（口含菸／尼古丁袋）— provide clear, evidence-based, regulatory-grounded information to help consumers in Taiwan make informed decisions about nicotine-pouch products.
 **Tone:** clinical, professional, authoritative. Traditional Chinese (zh-TW).
 **Brand:** Site name is **NicoFacts**（口含菸科普平台）. Domain nicofacts.com.
-**Editing rule:** This file dictates all page copy. Code must match this spec; edit here first, then sync components. Blog post BODIES live in content/blog/*.md (this file only indexes them).
+**Editing rule:** This file dictates all page copy. Code must match this spec; edit here first, then sync components. Blog posts live in content/blog/*.md in their entirety — frontmatter (title, publishDate, readingTime, author, hero image + alt, excerpt) plus body; this file only indexes them.
 
 ---
 
@@ -11,6 +11,7 @@
 
 | Destination | Purpose | URL |
 |---|---|---|
+| CNN (media article) | Media coverage — FDA modified-risk authorization for ZYN | https://edition.cnn.com/2026/07/01/health/zyn-cigarettes-fda |
 | 經濟日報 (media article) | Media coverage — 無煙台灣宣言 | https://money.udn.com/money/story/5635/8774968 |
 | 世界新聞網 (media article) | Media coverage — 職場口含菸提神 | https://www.worldjournal.com/wj/story/121472/7824800 |
 | 2firsts (media article) | Media coverage — 世界無菸日2025 | https://www.2firsts.com/news/world-no-tobacco-day-2025-embracing-tobacco-harm-reduction-to-save-millions |
@@ -133,27 +134,31 @@ Source: `components/sections/home/home-client.tsx`
 
 - **Section H2:** `媒體關注與專家觀點`
 - **Section subtext:** `了解國際與台灣媒體如何報導尼古丁替代方案`
-- **Carousel CTA per card:** `閱讀更多` (with trailing chevron icon) → `article.link`, opens in new tab
+- **Card interaction:** the entire card is a link → `article.link`, opens in new tab; an external-link icon sits beside the source name (no separate CTA text)
 
 `mediaArticles` array (id, source, articleTitle, excerpt, link):
 
-1. **經濟日報** — `台灣菸草減害研究院發布《無煙台灣宣言》`
+1. **CNN** — `美國FDA批准ZYN以「低於香菸風險」名義行銷`
+   excerpt: `美國食品藥物管理局正式授權菲利普莫里斯旗下20款ZYN口含菸產品標示「改用ZYN取代香菸可降低罹患口腔癌、心臟病、肺癌、中風、肺氣腫與慢性支氣管炎的風險」，成為減害產品監管的重要里程碑...`
+   link: https://edition.cnn.com/2026/07/01/health/zyn-cigarettes-fda
+
+2. **經濟日報** — `台灣菸草減害研究院發布《無煙台灣宣言》`
    excerpt: `研究院強調菸草減害是基本人權，呼籲政府重啟科學對話，停止對電子菸、加熱菸與口含菸等減害菸品的一體適用式打壓，以實現真正的無煙台灣...`
    link: https://money.udn.com/money/story/5635/8774968
 
-2. **世界新聞網** — `職場菁英新歡：口含菸提神又增進效率`
+3. **世界新聞網** — `職場菁英新歡：口含菸提神又增進效率`
    excerpt: `彭博社報導指出，口含菸在財經界與高科技業大為風行，投資人使用後可專注完成工作，矽谷科技界使用情況越來越普遍，成為職場提神聖品...`
    link: https://www.worldjournal.com/wj/story/121472/7824800
 
-3. **2firsts** — `世界無菸日2025：前WHO執行主任呼籲擁抱菸草減害`
+4. **2firsts** — `世界無菸日2025：前WHO執行主任呼籲擁抱菸草減害`
    excerpt: `全球知名菸害防制專家Derek Yach博士強調，科學證據顯示電子菸、口含菸等產品危害顯著低於傳統香菸，呼籲國際社會支持減害策略拯救生命...`
    link: https://www.2firsts.com/news/world-no-tobacco-day-2025-embracing-tobacco-harm-reduction-to-save-millions
 
-4. **中央社** — `菸防法修法近2年，國健署首件加熱菸審查結果即將出爐`
+5. **中央社** — `菸防法修法近2年，國健署首件加熱菸審查結果即將出爐`
    excerpt: `衛福部國健署長吳昭軍表示，台灣加熱菸健康風險評估審查正在進行中，首家業者審查結果預計4月公布，顯示政府以科學實證保護民眾健康...`
    link: https://www.cna.com.tw/news/ahel/202503070183.aspx
 
-5. **中國時報** — `電子菸加熱菸稽查統計：全臺2年開罰5億元`
+6. **中國時報** — `電子菸加熱菸稽查統計：全臺2年開罰5億元`
    excerpt: `WHO統計全球新興菸品社群媒體瀏覽超過34億次，國健署加強稽查違法產品，顯示政府重視菸害防制與產品品質管控...`
    link: https://www.chinatimes.com/cn/realtimenews/20250526002653-260405
 
@@ -237,7 +242,7 @@ Source: `app/learn/page.tsx`
 
 - **H1:** `了解尼古丁替代方案`
 - **Subheadline:** `基於實證研究，協助您做出明智決定`
-- **Blog grid:** for each published post — title, excerpt, `{readingTime}分鐘閱讀` (with clock icon), `閱讀更多` link → `/blog/{slug}`
+- **Blog grid:** for each published post — title, excerpt, `{readingTime}分鐘閱讀` (with clock icon). The entire card is a link → `/blog/{slug}` (chevron affordance at footer right; no separate CTA text)
 
 ---
 
@@ -532,46 +537,3 @@ Recovered from `git show be2553c^:lib/blog.ts` (commented-out entries; body cont
 | nicotine-pouch-brands | `國際品牌介紹：ZYN、VELO等知名尼古丁袋品牌分析` | `深入了解全球主要尼古丁袋品牌的特色與差異。從ZYN的市場地位到VELO的產品線，分析各品牌的製造標準、認證狀況，以及在台灣的可取得性。` | Unwritten — placeholder stub only (`詳細內容即將推出...`) |
 | nicotine-pouch-legality-in-taiwan | `台灣法規現況：尼古丁袋的合法性與使用須知` | `尼古丁袋在台灣的法律地位如何？了解相關法規、使用限制，以及如何在法律框架內安全使用。包含最新政策動態與合規建議。` | Unwritten — placeholder stub only (`詳細內容即將推出...`) |
 
----
-
-## Structured data (JSON-LD)
-
-Source: `app/ClientLayout.tsx`
-
-**Organization:**
-- `name`: spec value **`NicoFacts｜口含菸（尼古丁袋）科普平台`** **(rebrand)** — current code: `台灣口含菸（尼古丁袋）科普平台`
-- `description`: `為臺灣消費者提供關於口含菸的可靠資訊`
-- `inLanguage`: `zh-TW`
-
-**WebSite:**
-- `name`: spec value **`NicoFacts｜口含菸（尼古丁袋）科普平台`** **(rebrand)** — current code: `台灣口含菸（尼古丁袋）科普平台`
-
-**FAQPage — mainEntity (4 Q&A pairs; note this JSON-LD FAQ set is a SUBSET of the full on-page FAQ accordion above — only 4 of the 9 questions are duplicated into structured data, and answer text here is independently authored/shorter than the accordion answers, not copy-pasted from them):**
-
-1. **Q:** `口含菸到底是什麼？`
-   **A:** `口含菸（又稱尼古丁袋、nicotine pouch）是一種無煙尼古丁產品，通常放置在上唇與牙齦之間。它不含煙草，而是由尼古丁、調味劑和植物纖維等成分組成，提供無煙、無味的尼古丁體驗。`
-
-2. **Q:** `可以在工作場使用嗎？`
-   **A:** `口含菸因其無煙、無味、無需吸入的特性，非常適合在工作場所使用。它可以在辦公室、會議室、公共交通等場所謹慎使用，不會影響他人或專業形象。`
-
-3. **Q:** `與電子菸有何差別？`
-   **A:** `與電子菸不同，口含菸不需要任何設備或充電。它們不產生蒸氣或煙霧，使用時完全無味，且不需要吸入任何物質。`
-
-4. **Q:** `口含菸安全嗎？`
-   **A:** `相較於傳統吸菸，口含菸避免了燃燒產生的焦油、一氧化碳等數千種有害化學物質，大幅降低與吸菸相關的健康風險。美國FDA已授權部分品牌為「適合公共健康」的產品。`
-
----
-
-## Metadata (app/layout.tsx)
-
-- **title:** **`NicoFacts｜口含菸（尼古丁袋）科普平台`** **(rebrand)** — current code: `台灣口含菸（尼古丁袋）科普平台`
-- **description:** `為臺灣消費者提供關於口含菸的可靠資訊`
-- **openGraph.title:** **`NicoFacts｜口含菸（尼古丁袋）科普平台`** **(rebrand)**
-- **openGraph.description:** `純淨尼古丁，明智選擇。為臺灣消費者提供關於口含菸的可靠資訊。`
-- **openGraph.siteName:** **`NicoFacts｜口含菸（尼古丁袋）科普平台`** **(rebrand)**
-- **openGraph.images[0].alt:** **`NicoFacts｜口含菸（尼古丁袋）科普平台 - 純淨尼古丁，明智選擇`** **(rebrand)**
-- **openGraph.locale:** `zh_TW`
-- **twitter.title:** **`NicoFacts｜口含菸（尼古丁袋）科普平台`** **(rebrand)**
-- **twitter.description:** `純淨尼古丁，明智選擇。為臺灣消費者提供關於口含菸的可靠資訊。`
-
-(Note: all metadata title fields — `<title>`, openGraph.title/siteName, twitter.title, and the brand portion of the OG image alt — are "metadata titles" under the rebrand rule and record the NEW brand; current code still carries `台灣口含菸（尼古丁袋）科普平台` in each. Descriptions are body copy and stay verbatim.)

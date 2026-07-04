@@ -1,7 +1,7 @@
 // app/learn/page.tsx
 import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Clock } from "lucide-react"
+import { ChevronRight, Clock } from "lucide-react"
 import { BlogPost, getAllPosts } from "@/lib/content/blog"
 import { PageHeader } from "@/components/primitives/page-header"
 import { Section } from "@/components/primitives/section"
@@ -18,23 +18,23 @@ export default function LearnPage() {
         <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
           {postsToDisplay.map((post) => (
             <StaggerItem key={post.slug} className="flex flex-col h-full">
-              <Card className="shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
-                <CardHeader>
-                  <CardTitle className="text-ink">{post.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-muted-foreground">{post.excerpt}</p>
-                </CardContent>
-                <CardFooter className="flex justify-between items-center mt-auto">
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>{post.readingTime}分鐘閱讀</span>
-                  </div>
-                  <Link href={`/blog/${post.slug}`} className="text-accent hover:underline">
-                    閱讀更多
-                  </Link>
-                </CardFooter>
-              </Card>
+              <Link href={`/blog/${post.slug}`} className="group block h-full">
+                <Card className="shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                  <CardHeader>
+                    <CardTitle className="text-ink transition-colors group-hover:text-primary">{post.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-muted-foreground">{post.excerpt}</p>
+                  </CardContent>
+                  <CardFooter className="flex justify-between items-center mt-auto">
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Clock className="h-4 w-4 mr-1" />
+                      <span>{post.readingTime}分鐘閱讀</span>
+                    </div>
+                    <ChevronRight className="h-5 w-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-primary" />
+                  </CardFooter>
+                </Card>
+              </Link>
             </StaggerItem>
           ))}
         </Stagger>

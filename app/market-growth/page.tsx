@@ -48,7 +48,7 @@ export default function MarketGrowthPage() {
                         borderColor: 'transparent',
                         pointRadius: 0,
                         fill: '+1',
-                        backgroundColor: 'rgba(14, 165, 233, 0.1)', // Light sky blue fill
+                        backgroundColor: 'rgba(23, 109, 101, 0.1)', // Light teal fill (--primary)
                     },
                     {
                         label: 'Conservative Projection',
@@ -59,11 +59,11 @@ export default function MarketGrowthPage() {
                     {
                         label: 'Realistic Estimate',
                         data: realisticData,
-                        borderColor: '#0ea5e9', // sky-500
+                        borderColor: '#176d65', // --primary teal
                         borderWidth: 3.5,
-                        pointBackgroundColor: '#0ea5e9',
+                        pointBackgroundColor: '#176d65',
                         pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: '#0ea5e9',
+                        pointHoverBorderColor: '#176d65',
                         pointRadius: (context: { dataIndex: number }) => (context.dataIndex === 0 || context.dataIndex === years.length - 1) ? 5 : 0,
                         pointHoverRadius: 6,
                         tension: 0.4,
@@ -156,9 +156,9 @@ export default function MarketGrowthPage() {
                                         tbody.appendChild(tr);
                                     } else { // Projection data
                                         const rows = [
-                                            { label: 'Optimistic', value: optimistic, color: '#0ea5e9' },
-                                            { label: 'Realistic', value: realistic, color: '#0284c7' },
-                                            { label: 'Conservative', value: conservative, color: '#0369a1' },
+                                            { label: 'Optimistic', value: optimistic, color: '#2a9d92' },
+                                            { label: 'Realistic', value: realistic, color: '#176d65' },
+                                            { label: 'Conservative', value: conservative, color: '#0f4a44' },
                                         ];
                                         rows.forEach(row => {
                                             const tr = document.createElement('tr');
