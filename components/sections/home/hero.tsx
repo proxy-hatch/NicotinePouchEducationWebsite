@@ -4,8 +4,14 @@ import { CTAButton } from "@/components/primitives/cta-button"
 
 export function Hero() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 hero-gradient">
-      <div className="container px-4 md:px-6">
+    <section className="relative w-full overflow-hidden py-12 md:py-24 lg:py-32 hero-gradient">
+      {/* Decorative backdrop: dot grid + slow-drifting teal glows (aria-hidden, no pointer events) */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="hero-dots absolute inset-0" />
+        <div className="animate-hero-drift-a absolute -top-24 right-[6%] h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+        <div className="animate-hero-drift-b absolute -bottom-36 left-[-6%] h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-3xl" />
+      </div>
+      <div className="container relative px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <Stagger className="space-y-4">
             <StaggerItem>

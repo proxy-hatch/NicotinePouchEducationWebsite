@@ -61,6 +61,44 @@
       radial-gradient(40rem 22rem at 2% 105%, hsl(199 55% 90% / 0.5), transparent 60%),
       linear-gradient(to bottom, hsl(var(--secondary)), hsl(var(--background)));
   }
+
+  /* Hero decorative layer: faint dot grid, fading out from the top-right */
+  .hero-dots {
+    background-image: radial-gradient(hsl(174 40% 38% / 0.22) 1px, transparent 1.5px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(42rem 26rem at 78% 12%, black, transparent 72%);
+    -webkit-mask-image: radial-gradient(42rem 26rem at 78% 12%, black, transparent 72%);
+  }
+}
+
+/* Slow-drifting hero glow blobs (GPU-friendly transforms only) */
+@keyframes hero-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(2.5rem, -1.5rem, 0) scale(1.1);
+  }
+}
+@keyframes hero-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+  to {
+    transform: translate3d(-2rem, 1.5rem, 0) scale(1);
+  }
+}
+.animate-hero-drift-a {
+  animation: hero-drift-a 18s ease-in-out infinite alternate;
+}
+.animate-hero-drift-b {
+  animation: hero-drift-b 24s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-drift-a,
+  .animate-hero-drift-b {
+    animation: none;
+  }
 }
 
 /* FAQ accordion content spacing (ported from app/styles/faq-styles.css; Task 9 restyles FAQ) */
