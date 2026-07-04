@@ -205,7 +205,7 @@ Source: `components/sections/home/home-client.tsx`
 
 5. **Q:** `尼古丁真的像大家說的那麼有害嗎？`
    **A (paragraph 1):** `這是一個常見的誤解。純尼古丁本身與香菸的危害完全不同。科學研究顯示，尼古丁可能對認知功能、注意力、執行功能和工作記憶帶來益處 (` + link text `source` (→ https://pmc.ncbi.nlm.nih.gov/articles/PMC1201375/) + `)，並在治療妥瑞症 (` + link text `source` (→ https://www.sciencedirect.com/science/article/abs/pii/S0163725896001994) + `)、早期阿茲海默症 (` + link text `source` (→ https://optoceutics.com/nicotine-and-alzheimers-connection-risks-benefits-impact/?srsltid=AfmBOopqouLKCUFtQIiEU4hpjtIpij-7h4w9mdQpBgLSHZw8LzC48VEH) + `) 等神經精神疾病方面展現治療潛力。`
-   **A (paragraph 2):** `每個人對尼古丁的代謝和反應存在基因差異，使用目的也不同。真正的風險來自輸送方式：香菸的燃燒產生焦油和數千種致癌物質，而口含菸作為無燃燒、無菸草、無二手菸害的方式，消除了這些主要風險源。西方國家的減害政策正是基於這種科學認知，將口含菸定位為風險階梯中最低的選項。`
+   **A (paragraph 2):** `每個人對尼古丁的代謝和反應存在基因差異，使用目的也不同。真正的風險來自輸送方式：香菸的燃燒產生焦油和數千種致癌物質，而口含菸作為無燃燒、無菸草、無二手菸害的方式，消除了這些主要風險源。美國的減害政策正是基於這種科學認知，將口含菸定位為風險階梯中最低的選項。`
 
 6. **Q:** `會影響牙齦健康嗎？`
    **A (paragraph 1):** `部分使用者初期可能會感到輕微的牙齦刺激或刺痛感，這是正常現象，通常在使用一至兩週後會逐漸適應並減輕。這種初期反應主要是口腔組織適應新產品的過程。`
@@ -217,7 +217,7 @@ Source: `components/sections/home/home-client.tsx`
    **A:** `一般來說，口含菸的效果可持續30-60分鐘，視產品強度和個人使用習慣而定。`
 
 8. **Q:** `如何辨別產品是否正品？`
-   **A:** `購買時應選擇有明確品牌標識、批號和成分標示的產品，並從可靠的供應商處購買。正品通常有防偽措施和完整的產品信息。`
+   **A:** `購買時應選擇有明確品牌標識、批號和成分標示的產品，並從可靠的供應商處購買。正品通常有防偽措施和完整的產品資訊。`
    Plus: `詳細的辨識技巧請參考我們的 ` + link to blog post title for slug `nicotine-pouch-where-to-buy-taiwan` (resolves to `口含菸哪裡買？{{year}}台灣購買指南與推薦商家評價`) → `/blog/nicotine-pouch-where-to-buy-taiwan`
 
 9. **Q:** `費用會很昂貴嗎？`
@@ -308,7 +308,7 @@ Source: `app/research/page.tsx`
 - **H2:** `查看通過驗證的產品`
 - **Body:** `基於上述FDA級別的嚴格評估標準，我們會持續追蹤對全球主要尼古丁袋品牌的綜合評估。`
 - **CTA button:** `查看推薦品牌和可信供應商` → `/vendors`
-- **Sub-caption:** `了解哪些產品通過我們的四階段品質認證標準，瀏覽經我們驗證、能夠提供國際品牌正品的可靠採購渠道。`
+- **Sub-caption:** `了解哪些產品通過我們的四階段品質認證標準，瀏覽經我們驗證、能夠提供國際品牌正品的可靠採購通路。`
 
 ### Trust signal footer
 

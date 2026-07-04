@@ -118,7 +118,7 @@ export function Faq({ posts }: { posts: Pick<BlogPost, 'slug' | 'title'>[] }) {
                   ) 等神經精神疾病方面展現治療潛力。
                 </p>
                 <p>
-                  每個人對尼古丁的代謝和反應存在基因差異，使用目的也不同。真正的風險來自輸送方式：香菸的燃燒產生焦油和數千種致癌物質，而口含菸作為無燃燒、無菸草、無二手菸害的方式，消除了這些主要風險源。西方國家的減害政策正是基於這種科學認知，將口含菸定位為風險階梯中最低的選項。
+                  每個人對尼古丁的代謝和反應存在基因差異，使用目的也不同。真正的風險來自輸送方式：香菸的燃燒產生焦油和數千種致癌物質，而口含菸作為無燃燒、無菸草、無二手菸害的方式，消除了這些主要風險源。美國的減害政策正是基於這種科學認知，將口含菸定位為風險階梯中最低的選項。
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -147,7 +147,7 @@ export function Faq({ posts }: { posts: Pick<BlogPost, 'slug' | 'title'>[] }) {
               <AccordionTrigger className="text-left font-medium">如何辨別產品是否正品？</AccordionTrigger>
               <AccordionContent className="faq-accordion-content">
                 <p>
-                  購買時應選擇有明確品牌標識、批號和成分標示的產品，並從可靠的供應商處購買。正品通常有防偽措施和完整的產品信息。
+                  購買時應選擇有明確品牌標識、批號和成分標示的產品，並從可靠的供應商處購買。正品通常有防偽措施和完整的產品資訊。
                 </p>
                 <p>
                   詳細的辨識技巧請參考我們的{" "}

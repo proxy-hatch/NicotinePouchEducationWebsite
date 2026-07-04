@@ -147,7 +147,7 @@ export default function ResearchPage() {
             </p>
             <CTAButton href="/vendors">查看推薦品牌和可信供應商</CTAButton>
             <p className="text-muted-foreground text-sm">
-              了解哪些產品通過我們的四階段品質認證標準，瀏覽經我們驗證、能夠提供國際品牌正品的可靠採購渠道。
+              了解哪些產品通過我們的四階段品質認證標準，瀏覽經我們驗證、能夠提供國際品牌正品的可靠採購通路。
             </p>
           </div>
         </Reveal>
