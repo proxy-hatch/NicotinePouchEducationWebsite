@@ -27,13 +27,13 @@ export function Hero() {
               </div>
             </StaggerItem>
           </Stagger>
-          <div className="mx-auto lg:ml-auto">
-            <div className="aspect-video overflow-hidden rounded-xl bg-secondary flex items-center justify-center">
+          <div className="mx-auto lg:ml-auto w-full">
+            <div className="aspect-video overflow-hidden rounded-2xl ring-1 ring-border/60 shadow-xl shadow-primary/10">
               <Image
-                src="/hero-image.png"
-                alt="專業實驗室研究員使用顯微鏡進行科學研究 - 象徵口含菸產品的科學研發與品質檢測"
-                width={1024}
-                height={556}
+                src="/hero-pouches.jpg"
+                alt="手持開啟的口含菸罐，展示白色尼古丁袋 - 無煙、透明成分的現代尼古丁替代方案"
+                width={1600}
+                height={1111}
                 className="object-cover w-full h-full"
                 priority
               />

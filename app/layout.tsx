@@ -1,10 +1,17 @@
 import type React from "react"
-import { Noto_Sans_TC } from "next/font/google"
+import { Inter, Noto_Sans_TC } from "next/font/google"
 import "./globals.css"
 import { siteConfig } from "@/lib/site-config"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Analytics } from "@/components/layout/analytics"
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-inter",
+  display: "swap",
+})
 
 const notoSansTC = Noto_Sans_TC({
   subsets: ["latin"],
@@ -56,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="zh-TW" className={notoSansTC.variable}>
+    <html lang="zh-TW" className={`${inter.variable} ${notoSansTC.variable}`}>
       <body className="font-sans">
         <Analytics />
         <div className="flex flex-col min-h-screen">

@@ -15,9 +15,9 @@ const mediaArticles = [
   {
     id: 0,
     source: "CNN",
-    articleTitle: "美國FDA批准ZYN以「低於香菸風險」名義行銷",
+    articleTitle: "美國FDA批准ZYN作為香菸減害替代產品行銷",
     excerpt:
-      "美國食品藥物管理局正式授權菲利普莫里斯旗下20款ZYN口含菸產品標示「改用ZYN取代香菸可降低罹患口腔癌、心臟病、肺癌、中風、肺氣腫與慢性支氣管炎的風險」，成為減害產品監管的重要里程碑...",
+      "美國食品藥物管理局正式授權20款ZYN口含菸產品以減害名義行銷，認可完全改用ZYN可顯著降低多種重大疾病風險，樹立減害監管里程碑...",
     link: "https://edition.cnn.com/2026/07/01/health/zyn-cigarettes-fda",
   },
   {

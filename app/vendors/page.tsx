@@ -67,8 +67,7 @@ const brandsData: Brand[] = [
   {
     id: "zyn",
     name: "ZYN",
-    productImageUrl:
-      "https://imgproxy.whitepouches.com/gravity:nowe/resize:fit:1250/quality:70/aHR0cHM6Ly93aGl0ZXBvdWNoZXMuY2VudHJhY2RuLm5ldC9jbGllbnQvZHluYW1pYy9pbWFnZXMvNDkwXzI0Njc5ZjM5NDMtNzExX3p5bi1jb29sLW1pbnQtbWluaS1kcnktc3VwZXItc3Ryb25nLW9yaWdpbmFsLmpwZw==",
+    productImageUrl: "/vendor/zyn-cool-mint.png",
     description:
       "ZYN由Swedish Match（Philip Morris International）製造，是首個獲得美國FDA PMTA正式授權的口含菸品牌。2025年1月FDA授權20項產品上市，確認其有害成分含量顯著低於香菸。提供多種口味與尼古丁強度選擇，採用高科技蒸餾純化技術，為全球市場領導品牌。",
     websiteUrl: "https://www.zyn.com/gb/en/home.html/",
@@ -77,8 +76,7 @@ const brandsData: Brand[] = [
   {
     id: "loop",
     name: "LOOP",
-    productImageUrl:
-      "https://loopnicotinepouches.com/wp-content/uploads/2024/09/Spicy_Apple_Studio_Right_Shadow_1500x1500.webp",
+    productImageUrl: "/vendor/loop-spicy-apple.webp",
     description:
       "LOOP由Another Snus Factory製造，以InstantRush™快速釋放技術聞名，提供創新辛辣口味系列。採用PlantCan™環保包裝罐，符合永續發展理念。在瑞典監管市場具有合法銷售地位，專為追求新奇體驗的年輕消費者設計。",
     websiteUrl: "https://loopnicotinepouches.com/",
@@ -87,7 +85,7 @@ const brandsData: Brand[] = [
   {
     id: "velo",
     name: "VELO",
-    productImageUrl: "https://snusdiscount.co.uk/cdn/shop/files/Breezy_Mango_Right.png?v=1720813552&width=1946",
+    productImageUrl: "/vendor/velo-plus-mint.png",
     description:
       "VELO由英美菸草公司（BAT）推出，經第三方認證實驗室檢測，相較香菸減少99%有毒物質。提供傳統菸草尼古丁與VELO PLUS合成尼古丁選項，時尚包裝設計，在全球多個市場獲得合規銷售許可，包裝獲ISCC永續認證。",
     websiteUrl: "https://www.velo.com/",
@@ -96,7 +94,7 @@ const brandsData: Brand[] = [
   {
     id: "helwit",
     name: "Helwit",
-    productImageUrl: "https://www.nicpouch.co.uk/cdn/shop/products/HELWITMINT2p.jpg?v=1629888315",
+    productImageUrl: "/vendor/helwit-mint.jpg",
     description:
       "Helwit由Yoik AB製造，強調永續發展理念，工廠採用100%水力發電，使用環保包裝罐。專注於自然風味研發，符合瑞典嚴格的品質標準。針對環保意識強、偏好自然風味的消費者，體現北歐簡約與可持續發展價值觀。",
     websiteUrl: "https://helwit.com",
@@ -105,8 +103,7 @@ const brandsData: Brand[] = [
   {
     id: "killa",
     name: "KILLA",
-    productImageUrl:
-      "https://management.flavourvapour.co.uk/res/user/fullsize/6478_killa-mini-blueberry-nicotine-pouch-snus-uk.jpg",
+    productImageUrl: "/vendor/killa-blueberry.jpg",
     description:
       "KILLA由N.G.P. Empire/N.G.P. Tobacco ApS製造，專為經驗豐富的尼古丁使用者設計，提供超高尼古丁含量選項。口味濃烈多樣，包裝設計前衛，在丹麥監管框架下生產。適合追求強烈刺激感的資深使用者，為高強度市場區塊的代表品牌。",
     websiteUrl: "https://killapods.eu/",
@@ -115,7 +112,7 @@ const brandsData: Brand[] = [
   {
     id: "on",
     name: "on!",
-    productImageUrl: "https://nicopouches.fr/en/1958-large_default/mint-mini-medium-6-mg.jpg",
+    productImageUrl: "/vendor/on-mint.png",
     description:
       "on!由Helix Innovations LLC（Altria Group旗下）製造，採用獨特長方形包裝設計，提供從低到高的多樣化尼古丁強度選擇。Altria已向FDA提交35項on!產品的PMTA申請，並發表同行評議研究證實其減害潛力。適合尋求靈活劑量選擇的使用者。",
     websiteUrl: "https://www.onnicotine.com/",
