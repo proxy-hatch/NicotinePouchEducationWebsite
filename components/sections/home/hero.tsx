@@ -38,8 +38,8 @@ export function Hero() {
               <Image
                 src="/hero-pouches.jpg"
                 alt="手持開啟的口含菸罐，展示白色尼古丁袋 - 無煙、透明成分的現代尼古丁替代方案"
-                width={1600}
-                height={1111}
+                width={2488}
+                height={1400}
                 className="object-cover w-full h-full"
                 priority
               />
