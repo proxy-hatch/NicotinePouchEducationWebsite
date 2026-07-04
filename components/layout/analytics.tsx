@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site-config"
 const microsoftClarityProjectId = "t8zin2xpe3"
 
 export function Analytics() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  const siteUrl = siteConfig.url
 
   const jsonLd = {
     "@context": "https://schema.org",
