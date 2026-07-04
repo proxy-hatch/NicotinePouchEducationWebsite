@@ -4,6 +4,10 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { PageHeader } from "@/components/primitives/page-header"
+import { Section } from "@/components/primitives/section"
+import { Stagger, StaggerItem } from "@/components/motion/stagger"
+import { Reveal } from "@/components/motion/reveal"
 
 interface Vendor {
   id: string
@@ -122,37 +126,21 @@ const brandsData: Brand[] = [
 export default function VendorsPage() {
   return (
     <main className="flex flex-col min-h-screen">
-      {/* Page Header */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container px-4 md:px-6 text-center">
-          <div className="max-w-3xl mx-auto space-y-4">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800">
-              推薦供應商與品牌
-            </h1>
-            <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              探索國際知名口含菸（尼古丁袋）品牌與可信通路
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader title="推薦供應商與品牌" subtitle="探索國際知名口含菸（尼古丁袋）品牌與可信通路" />
 
       {/* Vendors Section */}
-      <section id="vendors" className="w-full py-12 md:py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800 mb-10 text-center md:text-left">
-            經驗證供應商
-          </h2>
-          {vendorsData.length > 0 ? (
-            <div className="grid gap-6 md:gap-8 sm:grid-cols-1 lg:grid-cols-3">
-              {vendorsData.map((vendor) => (
-                <Card
-                  key={vendor.id}
-                  className="shadow-lg rounded-xl overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300"
-                >
+      <Section id="vendors">
+        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-ink mb-10 text-center md:text-left">
+          經驗證供應商
+        </h2>
+        {vendorsData.length > 0 ? (
+          <Stagger className="grid gap-6 md:gap-8 sm:grid-cols-1 lg:grid-cols-3">
+            {vendorsData.map((vendor) => (
+              <StaggerItem key={vendor.id}>
+                <Card className="shadow-lg rounded-xl overflow-hidden flex flex-col h-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-2">
-                      <CardTitle className="text-xl font-semibold text-blue-700">{vendor.name}</CardTitle>
-                      {/*<ShoppingBag className="h-8 w-8 text-blue-500" />*/}
+                      <CardTitle className="text-xl font-semibold text-ink">{vendor.name}</CardTitle>
                     </div>
                     <Image
                       src={vendor.logoUrl || "/placeholder.svg"}
@@ -161,66 +149,60 @@ export default function VendorsPage() {
                       height={60}
                       className="h-12 object-contain mb-2 self-start"
                     />
-                    <CardDescription className="text-sm text-gray-600">{vendor.description}</CardDescription>
+                    <CardDescription className="text-sm text-muted-foreground">{vendor.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-3 flex-grow">
                     <div>
-                      <p className="text-sm font-medium text-gray-700 mb-1">主要特色：</p>
+                      <p className="text-sm font-medium text-ink mb-1">主要特色：</p>
                       <div className="flex flex-wrap gap-2">
                         {vendor.features.map((feature, index) => (
-                          <Badge key={index} variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                          <Badge key={index} variant="outline" className="bg-secondary text-primary border-border">
                             <CheckCircle className="h-3 w-3 mr-1" /> {feature}
                           </Badge>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-700">配送資訊：</p>
-                      <p className="text-sm text-gray-600">{vendor.shippingInfo}</p>
+                      <p className="text-sm font-medium text-ink">配送資訊：</p>
+                      <p className="text-sm text-muted-foreground">{vendor.shippingInfo}</p>
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
+                    <Button asChild className="w-full bg-primary hover:bg-primary-hover text-primary-foreground rounded-lg">
                       <Link href={vendor.websiteUrl} target="_blank" rel="noopener noreferrer">
                         前往選購 <ExternalLink className="h-4 w-4 ml-2" />
                       </Link>
                     </Button>
                   </CardFooter>
                 </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-xl text-gray-500">Coming Soon</p>
-              <p className="text-gray-400 mt-2">我們正在努力整理更多優質供應商資訊，敬請期待！</p>
-            </div>
-          )}
-        </div>
-      </section>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-xl text-muted-foreground">Coming Soon</p>
+            <p className="text-muted-foreground mt-2">我們正在努力整理更多優質供應商資訊，敬請期待！</p>
+          </div>
+        )}
+      </Section>
 
       {/* Brands Section */}
-      <section id="brands" className="w-full py-12 md:py-16 bg-gray-50">
-        <div className="container px-4 md:px-6">
-          <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-blue-800 mb-10 text-center md:text-left">
-            國際知名品牌
-          </h2>
-          <div className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {brandsData.map((brand) => (
-              <Link
-                key={brand.id}
-                href={brand.websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group"
-              >
-                <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col transform group-hover:scale-105 group-hover:shadow-xl transition-all duration-300">
+      <Section id="brands" tone="surface">
+        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl text-ink mb-10 text-center md:text-left">
+          國際知名品牌
+        </h2>
+        <Stagger className="grid gap-6 md:gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {brandsData.map((brand) => (
+            <StaggerItem key={brand.id}>
+              <Link href={brand.websiteUrl} target="_blank" rel="noopener noreferrer" className="block group h-full">
+                <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                   <CardHeader className="pb-4">
                     <div className="mb-3">
-                      <CardTitle className="text-xl font-semibold text-blue-700">{brand.name}</CardTitle>
+                      <CardTitle className="text-xl font-semibold text-ink">{brand.name}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4 flex-grow">
-                    <div className="aspect-square bg-white rounded-md flex items-center justify-center overflow-hidden mb-3">
+                    <div className="aspect-square bg-background rounded-md flex items-center justify-center overflow-hidden mb-3">
                       <Image
                         src={brand.productImageUrl || "/placeholder.svg"}
                         alt={`${brand.name} Product Sample`}
@@ -229,28 +211,28 @@ export default function VendorsPage() {
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
-                    <p className="text-sm text-gray-600 line-clamp-4">{brand.description}</p>
+                    <p className="text-sm text-muted-foreground line-clamp-4">{brand.description}</p>
                     <div>
-                      <p className="text-xs font-medium text-gray-500">產地：{brand.origin}</p>
+                      <p className="text-xs font-medium text-muted-foreground">產地：{brand.origin}</p>
                     </div>
                   </CardContent>
                 </Card>
               </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </Section>
 
       {/* Legal Disclaimer (Optional - kept from original structure, can be removed or modified) */}
-      <section className="w-full py-8 bg-white">
-        <div className="container px-4 md:px-6">
+      <Section className="py-8">
+        <Reveal>
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               本頁面提供的品牌與供應商資訊僅供研究參考，旨在幫助消費者了解國際品質標準與驗證方法。我們不直接銷售任何產品，所列資訊基於公開的監管資料與第三方檢測結果。消費者應自行評估相關風險並遵守當地法規。
             </p>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      </Section>
     </main>
   )
 }

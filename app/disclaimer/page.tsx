@@ -1,20 +1,15 @@
+import { PageHeader } from "@/components/primitives/page-header"
+import { Section } from "@/components/primitives/section"
+import { Reveal } from "@/components/motion/reveal"
+
 export default function DisclaimerPage() {
   return (
     <main className="flex flex-col min-h-screen">
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container px-4 md:px-6 text-center">
-          <div className="max-w-3xl mx-auto space-y-4">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800">免責聲明</h1>
-            <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              關於本網站資訊的重要聲明
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader title="免責聲明" subtitle="關於本網站資訊的重要聲明" />
 
-      <section className="w-full py-12 md:py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto prose prose-lg prose-blue">
+      <Section>
+        <Reveal>
+          <div className="max-w-3xl mx-auto prose prose-lg prose-headings:text-ink prose-a:text-accent">
             <h2>資訊性質</h2>
             <p>
               本網站（台灣尼古丁袋教育平台）提供的所有內容，包括文字、圖像、連結及其他資料，均僅供一般教育和資訊目的。這些資訊不應被視為專業醫療建議、診斷或治療的替代品。
@@ -43,10 +38,10 @@ export default function DisclaimerPage() {
             <p>
               本網站可能包含指向第三方網站的連結。提供這些連結是為了方便起見，並不表示我們認可這些網站的內容。我們對第三方網站的內容、隱私政策或做法概不負責。
             </p>
-            <p className="text-sm text-gray-500 mt-8">最後更新日期：{new Date().toLocaleDateString("zh-TW")}</p>
+            <p className="text-sm text-muted-foreground mt-8">最後更新日期：{new Date().toLocaleDateString("zh-TW")}</p>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      </Section>
     </main>
   )
 }

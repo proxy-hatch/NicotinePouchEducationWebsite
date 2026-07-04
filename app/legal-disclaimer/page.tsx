@@ -1,20 +1,15 @@
+import { PageHeader } from "@/components/primitives/page-header"
+import { Section } from "@/components/primitives/section"
+import { Reveal } from "@/components/motion/reveal"
+
 export default function LegalDisclaimerPage() {
   return (
     <main className="flex flex-col min-h-screen">
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container px-4 md:px-6 text-center">
-          <div className="max-w-3xl mx-auto space-y-4">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800">法律聲明</h1>
-            <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              本網站使用條款與重要法律資訊
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader title="法律聲明" subtitle="本網站使用條款與重要法律資訊" />
 
-      <section className="w-full py-12 md:py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto prose prose-lg prose-blue">
+      <Section>
+        <Reveal>
+          <div className="max-w-3xl mx-auto prose prose-lg prose-headings:text-ink prose-a:text-accent">
             <h2>網站使用條款</h2>
             <p>
               歡迎訪問台灣尼古丁袋教育平台（以下簡稱「本網站」）。使用本網站即表示您同意遵守以下條款。如果您不同意這些條款，請勿使用本網站。
@@ -43,10 +38,10 @@ export default function LegalDisclaimerPage() {
             <p>
               我們保留隨時修改這些條款的權利。任何修改將在本網站上公佈後立即生效。建議您定期查看這些條款以了解任何變更。
             </p>
-            <p className="text-sm text-gray-500 mt-8">最後更新日期：{new Date().toLocaleDateString("zh-TW")}</p>
+            <p className="text-sm text-muted-foreground mt-8">最後更新日期：{new Date().toLocaleDateString("zh-TW")}</p>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      </Section>
     </main>
   )
 }
