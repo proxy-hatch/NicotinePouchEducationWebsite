@@ -1,20 +1,15 @@
+import { PageHeader } from "@/components/primitives/page-header"
+import { Section } from "@/components/primitives/section"
+import { Reveal } from "@/components/motion/reveal"
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="flex flex-col min-h-screen">
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-50 to-white">
-        <div className="container px-4 md:px-6 text-center">
-          <div className="max-w-3xl mx-auto space-y-4">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-800">隱私政策</h1>
-            <p className="text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              我們如何收集、使用和保護您的個人資訊
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader title="隱私政策" subtitle="我們如何收集、使用和保護您的個人資訊" />
 
-      <section className="w-full py-12 md:py-16 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto prose prose-lg prose-blue">
+      <Section>
+        <Reveal>
+          <div className="max-w-3xl mx-auto prose prose-lg prose-headings:text-ink prose-a:text-accent">
             <h2>我們對您隱私的承諾</h2>
             <p>
               台灣尼古丁袋教育平台（以下簡稱「我們」或「本網站」）致力於保護您的隱私。本隱私政策解釋了我們如何收集、使用、披露和保護您在使用本網站時提供的個人資訊。
@@ -52,10 +47,10 @@ export default function PrivacyPolicyPage() {
             </p>
             <h3>7. 政策變更</h3>
             <p>我們可能會不時更新本隱私政策。任何變更將在本頁面上發布，並註明更新日期。我們鼓勵您定期查看本政策。</p>
-            <p className="text-sm text-gray-500 mt-8">最後更新日期：{new Date().toLocaleDateString("zh-TW")}</p>
+            <p className="text-sm text-muted-foreground mt-8">最後更新日期：{new Date().toLocaleDateString("zh-TW")}</p>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      </Section>
     </main>
   )
 }

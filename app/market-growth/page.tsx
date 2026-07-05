@@ -2,6 +2,10 @@
 
 import Script from 'next/script';
 import { useEffect, useRef } from 'react';
+import { PageHeader } from "@/components/primitives/page-header"
+import { Section } from "@/components/primitives/section"
+import { Reveal } from "@/components/motion/reveal"
+import { CountUp } from "@/components/motion/count-up"
 
 declare global {
     interface Window {
@@ -44,7 +48,7 @@ export default function MarketGrowthPage() {
                         borderColor: 'transparent',
                         pointRadius: 0,
                         fill: '+1',
-                        backgroundColor: 'rgba(14, 165, 233, 0.1)', // Light sky blue fill
+                        backgroundColor: 'rgba(23, 109, 101, 0.1)', // Light teal fill (--primary)
                     },
                     {
                         label: 'Conservative Projection',
@@ -55,11 +59,11 @@ export default function MarketGrowthPage() {
                     {
                         label: 'Realistic Estimate',
                         data: realisticData,
-                        borderColor: '#0ea5e9', // sky-500
+                        borderColor: '#176d65', // --primary teal
                         borderWidth: 3.5,
-                        pointBackgroundColor: '#0ea5e9',
+                        pointBackgroundColor: '#176d65',
                         pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: '#0ea5e9',
+                        pointHoverBorderColor: '#176d65',
                         pointRadius: (context: { dataIndex: number }) => (context.dataIndex === 0 || context.dataIndex === years.length - 1) ? 5 : 0,
                         pointHoverRadius: 6,
                         tension: 0.4,
@@ -152,9 +156,9 @@ export default function MarketGrowthPage() {
                                         tbody.appendChild(tr);
                                     } else { // Projection data
                                         const rows = [
-                                            { label: 'Optimistic', value: optimistic, color: '#0ea5e9' },
-                                            { label: 'Realistic', value: realistic, color: '#0284c7' },
-                                            { label: 'Conservative', value: conservative, color: '#0369a1' },
+                                            { label: 'Optimistic', value: optimistic, color: '#2a9d92' },
+                                            { label: 'Realistic', value: realistic, color: '#176d65' },
+                                            { label: 'Conservative', value: conservative, color: '#0f4a44' },
                                         ];
                                         rows.forEach(row => {
                                             const tr = document.createElement('tr');
@@ -203,36 +207,45 @@ export default function MarketGrowthPage() {
                 onLoad={initializeChart}
             />
             <style jsx global>{`
-                body {
-                    font-family: 'Inter', sans-serif;
-                    background-color: #f8fafc; /* slate-50 */
-                }
                 .chartjs-tooltip-item {
                     display: flex;
                     justify-content: space-between;
                     width: 100%;
                 }
             `}</style>
-            <main className="antialiased text-slate-800 flex items-center justify-center min-h-screen p-4">
-                <div className="w-full max-w-5xl bg-white rounded-2xl shadow-lg p-6 md:p-8">
-                    <div className="mb-6">
-                        <h1 className="text-2xl md:text-3xl font-bold text-slate-900">The Market Growth Trajectory</h1>
-                        <p className="text-slate-500 mt-1">Global Nicotine Pouch Market Valuation: Historical & Projected (2018-2032)</p>
-                    </div>
+            <main className="flex flex-col min-h-screen">
+                <PageHeader
+                    title="The Market Growth Trajectory"
+                    subtitle="Global Nicotine Pouch Market Valuation: Historical & Projected (2018-2032)"
+                />
 
-                    <div className="h-80 md:h-96 w-full">
-                        <canvas id="marketGrowthChart" ref={chartRef}></canvas>
-                    </div>
+                <Section>
+                    <Reveal>
+                        <div className="w-full max-w-5xl mx-auto bg-surface rounded-2xl shadow-lg p-6 md:p-8">
+                            <div className="h-80 md:h-96 w-full">
+                                <canvas id="marketGrowthChart" ref={chartRef}></canvas>
+                            </div>
 
-                    <div className="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-600">
-                        <h3 className="font-semibold text-slate-800 mb-2">Key Insights:</h3>
-                        <ul className="list-disc list-inside space-y-1">
-                            <li>This chart shows a smooth, unified curve representing the market&apos;s journey from infancy to a projected <strong>$30B+ industry</strong>.</li>
-                            <li>The solid blue line represents the most realistic estimate, blending historical data with future projections.</li>
-                            <li>Hover over the chart from 2025 onward to see the specific values for the <strong>Optimistic</strong>, <strong>Realistic</strong>, and <strong>Conservative</strong> forecasts.</li>
-                        </ul>
-                    </div>
-                </div>
+                            <div className="mt-8 border-t border-border pt-6 text-sm text-muted-foreground">
+                                <h3 className="font-semibold text-ink mb-2">Key Insights:</h3>
+                                <ul className="list-disc list-inside space-y-1">
+                                    <li>
+                                        This chart shows a smooth, unified curve representing the market&apos;s journey from infancy to a projected{' '}
+                                        <strong className="text-ink">
+                                            $<CountUp to={30} suffix="B+ industry" />
+                                        </strong>
+                                        .
+                                    </li>
+                                    <li>The solid blue line represents the most realistic estimate, blending historical data with future projections.</li>
+                                    <li>
+                                        Hover over the chart from 2025 onward to see the specific values for the <strong className="text-ink">Optimistic</strong>,{' '}
+                                        <strong className="text-ink">Realistic</strong>, and <strong className="text-ink">Conservative</strong> forecasts.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </Reveal>
+                </Section>
             </main>
         </>
     );

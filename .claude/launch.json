@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "static-out",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "out", "-l", "3111"],
+      "port": 3111
+    }
+  ]
+}
